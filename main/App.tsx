@@ -1,3 +1,5 @@
+// const clientId =
+//  "BKFHmCbIoeVnKWwLE0lTWa336pLqpCm6eHG6WwfwfWtAVV3BiTpO6aWFLVCWcqYTMM8IKCBQR5KHzIwmpmUYtuE";
 import Web3Auth, {
   LOGIN_PROVIDER,
   OPENLOGIN_NETWORK,
@@ -17,15 +19,15 @@ import {
 
 import RPC from "./ethersRPC"; // for using ethers.js
 
+global.Buffer = global.Buffer || Buffer;
+
+const scheme = "localhost";
+
 const resolvedRedirectUrl =
   Constants.appOwnership == AppOwnership.Expo ||
   Constants.appOwnership == AppOwnership.Guest
     ? Linking.createURL("web3auth", {})
-    : Linking.createURL("web3auth", { scheme: "localhost" });
-
-const clientId =
-  "BKFHmCbIoeVnKWwLE0lTWa336pLqpCm6eHG6WwfwfWtAVV3BiTpO6aWFLVCWcqYTMM8IKCBQR5KHzIwmpmUYtuE";
-const providerUrl = "https://rpc.ankr.com/eth"; // Or your desired provider url
+    : Linking.createURL("web3auth", { scheme: scheme });
 
 export default function App() {
   const [key, setKey] = useState("");
@@ -34,21 +36,21 @@ export default function App() {
 
   const login = async () => {
     try {
-      setConsole("Logging in");
       const web3auth = new Web3Auth(WebBrowser, {
-        clientId,
-        network: OPENLOGIN_NETWORK.CYAN, // or other networks
+        clientId:
+          "BKFHmCbIoeVnKWwLE0lTWa336pLqpCm6eHG6WwfwfWtAVV3BiTpO6aWFLVCWcqYTMM8IKCBQR5KHzIwmpmUYtuE",
+        network: "mainnet", // or other networks
       });
       const info = await web3auth.login({
         loginProvider: LOGIN_PROVIDER.GOOGLE,
         redirectUrl: resolvedRedirectUrl,
         mfaLevel: "none",
-        curve: "secp256k1",
       });
 
       setUserInfo(info);
       setKey(info.privKey);
       uiConsole("Logged In");
+      uiConsole(info);
     } catch (e) {
       uiConsole(e);
     }
