@@ -1,5 +1,5 @@
-import { Buffer } from 'buffer';
-import { ParticleInfo } from './ParticleInfo';
+import {Buffer} from 'buffer';
+import {ParticleInfo} from './ParticleInfo';
 
 /**
  * Makes a JSON RPC request to the given URL, with the given RPC method and params.
@@ -10,12 +10,17 @@ import { ParticleInfo } from './ParticleInfo';
  * @returns {Promise<unknown|undefined>} Returns the result of the RPC method call,
  * or throws an error in case of failure.
  */
-export async function JsonRpcRequest(rpcUrl: string, pathname: string, rpcMethod: string, rpcParams: any = [], chainId: number) {
-
+export async function JsonRpcRequest(
+  rpcUrl: string,
+  pathname: string,
+  rpcMethod: string,
+  rpcParams: any = [],
+  chainId: number,
+) {
   let fetchUrl = rpcUrl;
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization':'',
+    Authorization: '',
   };
   // URLs containing username and password needs special processing
   const username = ParticleInfo.projectId;
@@ -39,7 +44,7 @@ export async function JsonRpcRequest(rpcUrl: string, pathname: string, rpcMethod
   });
 
   console.log(`request body = ${body}`);
-  
+
   const jsonRpcResponse = await fetch(fetchUrl, {
     method: 'POST',
     body: body,
@@ -53,13 +58,11 @@ export async function JsonRpcRequest(rpcUrl: string, pathname: string, rpcMethod
     Array.isArray(jsonRpcResponseJson) ||
     typeof jsonRpcResponseJson !== 'object'
   ) {
-
     throw new Error(`RPC endpoint ${rpcUrl} returned non-object response.`);
   }
-  const { error, result } = jsonRpcResponseJson;
+  const {error, result} = jsonRpcResponseJson;
 
   if (error) {
-
     throw new Error(error?.message || error);
   }
   return result;

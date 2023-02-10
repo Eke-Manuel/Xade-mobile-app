@@ -11,10 +11,36 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4B7E47A3788A41CFAAF4D60F /* VelaSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 577B344C2AE84ED993161D2B /* VelaSans-Bold.otf */; };
 		7F8EA245E62A3B030752D280 /* Pods_main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8F560D7B9B63421C8808873F /* LemonMilk-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A3457CF55654EA39B47196F /* LemonMilk-Regular.otf */; };
+		98354A299FD14BF3B4F28098 /* VelaSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */; };
+		9AE5F82E93B14DC7962651CA /* LemonMilk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CA994A5F6D54A34B82F2A33 /* LemonMilk-Bold.otf */; };
+		9C0B9FB92996B78C00832244 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FA92996B78C00832244 /* Fontisto.ttf */; };
+		9C0B9FBA2996B78C00832244 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FAA2996B78C00832244 /* Octicons.ttf */; };
+		9C0B9FBB2996B78C00832244 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FAB2996B78C00832244 /* Feather.ttf */; };
+		9C0B9FBC2996B78C00832244 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FAC2996B78C00832244 /* Entypo.ttf */; };
+		9C0B9FBD2996B78C00832244 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FAD2996B78C00832244 /* FontAwesome5_Brands.ttf */; };
+		9C0B9FBE2996B78C00832244 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FAE2996B78C00832244 /* MaterialCommunityIcons.ttf */; };
+		9C0B9FBF2996B78C00832244 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FAF2996B78C00832244 /* AntDesign.ttf */; };
+		9C0B9FC02996B78C00832244 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB02996B78C00832244 /* Foundation.ttf */; };
+		9C0B9FC12996B78C00832244 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB12996B78C00832244 /* Ionicons.ttf */; };
+		9C0B9FC22996B78C00832244 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB22996B78C00832244 /* FontAwesome5_Solid.ttf */; };
+		9C0B9FC32996B78C00832244 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB32996B78C00832244 /* FontAwesome5_Regular.ttf */; };
+		9C0B9FC42996B78C00832244 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB42996B78C00832244 /* FontAwesome.ttf */; };
+		9C0B9FC52996B78C00832244 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB52996B78C00832244 /* Zocial.ttf */; };
+		9C0B9FC62996B78C00832244 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB62996B78C00832244 /* EvilIcons.ttf */; };
+		9C0B9FC72996B78C00832244 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB72996B78C00832244 /* SimpleLineIcons.ttf */; };
+		9C0B9FC82996B78C00832244 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB82996B78C00832244 /* MaterialIcons.ttf */; };
 		9CEA97F72995F1F500F91878 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */; };
+		A32926D751B649D1AEE27B0E /* VelaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */; };
+		B68779033D9644E7B672829E /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B280CE38BA5F46ECB470BE7E /* Inter.ttf */; };
+		B7892641A50B43BC83A089C3 /* VelaSans-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF350E0611424AC4B1E1FAE4 /* VelaSans-ExtraBold.otf */; };
 		BC62EEFDF772A522D50692A0 /* Pods_main_mainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263E51652CE0D343E7DF6DED /* Pods_main_mainTests.framework */; };
+		CC7D72D2134D4E7DAF11FE48 /* VelaSans-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */; };
+		D8055FD304DB4D589D6DCD31 /* VelaSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */; };
+		E21DC469E7AD4C1E823060DB /* VelaSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,19 +57,45 @@
 		00E356EE1AD99517003FC87E /* mainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* mainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mainTests.m; sourceTree = "<group>"; };
+		0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-SemiBold.otf"; path = "../assets/fonts/VelaSans-SemiBold.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = main/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = main/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = main/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = main/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = main/main.m; sourceTree = "<group>"; };
+		1A3457CF55654EA39B47196F /* LemonMilk-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LemonMilk-Regular.otf"; path = "../assets/fonts/LemonMilk-Regular.otf"; sourceTree = "<group>"; };
+		232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Regular.otf"; path = "../assets/fonts/VelaSans-Regular.otf"; sourceTree = "<group>"; };
 		263E51652CE0D343E7DF6DED /* Pods_main_mainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_main_mainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-main.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-main.debug.xcconfig"; path = "Target Support Files/Pods-main/Pods-main.debug.xcconfig"; sourceTree = "<group>"; };
+		4CA994A5F6D54A34B82F2A33 /* LemonMilk-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LemonMilk-Bold.otf"; path = "../assets/fonts/LemonMilk-Bold.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-main.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-main.release.xcconfig"; path = "Target Support Files/Pods-main/Pods-main.release.xcconfig"; sourceTree = "<group>"; };
+		577B344C2AE84ED993161D2B /* VelaSans-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Bold.otf"; path = "../assets/fonts/VelaSans-Bold.otf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-main-mainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-main-mainTests.debug.xcconfig"; path = "Target Support Files/Pods-main-mainTests/Pods-main-mainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Medium.otf"; path = "../assets/fonts/VelaSans-Medium.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = main/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-main-mainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-main-mainTests.release.xcconfig"; path = "Target Support Files/Pods-main-mainTests/Pods-main-mainTests.release.xcconfig"; sourceTree = "<group>"; };
+		92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-ExtraLight.otf"; path = "../assets/fonts/VelaSans-ExtraLight.otf"; sourceTree = "<group>"; };
+		9C0B9FA92996B78C00832244 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		9C0B9FAA2996B78C00832244 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		9C0B9FAB2996B78C00832244 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		9C0B9FAC2996B78C00832244 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		9C0B9FAD2996B78C00832244 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		9C0B9FAE2996B78C00832244 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		9C0B9FAF2996B78C00832244 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		9C0B9FB02996B78C00832244 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		9C0B9FB12996B78C00832244 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		9C0B9FB22996B78C00832244 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		9C0B9FB32996B78C00832244 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		9C0B9FB42996B78C00832244 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		9C0B9FB52996B78C00832244 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		9C0B9FB62996B78C00832244 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		9C0B9FB72996B78C00832244 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		9C0B9FB82996B78C00832244 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
+		AF350E0611424AC4B1E1FAE4 /* VelaSans-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-ExtraBold.otf"; path = "../assets/fonts/VelaSans-ExtraBold.otf"; sourceTree = "<group>"; };
+		B280CE38BA5F46ECB470BE7E /* Inter.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Inter.ttf; path = ../assets/fonts/Inter.ttf; sourceTree = "<group>"; };
+		E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Light.otf"; path = "../assets/fonts/VelaSans-Light.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,6 +161,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		36AC4699C7D94B21A7CA86CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */,
+				4CA994A5F6D54A34B82F2A33 /* LemonMilk-Bold.otf */,
+				1A3457CF55654EA39B47196F /* LemonMilk-Regular.otf */,
+				B280CE38BA5F46ECB470BE7E /* Inter.ttf */,
+				577B344C2AE84ED993161D2B /* VelaSans-Bold.otf */,
+				AF350E0611424AC4B1E1FAE4 /* VelaSans-ExtraBold.otf */,
+				92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */,
+				E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */,
+				232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */,
+				0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +188,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9C0B9FA82996B78C00832244 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* main */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* mainTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				36AC4699C7D94B21A7CA86CF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -138,6 +209,29 @@
 				00E356EE1AD99517003FC87E /* mainTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9C0B9FA82996B78C00832244 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9C0B9FA92996B78C00832244 /* Fontisto.ttf */,
+				9C0B9FAA2996B78C00832244 /* Octicons.ttf */,
+				9C0B9FAB2996B78C00832244 /* Feather.ttf */,
+				9C0B9FAC2996B78C00832244 /* Entypo.ttf */,
+				9C0B9FAD2996B78C00832244 /* FontAwesome5_Brands.ttf */,
+				9C0B9FAE2996B78C00832244 /* MaterialCommunityIcons.ttf */,
+				9C0B9FAF2996B78C00832244 /* AntDesign.ttf */,
+				9C0B9FB02996B78C00832244 /* Foundation.ttf */,
+				9C0B9FB12996B78C00832244 /* Ionicons.ttf */,
+				9C0B9FB22996B78C00832244 /* FontAwesome5_Solid.ttf */,
+				9C0B9FB32996B78C00832244 /* FontAwesome5_Regular.ttf */,
+				9C0B9FB42996B78C00832244 /* FontAwesome.ttf */,
+				9C0B9FB52996B78C00832244 /* Zocial.ttf */,
+				9C0B9FB62996B78C00832244 /* EvilIcons.ttf */,
+				9C0B9FB72996B78C00832244 /* SimpleLineIcons.ttf */,
+				9C0B9FB82996B78C00832244 /* MaterialIcons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -245,7 +339,33 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9C0B9FC22996B78C00832244 /* FontAwesome5_Solid.ttf in Resources */,
+				9C0B9FC12996B78C00832244 /* Ionicons.ttf in Resources */,
+				9C0B9FC52996B78C00832244 /* Zocial.ttf in Resources */,
+				9C0B9FC72996B78C00832244 /* SimpleLineIcons.ttf in Resources */,
 				9CEA97F72995F1F500F91878 /* ParticleNetwork-Info.plist in Resources */,
+				9C0B9FBD2996B78C00832244 /* FontAwesome5_Brands.ttf in Resources */,
+				9C0B9FC62996B78C00832244 /* EvilIcons.ttf in Resources */,
+				E21DC469E7AD4C1E823060DB /* VelaSans-Medium.otf in Resources */,
+				9AE5F82E93B14DC7962651CA /* LemonMilk-Bold.otf in Resources */,
+				8F560D7B9B63421C8808873F /* LemonMilk-Regular.otf in Resources */,
+				9C0B9FBB2996B78C00832244 /* Feather.ttf in Resources */,
+				9C0B9FB92996B78C00832244 /* Fontisto.ttf in Resources */,
+				B68779033D9644E7B672829E /* Inter.ttf in Resources */,
+				4B7E47A3788A41CFAAF4D60F /* VelaSans-Bold.otf in Resources */,
+				B7892641A50B43BC83A089C3 /* VelaSans-ExtraBold.otf in Resources */,
+				9C0B9FBA2996B78C00832244 /* Octicons.ttf in Resources */,
+				9C0B9FC82996B78C00832244 /* MaterialIcons.ttf in Resources */,
+				D8055FD304DB4D589D6DCD31 /* VelaSans-ExtraLight.otf in Resources */,
+				9C0B9FC42996B78C00832244 /* FontAwesome.ttf in Resources */,
+				9C0B9FBF2996B78C00832244 /* AntDesign.ttf in Resources */,
+				9C0B9FC02996B78C00832244 /* Foundation.ttf in Resources */,
+				9C0B9FC32996B78C00832244 /* FontAwesome5_Regular.ttf in Resources */,
+				98354A299FD14BF3B4F28098 /* VelaSans-Light.otf in Resources */,
+				9C0B9FBE2996B78C00832244 /* MaterialCommunityIcons.ttf in Resources */,
+				A32926D751B649D1AEE27B0E /* VelaSans-Regular.otf in Resources */,
+				9C0B9FBC2996B78C00832244 /* Entypo.ttf in Resources */,
+				CC7D72D2134D4E7DAF11FE48 /* VelaSans-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
