@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7F8EA245E62A3B030752D280 /* Pods_main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9CEA97F72995F1F500F91878 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */; };
 		BC62EEFDF772A522D50692A0 /* Pods_main_mainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263E51652CE0D343E7DF6DED /* Pods_main_mainTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		5B7EB9410499542E8C5724F5 /* Pods-main-mainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-main-mainTests.debug.xcconfig"; path = "Target Support Files/Pods-main-mainTests/Pods-main-mainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = main/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-main-mainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-main-mainTests.release.xcconfig"; path = "Target Support Files/Pods-main-mainTests/Pods-main-mainTests.release.xcconfig"; sourceTree = "<group>"; };
+		9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 		13B07FAE1A68108700A75B9A /* main */ = {
 			isa = PBXGroup;
 			children = (
+				9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -242,6 +245,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9CEA97F72995F1F500F91878 /* ParticleNetwork-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
