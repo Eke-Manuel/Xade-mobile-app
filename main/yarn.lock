@@ -3952,6 +3952,11 @@
   dependencies:
     "loose-envify" "^1.0.0"
 
+"ios-deploy@^1.12.1":
+  "integrity" "sha512-xK+oinl5DvsoFZRG0WsuOkzXblbw30xD90eboVszeHoEp8l5len9QIy74XD+/6EAop3/tA52KMdVPp5/TZLrlw=="
+  "resolved" "https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.12.1.tgz"
+  "version" "1.12.1"
+
 "ip@^1.1.5":
   "integrity" "sha512-PuExPYUiu6qMBQb4l06ecm6T6ujzhmh+MeJcW9wa89PoAz5pvd4zPgN5WJV104mb6S2T1AwNIAaB70JNrLQWhg=="
   "resolved" "https://registry.npmjs.org/ip/-/ip-1.1.8.tgz"
@@ -5994,6 +5999,11 @@
   "integrity" "sha512-nnLawTZEPPRAKq92UqDkzoGgCBl9aa9zAihFHMwmwzn4WRVdK4O6Cd4XYiyoNOiQzx3Hh9k5WOckHE80C92ivQ=="
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.14.tgz"
   "version" "0.71.14"
+
+"react-native-particle-auth@^0.9.0":
+  "integrity" "sha512-kqeHB2ZyfK6mPtu0vOE7jm7xgh4UfRgVWrvzJIKRH9HHfKw12vFialJGAQLjNsCgWopdIIrlheBfLH1oF7AiYw=="
+  "resolved" "https://registry.npmjs.org/react-native-particle-auth/-/react-native-particle-auth-0.9.0.tgz"
+  "version" "0.9.0"
 
 "react-native-particle-connect@^0.9.0":
   "integrity" "sha512-oEYG4lq/qy9WK/nAeFNheakstXoBhXiWq1/EdU1i5wbGJFczdV/khl4iHpMmi5PGlitTLNUka/C+fSOgJMtoXg=="

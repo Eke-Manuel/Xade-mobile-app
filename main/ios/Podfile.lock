@@ -336,6 +336,10 @@ PODS:
   - React-jsinspector (0.71.2)
   - React-logger (0.71.2):
     - glog
+  - react-native-particle-auth (0.9.0):
+    - ParticleAuthService
+    - ParticleNetworkBase
+    - React-Core
   - react-native-particle-connect (0.9.0):
     - ConnectCommon
     - ConnectEVMAdapter
@@ -497,6 +501,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-particle-auth (from `../node_modules/react-native-particle-auth`)
   - react-native-particle-connect (from `../node_modules/react-native-particle-connect`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -594,6 +599,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-particle-auth:
+    :path: "../node_modules/react-native-particle-auth"
   react-native-particle-connect:
     :path: "../node_modules/react-native-particle-connect"
   react-native-safe-area-context:
@@ -685,6 +692,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 272deb09db352916b331dc7a0dd1c78b22ff8e54
   React-jsinspector: ea8101acf525ec08b2d87ddf0637d45f8e3b4148
   React-logger: 97987f46779d8dd24656474ad0c43a5b459f31d6
+  react-native-particle-auth: 73470b3ed2d73d848ca3a1bd0802a81805b8605e
   react-native-particle-connect: c74420411bff73683a2b445fef9dd3def000392c
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   React-perflogger: c7ccda3d1d1da837f7ff4e54e816022a6803ee87

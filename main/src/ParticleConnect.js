@@ -3,7 +3,7 @@ import {StyleSheet, View, SafeAreaView, FlatList} from 'react-native';
 import {Button} from '@rneui/themed';
 
 import * as particleConnect from 'react-native-particle-connect';
-import {TestAccountEVM, TestAccountSolana} from './TestAccount';
+import {TestAccountEVM} from './TestAccount';
 import * as Helper from './Helper';
 import {
   Env,
@@ -381,7 +381,7 @@ const data = [
   {key: 'ReconnectIfNeeded', function: this.reconnectIfNeeded},
 ];
 
-export default class ConnectDemo extends PureComponent {
+export default class ParticleConnect extends PureComponent {
   render = () => {
     return (
       <SafeAreaView>
