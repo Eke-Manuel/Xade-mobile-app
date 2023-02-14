@@ -14,19 +14,19 @@ import {Button} from '@rneui/themed';
 import * as Helper from './Helper';
 
 init = async () => {
-  const chainInfo = ChainInfo.EthereumGoerli;
+  const chainInfo = ChainInfo.CeloTestnet;
   const env = Env.Production;
   particleAuth.init(chainInfo, env);
 };
 
 setChainInfo = async () => {
-  const chainInfo = ChainInfo.EthereumGoerli;
+  const chainInfo = ChainInfo.CeloTestnet;
   const result = await particleAuth.setChainInfo(chainInfo);
   console.log(result);
 };
 
 setChainInfoAsync = async () => {
-  const chainInfo = ChainInfo.SolanaDevnet;
+  const chainInfo = ChainInfo.CeloTestnet;
   const result = await particleAuth.setChainInfoAsync(chainInfo);
   console.log(result);
 };
@@ -56,7 +56,7 @@ logout = async () => {
 
 isLogin = async () => {
   const result = await particleAuth.isLogin();
-  console.log(result);
+  return result;
 };
 
 signMessage = async () => {
@@ -185,7 +185,7 @@ setMediumScreen = async () => {
 };
 
 setLanguage = async () => {
-  const language = Language.JA;
+  const language = Language.EN;
   particleAuth.setLanguage(language);
 };
 
@@ -201,6 +201,15 @@ openWebWallet = async () => {
 getChainInfo = async () => {
   const result = await particleAuth.getChainInfo();
   console.log(result);
+};
+
+onClick = async () => {
+  this.init();
+  this.setLanguage();
+  this.setChainInfo();
+  this.login();
+  var result = this.isLogin();
+  return result;
 };
 
 const data = [
@@ -226,11 +235,13 @@ const data = [
   {key: 'GetChainInfo', function: this.getChainInfo},
 ];
 
+export default {data, onClick};
+/*
 export default class ParticleAuth extends PureComponent {
   render = () => {
     return (
       <SafeAreaView>
-        <View style={styles.contentView}>
+        <View>
           <FlatList data={data} renderItem={({item}) => <Item item={item} />} />
         </View>
       </SafeAreaView>
@@ -250,21 +261,10 @@ const Item = ({item}) => {
       <Button
         title={item.key}
         onPress={item.function}
-        buttonStyle={styles.buttonStyle}
-        containerStyle={styles.containerStyle}
+        buttonStyle
+        containerStyle
       />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  buttonStyle: {
-    backgroundColor: 'rgba(78, 116, 289, 1)',
-    borderRadius: 3,
-  },
-  containerStyle: {
-    width: 300,
-    marginHorizontal: 50,
-    marginVertical: 10,
-  },
-});
+*/

@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {View} from 'react-native';
 
 import ParticleConnect from './ParticleConnect';
-import ParticleAuth from './ParticleAuth';
+import onClick from './ParticleAuth';
 import StaticHomeScreen from './screens/home';
 import Login from './screens/login';
 import {Text} from 'react-native-elements';
@@ -40,7 +40,15 @@ function Auth({navigation}) {
 function LoggedIn({navigation}) {
   return (
     <View>
-      <Text>Logged In!</Text>
+      {this.onClick() ? <Text>Logged In!</Text> : <Text>Not logged in</Text>}
+    </View>
+  );
+}
+
+function Error({navigation}) {
+  return (
+    <View>
+      <Text>Error!</Text>
     </View>
   );
 }
@@ -75,6 +83,7 @@ export default function App({navigation}) {
           navigation={navigation}
         />
         <Stack.Screen name="Connected" component={Connected} />
+        <Stack.Screen name="Error" component={Error} />
       </Stack.Navigator>
     </NavigationContainer>
   );

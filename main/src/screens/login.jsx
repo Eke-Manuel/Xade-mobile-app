@@ -11,7 +11,6 @@ import {
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
 
-
 const bg = require('../../assets/bg.png');
 const windowHeight = Dimensions.get('window').height;
 
@@ -39,7 +38,7 @@ const Login = ({navigation}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('ParticleAuth')}>
+                onPress={() => navigation.navigate('LoggedIn')}>
                 <Icon
                   style={styles.buttonIcon}
                   name="arrow-right"
