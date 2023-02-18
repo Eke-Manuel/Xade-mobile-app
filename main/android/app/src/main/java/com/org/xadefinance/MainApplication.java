@@ -1,4 +1,4 @@
-package com.main;
+package com.org.xadefinance;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

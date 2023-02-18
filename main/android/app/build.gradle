@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.main"
+    namespace "com.org.xadefinance"
     defaultConfig {
-        applicationId "com.main"
+        applicationId "com.org.xadefinance"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

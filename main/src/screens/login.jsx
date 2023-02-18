@@ -11,7 +11,7 @@ import {
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
 
-const bg = require('../../assets/bg.png');
+const bg = require('../../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;
 
 const Login = ({navigation}) => {
@@ -24,8 +24,16 @@ const Login = ({navigation}) => {
               <Text style={styles.logo}>XADE</Text>
             </View>
             <View style={styles.mainContent}>
+              <Text style={styles.mainText}>
+                Enter a{'\n'}
+                new era of{'\n'}
+                banking
+              </Text>
+              <Text style={styles.subText}>
+                The future of finance{'\n'} is now here...
+              </Text>
               <TouchableOpacity
-                style={styles.button}
+                style={styles.buttonTop}
                 onPress={() => navigation.navigate('ParticleConnect')}>
                 <Icon
                   style={styles.buttonIcon}
@@ -43,10 +51,10 @@ const Login = ({navigation}) => {
                   style={styles.buttonIcon}
                   name="arrow-right"
                   size={30}
-                  color="black"
+                  color="white"
                   type="feather"
                 />
-                <Text style={styles.buttonText}>Login</Text>
+                <Text style={styles.buttonTextbottom}>Login</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -60,6 +68,7 @@ const styles = StyleSheet.create({
   bg: {
     width: '100%',
     height: '100%',
+    resizeMode: 'contain',
   },
 
   container: {
@@ -83,18 +92,49 @@ const styles = StyleSheet.create({
   mainContent: {
     width: '100%',
     backgroundColor: 'transparent',
-    marginTop: '90%',
+    marginTop: '-5%',
+  },
+
+  mainText: {
+    color: '#fff',
+    fontFamily: 'VelaSans-Bold',
+    fontSize: 54,
+    width: '100%',
+    marginTop: windowHeight / 8.0,
+    marginLeft: '10%',
+  },
+
+  subText: {
+    color: '#979797',
+    fontFamily: 'VelaSans-Medium',
+    fontSize: 24,
+    width: '100%',
+    marginLeft: '10%',
+    marginTop: '8%',
+  },
+
+  buttonTop: {
+    width: '75%',
+    color: '#000',
+    borderRadius: 50,
+    marginLeft: '12%',
+    marginTop: '20%',
+    padding: '5%',
+    backgroundColor: '#fff',
+    marginBottom: '5%',
   },
 
   button: {
     width: '75%',
     color: '#000',
-    borderRadius: 15,
+    borderRadius: 50,
     marginLeft: '12%',
-    marginTop: '15%',
+    marginTop: '3%',
     padding: '5%',
-    backgroundColor: '#E8FF59',
+    backgroundColor: '#000',
     marginBottom: '5%',
+    borderWidth: 2.5,
+    borderColor: '#fff',
   },
 
   buttonText: {
@@ -102,7 +142,15 @@ const styles = StyleSheet.create({
     fontFamily: 'VelaSans-Bold',
     fontSize: 20,
     marginTop: '-11.7%',
-    marginLeft: '2%',
+    marginLeft: '10%',
+  },
+
+  buttonTextbottom: {
+    color: '#fff',
+    fontFamily: 'VelaSans-Bold',
+    fontSize: 20,
+    marginTop: '-11.7%',
+    marginLeft: '10%',
   },
 
   buttonIcon: {
