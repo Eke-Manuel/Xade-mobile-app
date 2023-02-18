@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* XadeMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* XadeMobileTests.m */; };
+		0841FDD29900B8B66C76B406 /* Pods_XadeMobile_XadeMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886A90F9CB6993848EDF0BB4 /* Pods_XadeMobile_XadeMobileTests.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* XadeMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* XadeMobile.m */; };
 		4B7E47A3788A41CFAAF4D60F /* VelaSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 577B344C2AE84ED993161D2B /* VelaSans-Bold.otf */; };
-		7F8EA245E62A3B030752D280 /* Pods_main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8F560D7B9B63421C8808873F /* LemonMilk-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A3457CF55654EA39B47196F /* LemonMilk-Regular.otf */; };
 		98354A299FD14BF3B4F28098 /* VelaSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */; };
@@ -37,10 +37,10 @@
 		A32926D751B649D1AEE27B0E /* VelaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */; };
 		B68779033D9644E7B672829E /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B280CE38BA5F46ECB470BE7E /* Inter.ttf */; };
 		B7892641A50B43BC83A089C3 /* VelaSans-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF350E0611424AC4B1E1FAE4 /* VelaSans-ExtraBold.otf */; };
-		BC62EEFDF772A522D50692A0 /* Pods_main_mainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263E51652CE0D343E7DF6DED /* Pods_main_mainTests.framework */; };
 		CC7D72D2134D4E7DAF11FE48 /* VelaSans-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */; };
 		D8055FD304DB4D589D6DCD31 /* VelaSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */; };
 		E21DC469E7AD4C1E823060DB /* VelaSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */; };
+		E36FB458932343EBBFBC4235 /* Pods_XadeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241E79D26CB45AF5E5B494A0 /* Pods_XadeMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,31 +49,32 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = "XadeMobile";
+			remoteInfo = XadeMobile;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* XadeMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XadeMobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* XadeMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XadeMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* XadeMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XadeMobileTests.m"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* XadeMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XadeMobileTests.m; sourceTree = "<group>"; };
 		0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-SemiBold.otf"; path = "../assets/fonts/VelaSans-SemiBold.otf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* XadeMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XadeMobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "XadeMobile/AppDelegate.h"; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "XadeMobile/AppDelegate.mm"; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "XadeMobile/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "XadeMobile/Info.plist"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* XadeMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XadeMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = XadeMobile/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = XadeMobile/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = XadeMobile/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = XadeMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* XadeMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XadeMobile.m; path = XadeMobile/XadeMobile.m; sourceTree = "<group>"; };
 		1A3457CF55654EA39B47196F /* LemonMilk-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LemonMilk-Regular.otf"; path = "../assets/fonts/LemonMilk-Regular.otf"; sourceTree = "<group>"; };
 		232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Regular.otf"; path = "../assets/fonts/VelaSans-Regular.otf"; sourceTree = "<group>"; };
-		263E51652CE0D343E7DF6DED /* Pods_main_mainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_main_mainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		241E79D26CB45AF5E5B494A0 /* Pods_XadeMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XadeMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-XadeMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XadeMobile.debug.xcconfig"; path = "Target Support Files/Pods-XadeMobile/Pods-XadeMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		4CA994A5F6D54A34B82F2A33 /* LemonMilk-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LemonMilk-Bold.otf"; path = "../assets/fonts/LemonMilk-Bold.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-XadeMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XadeMobile.release.xcconfig"; path = "Target Support Files/Pods-XadeMobile/Pods-XadeMobile.release.xcconfig"; sourceTree = "<group>"; };
 		577B344C2AE84ED993161D2B /* VelaSans-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Bold.otf"; path = "../assets/fonts/VelaSans-Bold.otf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-XadeMobile-XadeMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XadeMobile-XadeMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-XadeMobile-XadeMobileTests/Pods-XadeMobile-XadeMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Medium.otf"; path = "../assets/fonts/VelaSans-Medium.otf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "XadeMobile/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = XadeMobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		886A90F9CB6993848EDF0BB4 /* Pods_XadeMobile_XadeMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XadeMobile_XadeMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-XadeMobile-XadeMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XadeMobile-XadeMobileTests.release.xcconfig"; path = "Target Support Files/Pods-XadeMobile-XadeMobileTests/Pods-XadeMobile-XadeMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-ExtraLight.otf"; path = "../assets/fonts/VelaSans-ExtraLight.otf"; sourceTree = "<group>"; };
 		9C0B9FA92996B78C00832244 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		B280CE38BA5F46ECB470BE7E /* Inter.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Inter.ttf; path = ../assets/fonts/Inter.ttf; sourceTree = "<group>"; };
 		E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Light.otf"; path = "../assets/fonts/VelaSans-Light.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC62EEFDF772A522D50692A0 /* Pods_main_mainTests.framework in Frameworks */,
+				0841FDD29900B8B66C76B406 /* Pods_XadeMobile_XadeMobileTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8EA245E62A3B030752D280 /* Pods_main.framework in Frameworks */,
+				E36FB458932343EBBFBC4235 /* Pods_XadeMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 				00E356F21AD99517003FC87E /* XadeMobileTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = "XadeMobileTests";
+			path = XadeMobileTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -148,15 +148,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* XadeMobile.m */,
 			);
-			name = "XadeMobile";
+			name = XadeMobile;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				FFF2D5BBEA2D19D9ED38EDCF /* Pods_main.framework */,
-				263E51652CE0D343E7DF6DED /* Pods_main_mainTests.framework */,
+				241E79D26CB45AF5E5B494A0 /* Pods_XadeMobile.framework */,
+				886A90F9CB6993848EDF0BB4 /* Pods_XadeMobile_XadeMobileTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -284,8 +284,8 @@
 			);
 			dependencies = (
 			);
-			name = "XadeMobile";
-			productName = "XadeMobile";
+			name = XadeMobile;
+			productName = XadeMobile;
 			productReference = 13B07F961A680F5B00A75B9A /* XadeMobile.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -527,7 +527,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "XadeMobileTests/Info.plist";
+				INFOPLIST_FILE = XadeMobileTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,7 +539,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.org.xadefinance";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.xadefinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -557,7 +557,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 5F22SCR6J9;
-				INFOPLIST_FILE = "XadeMobileTests/Info.plist";
+				INFOPLIST_FILE = XadeMobileTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -569,7 +569,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.org.xadefinance";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.xadefinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -588,7 +588,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5F22SCR6J9;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "XadeMobile/Info.plist";
+				INFOPLIST_FILE = XadeMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Xade Mobile";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -602,9 +602,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.org.xadefinance";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.xadefinance;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.XadeMobile;
-				PRODUCT_NAME = "XadeMobile";
+				PRODUCT_NAME = XadeMobile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -619,7 +619,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5F22SCR6J9;
-				INFOPLIST_FILE = "XadeMobile/Info.plist";
+				INFOPLIST_FILE = XadeMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Xade Mobile";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -633,9 +633,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.org.xadefinance";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.xadefinance;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.XadeMobile;
-				PRODUCT_NAME = "XadeMobile";
+				PRODUCT_NAME = XadeMobile;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

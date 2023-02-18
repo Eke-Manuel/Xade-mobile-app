@@ -449,9 +449,9 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.15.2):
-    - SDWebImage/Core (= 5.15.2)
-  - SDWebImage/Core (5.15.2)
+  - SDWebImage (5.15.3):
+    - SDWebImage/Core (= 5.15.3)
+  - SDWebImage/Core (5.15.3)
   - SDWebImageWebPCoder (0.10.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
@@ -713,7 +713,7 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
+  SDWebImage: 302d4e14efff86b36b5f36d1bf891b635436d071
   SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
@@ -726,6 +726,6 @@ SPEC CHECKSUMS:
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
   Yoga: 5b0304b3dbef2b52e078052138e23a19c7dacaef
 
-PODFILE CHECKSUM: 0e4274308c0d3a7d83edd64a87f2cec9e797e60b
+PODFILE CHECKSUM: 446de9c184ffba54f91da0afd68905dfb69f6c4f
 
 COCOAPODS: 1.11.3
