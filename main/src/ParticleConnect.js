@@ -72,6 +72,7 @@ connect = async () => {
     const error = result.data;
     console.log(error);
   }
+  return result;
 };
 
 connectWithParticleConfig = async () => {
@@ -356,6 +357,20 @@ reconnectIfNeeded = async () => {
   }
 };
 
+onClickConnect = async () => {
+  this.init();
+  this.setLanguage();
+  this.setChainInfo();
+  const result = await particleConnect.connect(walletType);
+  const account = result.data;
+  const isConnected = await particleConnect.isConnected(
+    walletType,
+    account.publicAddress,
+  );
+  console.log(isConnected);
+  return isConnected;
+};
+
 const data = [
   {key: 'Init', function: this.init},
   {key: 'SetChainInfo', function: this.setChainInfo},
@@ -381,6 +396,8 @@ const data = [
   {key: 'ReconnectIfNeeded', function: this.reconnectIfNeeded},
 ];
 
+export default {data, onClickConnect};
+/*
 export default class ParticleConnect extends PureComponent {
   render = () => {
     return (
@@ -421,3 +438,4 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
+*/

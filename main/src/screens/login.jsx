@@ -10,10 +10,54 @@ import {
 } from 'react-native';
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
+import * as particleAuth from 'react-native-particle-auth';
+
+import {
+  data,
+  init,
+  setLanguage,
+  setChainInfo,
+  login,
+  openWebWallet,
+} from '../ParticleAuth';
 
 const bg = require('../../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;
 
+onClickLogin = async navigation => {
+  await particleAuth.logout();
+  navigation.navigate('Loading');
+  await this.init();
+  await this.setLanguage();
+  await this.setChainInfo();
+  await this.login();
+  const result = await particleAuth.isLogin();
+  console.log('Result:', result);
+  if (result) {
+    navigation.navigate('LoggedIn');
+  } else {
+    navigation.navigate('Error');
+  }
+};
+/*
+  await particleAuth.logout();
+  if ((await particleAuth.isLogin()) == true) {
+    navigation.navigate('LoggedIn');
+  } else {
+    navigation.navigate('Loading');
+    await this.init();
+    await this.setLanguage();
+    await this.setChainInfo();
+    await this.login();
+    const result = await particleAuth.isLogin();
+    console.log('Result:', result);
+    if (result) {
+      navigation.navigate('LoggedIn');
+    } else {
+      navigation.navigate('Error');
+    }
+  }
+  */
 const Login = ({navigation}) => {
   return (
     <ImageBackground source={bg} style={styles.bg}>
@@ -34,7 +78,7 @@ const Login = ({navigation}) => {
               </Text>
               <TouchableOpacity
                 style={styles.buttonTop}
-                onPress={() => navigation.navigate('ParticleConnect')}>
+                onPress={() => navigation.navigate('Connected')}>
                 <Icon
                   style={styles.buttonIcon}
                   name="arrow-right"
@@ -46,7 +90,7 @@ const Login = ({navigation}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('LoggedIn')}>
+                onPress={() => onClickLogin(navigation)}>
                 <Icon
                   style={styles.buttonIcon}
                   name="arrow-right"
@@ -68,7 +112,7 @@ const styles = StyleSheet.create({
   bg: {
     width: '100%',
     height: '100%',
-    resizeMode: 'contain',
+    flexDirection: 'column',
   },
 
   container: {

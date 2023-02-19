@@ -33,7 +33,13 @@ setChainInfoAsync = async () => {
 
 login = async () => {
   const type = LoginType.Phone;
-  const supportAuthType = [SupportAuthType.Google, SupportAuthType.Email];
+  const supportAuthType = [
+    SupportAuthType.Email,
+    SupportAuthType.Google,
+    SupportAuthType.Apple,
+    SupportAuthType.Linkedin,
+    SupportAuthType.Github,
+  ];
   const result = await particleAuth.login(type, '', supportAuthType, undefined);
   if (result.status) {
     const userInfo = result.data;
@@ -203,14 +209,7 @@ getChainInfo = async () => {
   console.log(result);
 };
 
-onClick = async () => {
-  this.init();
-  this.setLanguage();
-  this.setChainInfo();
-  this.login();
-  var result = this.isLogin();
-  return result;
-};
+
 
 const data = [
   {key: 'Init', function: this.init},
@@ -235,7 +234,7 @@ const data = [
   {key: 'GetChainInfo', function: this.getChainInfo},
 ];
 
-export default {data, onClick};
+export default {data, init, setLanguage, setChainInfo, login, openWebWallet};
 /*
 export default class ParticleAuth extends PureComponent {
   render = () => {
