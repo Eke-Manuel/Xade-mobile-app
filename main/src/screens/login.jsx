@@ -20,15 +20,13 @@ import {
   login,
   openWebWallet,
 } from '../ParticleAuth';
-
+import ParticleConnect from '../ParticleConnect';
 const bg = require('../../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;
 
 onClickLogin = async navigation => {
-  await particleAuth.logout();
-  navigation.navigate('Loading');
   await this.init();
-  await this.setLanguage();
+  navigation.navigate('Loading');
   await this.setChainInfo();
   await this.login();
   const result = await particleAuth.isLogin();
@@ -39,14 +37,23 @@ onClickLogin = async navigation => {
     navigation.navigate('Error');
   }
 };
-/*
-  await particleAuth.logout();
-  if ((await particleAuth.isLogin()) == true) {
-    navigation.navigate('LoggedIn');
+/* 
+  if (particleAuth.isLogin()) {
+    await particleAuth.logout();
+    navigation.navigate('Loading');
+    await this.init();
+    await this.setChainInfo();
+    await this.login();
+    const result = await particleAuth.isLogin();
+    console.log('Result:', result);
+    if (result) {
+      navigation.navigate('LoggedIn');
+    } else {
+      navigation.navigate('Error');
+    }
   } else {
     navigation.navigate('Loading');
     await this.init();
-    await this.setLanguage();
     await this.setChainInfo();
     await this.login();
     const result = await particleAuth.isLogin();
@@ -57,6 +64,7 @@ onClickLogin = async navigation => {
       navigation.navigate('Error');
     }
   }
+
   */
 const Login = ({navigation}) => {
   return (
@@ -90,7 +98,8 @@ const Login = ({navigation}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => onClickLogin(navigation)}>
+                //    onPress={() => onClickLogin(navigation)}>
+                onPress={() => this.onClickLogin(navigation)}>
                 <Icon
                   style={styles.buttonIcon}
                   name="arrow-right"

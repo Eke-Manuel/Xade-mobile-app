@@ -396,8 +396,8 @@ const data = [
   {key: 'ReconnectIfNeeded', function: this.reconnectIfNeeded},
 ];
 
-export default {data, onClickConnect};
-/*
+// export default {data, onClickConnect};
+
 export default class ParticleConnect extends PureComponent {
   render = () => {
     return (
@@ -438,4 +438,3 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
-*/

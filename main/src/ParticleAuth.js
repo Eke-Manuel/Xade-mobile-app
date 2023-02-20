@@ -14,13 +14,13 @@ import {Button} from '@rneui/themed';
 import * as Helper from './Helper';
 
 init = async () => {
-  const chainInfo = ChainInfo.CeloTestnet;
+  const chainInfo = ChainInfo.PolygonMainnet;
   const env = Env.Production;
   particleAuth.init(chainInfo, env);
 };
 
 setChainInfo = async () => {
-  const chainInfo = ChainInfo.CeloTestnet;
+  const chainInfo = ChainInfo.PolygonMainnet;
   const result = await particleAuth.setChainInfo(chainInfo);
   console.log(result);
 };
@@ -32,9 +32,9 @@ setChainInfoAsync = async () => {
 };
 
 login = async () => {
-  const type = LoginType.Phone;
+  const type = LoginType.Email;
   const supportAuthType = [
-    SupportAuthType.Email,
+    SupportAuthType.Phone,
     SupportAuthType.Google,
     SupportAuthType.Apple,
     SupportAuthType.Linkedin,
@@ -52,12 +52,16 @@ login = async () => {
 
 logout = async () => {
   const result = await particleAuth.logout();
+  console.log('Logged out successfully');
   if (result.status) {
     console.log(result.data);
+    console.log('Logged out successfully');
   } else {
     const error = result.data;
     console.log(error);
+    console.log('Logged out successfully');
   }
+  console.log('Logged out successfully');
 };
 
 isLogin = async () => {
@@ -208,8 +212,6 @@ getChainInfo = async () => {
   const result = await particleAuth.getChainInfo();
   console.log(result);
 };
-
-
 
 const data = [
   {key: 'Init', function: this.init},

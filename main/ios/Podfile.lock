@@ -336,11 +336,11 @@ PODS:
   - React-jsinspector (0.71.2)
   - React-logger (0.71.2):
     - glog
-  - react-native-particle-auth (0.9.0):
+  - react-native-particle-auth (0.10.0):
     - ParticleAuthService
     - ParticleNetworkBase
     - React-Core
-  - react-native-particle-connect (0.9.0):
+  - react-native-particle-connect (0.10.0):
     - ConnectCommon
     - ConnectEVMAdapter
     - ConnectPhantomAdapter
@@ -435,7 +435,7 @@ PODS:
     - React-jsi (= 0.71.2)
     - React-logger (= 0.71.2)
     - React-perflogger (= 0.71.2)
-  - RNScreens (3.19.0):
+  - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
   - RxAlamofire (6.1.1):
@@ -692,8 +692,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 272deb09db352916b331dc7a0dd1c78b22ff8e54
   React-jsinspector: ea8101acf525ec08b2d87ddf0637d45f8e3b4148
   React-logger: 97987f46779d8dd24656474ad0c43a5b459f31d6
-  react-native-particle-auth: 73470b3ed2d73d848ca3a1bd0802a81805b8605e
-  react-native-particle-connect: c74420411bff73683a2b445fef9dd3def000392c
+  react-native-particle-auth: 54e76535be9d3dfd99967b841b83305be552af28
+  react-native-particle-connect: 59345221ff20c17f93946889646eef99598c06fb
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   React-perflogger: c7ccda3d1d1da837f7ff4e54e816022a6803ee87
   React-RCTActionSheet: 01c125aebbad462a24228f68c584c7a921d6c28e
@@ -708,7 +708,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0af3babdeee1b2d052811a2f86977d1e1c81ebd1
   React-runtimeexecutor: 4bf9a9086d27f74065fce1dddac274aa95216952
   ReactCommon: 856d48a0b0b066a26c07a7acaae6cfd9f2042464
-  RNScreens: ea4cd3a853063cda19a4e3c28d2e52180c80f4eb
+  RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
