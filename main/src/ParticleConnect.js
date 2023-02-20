@@ -44,10 +44,10 @@ setChainInfoAsync = async () => {
 };
 
 init = async () => {
-  const chainInfo = ChainInfo.EthereumGoerli;
-  const env = Env.Dev;
+  const chainInfo = ChainInfo.PolygonMainnet;
+  const env = Env.Production;
   const metadata = {
-    name: 'Particle Connect',
+    name: 'Xade Finance',
     icon: 'https://connect.particle.network/icons/512.png',
     url: 'https://connect.particle.network',
   };
@@ -76,7 +76,8 @@ connect = async () => {
 };
 
 connectWithParticleConfig = async () => {
-  const connectConfig = new ParticleConnectConfig(LoginType.Phone, '', [
+  const connectConfig = new ParticleConnectConfig(LoginType.Email, '', [
+    SupportAuthType.Phone,
     SupportAuthType.Facebook,
     SupportAuthType.Google,
     SupportAuthType.Apple,
@@ -357,20 +358,30 @@ reconnectIfNeeded = async () => {
   }
 };
 
-onClickConnect = async () => {
-  this.init();
-  this.setLanguage();
-  this.setChainInfo();
-  const result = await particleConnect.connect(walletType);
-  const account = result.data;
-  const isConnected = await particleConnect.isConnected(
-    walletType,
-    account.publicAddress,
-  );
-  console.log(isConnected);
-  return isConnected;
-};
+onClickConnect = async navigation => {
+  const metadata = {
+    name: 'Xade Finance',
+    icon: 'https://connect.particle.network/icons/512.png',
+    url: 'https://connect.particle.network',
+  };
+  const rpcUrl = {evm_url: null, solana_url: null};
 
+  particleConnect.init(
+    ChainInfo.PolygonMainnet,
+    Env.Production,
+    metadata,
+    rpcUrl,
+  );
+  navigation.navigate('Loading');
+  await this.connect();
+  const result = await particleConnect.isConnected();
+  console.log('Result:', result);
+  if (result == true) {
+    navigation.navigate('Connected');
+  } else {
+    navigation.navigate('Error');
+  }
+};
 const data = [
   {key: 'Init', function: this.init},
   {key: 'SetChainInfo', function: this.setChainInfo},
@@ -396,8 +407,8 @@ const data = [
   {key: 'ReconnectIfNeeded', function: this.reconnectIfNeeded},
 ];
 
-// export default {data, onClickConnect};
-
+export default {connectWithParticleConfig, onClickConnect};
+/*
 export default class ParticleConnect extends PureComponent {
   render = () => {
     return (
@@ -438,3 +449,4 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
+*/

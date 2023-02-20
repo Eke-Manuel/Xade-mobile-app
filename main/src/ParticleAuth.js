@@ -53,15 +53,6 @@ login = async () => {
 logout = async () => {
   const result = await particleAuth.logout();
   console.log('Logged out successfully');
-  if (result.status) {
-    console.log(result.data);
-    console.log('Logged out successfully');
-  } else {
-    const error = result.data;
-    console.log(error);
-    console.log('Logged out successfully');
-  }
-  console.log('Logged out successfully');
 };
 
 isLogin = async () => {
@@ -213,6 +204,20 @@ getChainInfo = async () => {
   console.log(result);
 };
 
+onClickLogin = async navigation => {
+  await this.init();
+  navigation.navigate('Loading');
+  await this.setChainInfo();
+  await this.login();
+  const result = await particleAuth.isLogin();
+  console.log('Result:', result);
+  if (result) {
+    navigation.navigate('LoggedIn');
+  } else {
+    navigation.navigate('Error');
+  }
+};
+
 const data = [
   {key: 'Init', function: this.init},
   {key: 'SetChainInfo', function: this.setChainInfo},
@@ -236,7 +241,7 @@ const data = [
   {key: 'GetChainInfo', function: this.getChainInfo},
 ];
 
-export default {data, init, setLanguage, setChainInfo, login, openWebWallet};
+export default {onClickLogin, openWebWallet, logout};
 /*
 export default class ParticleAuth extends PureComponent {
   render = () => {

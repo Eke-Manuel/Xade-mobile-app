@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Icon} from 'react-native-elements';
 
 import {
   View,
@@ -13,6 +14,7 @@ import {
 
 import ParticleConnect from './ParticleConnect';
 import ParticleAuth from './ParticleAuth';
+import {openWebWallet, logout} from './ParticleAuth';
 
 import StaticHomeScreen from './screens/home';
 import Login from './screens/login';
@@ -51,6 +53,14 @@ function LoggedIn({navigation}) {
       <SafeAreaView>
         <View>
           <Text style={styles.text}>Logged In...</Text>
+          <TouchableOpacity
+            style={styles.walletButton}
+            onPress={() => this.openWebWallet()}>
+            <Text style={styles.walletButtonText}>Open Wallet</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.logout()}>
+            <Text style={styles.logoutext}>Logout</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </ImageBackground>
@@ -63,6 +73,11 @@ function Connected({navigation}) {
       <SafeAreaView>
         <View>
           <Text style={styles.text}>Connected...</Text>
+          <TouchableOpacity
+            style={styles.walletButton}
+            onPress={() => this.openWebWallet()}>
+            <Text style={styles.walletButtonText}>Open Wallet</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </ImageBackground>
@@ -185,6 +200,33 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: '-15.5%',
     marginLeft: '38%',
+  },
+
+  walletButton: {
+    width: '50%',
+    color: '#000',
+    borderRadius: 10,
+    marginLeft: '26%',
+    marginTop: '90%',
+    padding: '5%',
+    backgroundColor: '#E8FF59',
+    marginBottom: '5%',
+  },
+
+  walletButtonText: {
+    color: '#000',
+    fontFamily: 'VelaSans-Bold',
+    fontSize: 17,
+    marginTop: '-1%',
+    marginLeft: '15%',
+  },
+
+  logoutext: {
+    color: '#fff',
+    fontFamily: 'VelaSans-Bold',
+    fontSize: 20,
+    marginTop: '10%',
+    marginLeft: '40%',
   },
 });
 

@@ -10,62 +10,12 @@ import {
 } from 'react-native';
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
-import * as particleAuth from 'react-native-particle-auth';
 
-import {
-  data,
-  init,
-  setLanguage,
-  setChainInfo,
-  login,
-  openWebWallet,
-} from '../ParticleAuth';
-import ParticleConnect from '../ParticleConnect';
+import onClickLogin from '../ParticleAuth';
+import {connectWithParticleConfig, onClickConnect} from '../ParticleConnect';
 const bg = require('../../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;
 
-onClickLogin = async navigation => {
-  await this.init();
-  navigation.navigate('Loading');
-  await this.setChainInfo();
-  await this.login();
-  const result = await particleAuth.isLogin();
-  console.log('Result:', result);
-  if (result) {
-    navigation.navigate('LoggedIn');
-  } else {
-    navigation.navigate('Error');
-  }
-};
-/* 
-  if (particleAuth.isLogin()) {
-    await particleAuth.logout();
-    navigation.navigate('Loading');
-    await this.init();
-    await this.setChainInfo();
-    await this.login();
-    const result = await particleAuth.isLogin();
-    console.log('Result:', result);
-    if (result) {
-      navigation.navigate('LoggedIn');
-    } else {
-      navigation.navigate('Error');
-    }
-  } else {
-    navigation.navigate('Loading');
-    await this.init();
-    await this.setChainInfo();
-    await this.login();
-    const result = await particleAuth.isLogin();
-    console.log('Result:', result);
-    if (result) {
-      navigation.navigate('LoggedIn');
-    } else {
-      navigation.navigate('Error');
-    }
-  }
-
-  */
 const Login = ({navigation}) => {
   return (
     <ImageBackground source={bg} style={styles.bg}>
@@ -86,7 +36,7 @@ const Login = ({navigation}) => {
               </Text>
               <TouchableOpacity
                 style={styles.buttonTop}
-                onPress={() => navigation.navigate('Connected')}>
+                onPress={() => this.onClickConnect(navigation)}>
                 <Icon
                   style={styles.buttonIcon}
                   name="arrow-right"
