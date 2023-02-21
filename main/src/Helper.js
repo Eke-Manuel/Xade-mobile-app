@@ -1,13 +1,12 @@
 import {TestAccountSolana, TestAccountEVM} from './TestAccount';
-import JsonRpcRequest from './netservice/NetService';
+import JsonRpcRequest from './NetService/NetService';
 import {
   SerializeTransactionParams,
   SolanaReqBodyMethod,
-} from './netservice/NetParams';
+} from './NetService/NetParams';
 import BigNumber from 'bignumber.js';
 import {Buffer} from 'buffer';
-import {EvmService} from './netservice/EvmService';
-import {SolanaService} from './netservice/SolanaService';
+import {EvmService} from './NetService/EvmService';
 
 export async function getSolanaTransaction(from) {
   // mock a solana native transaction

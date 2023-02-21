@@ -13,7 +13,7 @@ import {
 } from 'react-native-particle-connect';
 import {ChainInfo} from 'react-native-particle-connect';
 import {ParticleConnectConfig} from 'react-native-particle-connect';
-import {PNAccount} from './models/PNAccount';
+import {PNAccount} from './Models/PNAccount';
 
 const walletType = WalletType.MetaMask;
 var loginSourceMessage = '';

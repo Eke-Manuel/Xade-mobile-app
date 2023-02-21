@@ -33,6 +33,7 @@
 		9C0B9FC62996B78C00832244 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB62996B78C00832244 /* EvilIcons.ttf */; };
 		9C0B9FC72996B78C00832244 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB72996B78C00832244 /* SimpleLineIcons.ttf */; };
 		9C0B9FC82996B78C00832244 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9FB82996B78C00832244 /* MaterialIcons.ttf */; };
+		9C25B68129A5163C00D75C60 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C25B68029A5163C00D75C60 /* main.jsbundle */; };
 		9CEA97F72995F1F500F91878 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */; };
 		A32926D751B649D1AEE27B0E /* VelaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */; };
 		B68779033D9644E7B672829E /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B280CE38BA5F46ECB470BE7E /* Inter.ttf */; };
@@ -96,6 +97,8 @@
 		9C0B9FB62996B78C00832244 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		9C0B9FB72996B78C00832244 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		9C0B9FB82996B78C00832244 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		9C25B68029A5163C00D75C60 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		9C47854B29A5040700426CBC /* XadeMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = XadeMobile.entitlements; path = XadeMobile/XadeMobile.entitlements; sourceTree = "<group>"; };
 		9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
 		A6106704CA49472FBF050379 /* NeueMachina-UltraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NeueMachina-UltraBold.otf"; path = "../assets/fonts/NeueMachina-UltraBold.otf"; sourceTree = "<group>"; };
 		AF350E0611424AC4B1E1FAE4 /* VelaSans-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-ExtraBold.otf"; path = "../assets/fonts/VelaSans-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		13B07FAE1A68108700A75B9A /* XadeMobile */ = {
 			isa = PBXGroup;
 			children = (
+				9C47854B29A5040700426CBC /* XadeMobile.entitlements */,
 				9CEA97F62995F1F500F91878 /* ParticleNetwork-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -151,6 +155,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* XadeMobile.m */,
+				9C25B68029A5163C00D75C60 /* main.jsbundle */,
 			);
 			name = XadeMobile;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				9C0B9FC42996B78C00832244 /* FontAwesome.ttf in Resources */,
 				9C0B9FBF2996B78C00832244 /* AntDesign.ttf in Resources */,
 				9C0B9FC02996B78C00832244 /* Foundation.ttf in Resources */,
+				9C25B68129A5163C00D75C60 /* main.jsbundle in Resources */,
 				9C0B9FC32996B78C00832244 /* FontAwesome5_Regular.ttf in Resources */,
 				98354A299FD14BF3B4F28098 /* VelaSans-Light.otf in Resources */,
 				9C0B9FBE2996B78C00832244 /* MaterialCommunityIcons.ttf in Resources */,
@@ -382,7 +388,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -394,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -490,8 +496,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\nif nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\nif ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\necho \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\nexit 2\nfi\nelse\nopen \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\nfi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -593,7 +598,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = XadeMobile/XadeMobile.entitlements;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 85KPK5A6SK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = XadeMobile/Info.plist;
@@ -628,7 +634,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = XadeMobile/XadeMobile.entitlements;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 85KPK5A6SK;
 				INFOPLIST_FILE = XadeMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Xade Finance";
