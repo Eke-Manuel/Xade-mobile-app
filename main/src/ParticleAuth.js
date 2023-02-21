@@ -9,6 +9,7 @@ import {
   Language,
 } from 'react-native-particle-auth';
 import * as particleAuth from 'react-native-particle-auth';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {Button} from '@rneui/themed';
 import * as Helper from './Helper';
@@ -50,7 +51,7 @@ login = async () => {
   }
 };
 
-logout = async () => {
+logout = async navigation => {
   const result = await particleAuth.logout();
   console.log('Logged out successfully');
 };

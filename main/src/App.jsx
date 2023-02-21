@@ -62,11 +62,10 @@ function LoggedIn({navigation}) {
             <Countdown navigation={navigation} />
             <TouchableOpacity
               style={styles.logout}
-              onPress={() => {
-                this.disconnect();
-                navigation.navigate('Particle');
+              onPress={async () => {
+                await this.logout();
               }}>
-              <Text style={styles.logoutext}>Disconnect</Text>
+              <Text style={styles.logoutext}>Logout</Text>
             </TouchableOpacity>
           </View>
         </SafeAreaView>
@@ -85,9 +84,9 @@ function Connected({navigation}) {
             <Countdown navigation={navigation} />
             <TouchableOpacity
               style={styles.logout}
-              onPress={() => {
-                this.disconnect();
-                navigation.navigate('Particle');
+              navigation={navigation}
+              onPress={async () => {
+                await this.disconnect();
               }}>
               <Text style={styles.logoutext}>Disconnect</Text>
             </TouchableOpacity>
