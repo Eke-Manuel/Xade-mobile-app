@@ -110,14 +110,14 @@ const styles = StyleSheet.create({
     fontFamily: 'VelaSans-Bold',
     textAlign: 'center',
     fontSize: 17,
-    marginTop: '12%',
+    marginTop: '30%',
   },
 
   button: {
     width: '70%',
     borderRadius: 50,
     marginLeft: '15%',
-    marginTop: '25%',
+    marginTop: '20%',
     paddingVertical: '5%',
     backgroundColor: '#000',
   },

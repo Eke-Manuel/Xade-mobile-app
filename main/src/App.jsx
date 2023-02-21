@@ -58,15 +58,7 @@ function LoggedIn({navigation}) {
       <View style={styles.black}>
         <SafeAreaView>
           <View>
-            <Text style={styles.text}>Thank You For Registering...</Text>
             <Countdown navigation={navigation} />
-            <TouchableOpacity
-              style={styles.logout}
-              onPress={async () => {
-                await this.logout();
-              }}>
-              <Text style={styles.logoutext}>Logout</Text>
-            </TouchableOpacity>
           </View>
         </SafeAreaView>
       </View>
@@ -80,16 +72,7 @@ function Connected({navigation}) {
       <View style={styles.black}>
         <SafeAreaView>
           <View>
-            <Text style={styles.text}>Thank You For Registering...</Text>
             <Countdown navigation={navigation} />
-            <TouchableOpacity
-              style={styles.logout}
-              navigation={navigation}
-              onPress={async () => {
-                await this.disconnect();
-              }}>
-              <Text style={styles.logoutext}>Disconnect</Text>
-            </TouchableOpacity>
           </View>
         </SafeAreaView>
       </View>
