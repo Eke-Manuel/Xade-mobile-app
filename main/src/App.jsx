@@ -10,18 +10,23 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  ScrollView,
+  Dimensions,
 } from 'react-native';
 
 import ParticleConnect from './ParticleConnect';
 import ParticleAuth from './ParticleAuth';
-import {openWebWallet, logout} from './ParticleAuth';
+import {openWebWallet, logoutAccount} from './ParticleAuth';
+import {disconnect} from './ParticleConnect';
 
 import StaticHomeScreen from './screens/home';
 import Login from './screens/login';
+import Countdown from './screens/countdown';
 import {Text} from 'react-native-elements';
 
 const Stack = createNativeStackNavigator();
 const bg = require('../assets/bg.png');
+const windowHeight = Dimensions.get('window').height;
 
 function Particle({navigation}) {
   return (
@@ -49,38 +54,47 @@ function Auth({navigation}) {
 
 function LoggedIn({navigation}) {
   return (
-    <ImageBackground source={bg} style={styles.bg}>
-      <SafeAreaView>
-        <View>
-          <Text style={styles.text}>Logged In...</Text>
-          <TouchableOpacity
-            style={styles.walletButton}
-            onPress={() => this.openWebWallet()}>
-            <Text style={styles.walletButtonText}>Open Wallet</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.logout()}>
-            <Text style={styles.logoutext}>Logout</Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
-    </ImageBackground>
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <Text style={styles.text}>Thank You For Registering...</Text>
+            <Countdown navigation={navigation} />
+            <TouchableOpacity
+              style={styles.logout}
+              onPress={() => {
+                this.disconnect();
+                navigation.navigate('Particle');
+              }}>
+              <Text style={styles.logoutext}>Disconnect</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
   );
 }
 
 function Connected({navigation}) {
   return (
-    <ImageBackground source={bg} style={styles.bg}>
-      <SafeAreaView>
-        <View>
-          <Text style={styles.text}>Connected...</Text>
-          <TouchableOpacity
-            style={styles.walletButton}
-            onPress={() => this.openWebWallet()}>
-            <Text style={styles.walletButtonText}>Open Wallet</Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
-    </ImageBackground>
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <Text style={styles.text}>Thank You For Registering...</Text>
+            <Countdown navigation={navigation} />
+            <TouchableOpacity
+              style={styles.logout}
+              onPress={() => {
+                this.disconnect();
+                navigation.navigate('Particle');
+              }}>
+              <Text style={styles.logoutext}>Disconnect</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -177,8 +191,8 @@ const styles = StyleSheet.create({
 
   text: {
     color: '#E8FF59',
-    fontFamily: 'VelaSans-Bold',
-    fontSize: 30,
+    fontFamily: 'NeueMachina-UltraBold',
+    fontSize: 25,
     textAlign: 'center',
     marginTop: '5%',
   },
@@ -225,8 +239,20 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'VelaSans-Bold',
     fontSize: 20,
-    marginTop: '10%',
-    marginLeft: '40%',
+    textAlign: 'center',
+  },
+
+  logout: {
+    width: '100%',
+    color: '#fff',
+    fontFamily: 'VelaSans-Bold',
+    fontSize: 20,
+    marginTop: '67%',
+  },
+
+  black: {
+    height: windowHeight,
+    backgroundColor: '#000',
   },
 });
 

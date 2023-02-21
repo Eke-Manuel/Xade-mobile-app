@@ -41,6 +41,8 @@
 		D8055FD304DB4D589D6DCD31 /* VelaSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */; };
 		E21DC469E7AD4C1E823060DB /* VelaSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */; };
 		E36FB458932343EBBFBC4235 /* Pods_XadeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241E79D26CB45AF5E5B494A0 /* Pods_XadeMobile.framework */; };
+		BF850EDD35DF48A594AB5399 /* NeueMachina-UltraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6106704CA49472FBF050379 /* NeueMachina-UltraBold.otf */; };
+		BD2CCEC0BF484F88BC943D7E /* NeueMontreal-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5527FF91DF54433594363E93 /* NeueMontreal-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		B280CE38BA5F46ECB470BE7E /* Inter.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Inter.ttf; path = ../assets/fonts/Inter.ttf; sourceTree = "<group>"; };
 		E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Light.otf"; path = "../assets/fonts/VelaSans-Light.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		A6106704CA49472FBF050379 /* NeueMachina-UltraBold.otf */ = {isa = PBXFileReference; name = "NeueMachina-UltraBold.otf"; path = "../assets/fonts/NeueMachina-UltraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5527FF91DF54433594363E93 /* NeueMontreal-Bold.otf */ = {isa = PBXFileReference; name = "NeueMontreal-Bold.otf"; path = "../assets/fonts/NeueMontreal-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 				E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */,
 				232299E82D904BA0A0E2A5BB /* VelaSans-Regular.otf */,
 				0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */,
+				A6106704CA49472FBF050379 /* NeueMachina-UltraBold.otf */,
+				5527FF91DF54433594363E93 /* NeueMontreal-Bold.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -366,6 +372,8 @@
 				A32926D751B649D1AEE27B0E /* VelaSans-Regular.otf in Resources */,
 				9C0B9FBC2996B78C00832244 /* Entypo.ttf in Resources */,
 				CC7D72D2134D4E7DAF11FE48 /* VelaSans-SemiBold.otf in Resources */,
+				BF850EDD35DF48A594AB5399 /* NeueMachina-UltraBold.otf in Resources */,
+				BD2CCEC0BF484F88BC943D7E /* NeueMontreal-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +597,7 @@
 				DEVELOPMENT_TEAM = 5F22SCR6J9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = XadeMobile/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Xade Mobile";
+				INFOPLIST_KEY_CFBundleDisplayName = "Xade Finance";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -620,7 +628,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5F22SCR6J9;
 				INFOPLIST_FILE = XadeMobile/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Xade Mobile";
+				INFOPLIST_KEY_CFBundleDisplayName = "Xade Finance";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

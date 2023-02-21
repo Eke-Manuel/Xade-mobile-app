@@ -72,7 +72,8 @@ connect = async () => {
     const error = result.data;
     console.log(error);
   }
-  return result;
+
+  return pnaccount;
 };
 
 connectWithParticleConfig = async () => {
@@ -101,13 +102,16 @@ connectWithParticleConfig = async () => {
     const error = result.data;
     console.log(error);
   }
+
+  return account;
 };
 
 disconnect = async () => {
-  const publicAddress = TestAccountEVM.publicAddress;
+  const publicAddress = pnaccount.publicAddress;
   const result = await particleConnect.disconnect(walletType, publicAddress);
   if (result.status) {
     console.log(result.data);
+    console.log('Disconnected successfully');
   } else {
     const error = result.data;
     console.log(error);
@@ -365,7 +369,6 @@ onClickConnect = async navigation => {
     url: 'https://connect.particle.network',
   };
   const rpcUrl = {evm_url: null, solana_url: null};
-
   particleConnect.init(
     ChainInfo.PolygonMainnet,
     Env.Production,
@@ -373,10 +376,14 @@ onClickConnect = async navigation => {
     rpcUrl,
   );
   navigation.navigate('Loading');
-  await this.connect();
-  const result = await particleConnect.isConnected();
+  var account = await this.connect();
+  var result = await particleConnect.isConnected(
+    WalletType.MetaMask,
+    account.publicAddress,
+  );
+  console.log('Account Info:', account);
   console.log('Result:', result);
-  if (result == true) {
+  if (result) {
     navigation.navigate('Connected');
   } else {
     navigation.navigate('Error');
@@ -407,7 +414,7 @@ const data = [
   {key: 'ReconnectIfNeeded', function: this.reconnectIfNeeded},
 ];
 
-export default {connectWithParticleConfig, onClickConnect};
+export default {onClickConnect, disconnect};
 /*
 export default class ParticleConnect extends PureComponent {
   render = () => {
