@@ -1,19 +1,8 @@
 import React from 'react';
-import {
-  ImageBackground,
-  TouchableOpacity,
-  ScrollView,
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Dimensions,
-  Linking,
-} from 'react-native';
+import {TouchableOpacity, StyleSheet, View, Linking} from 'react-native';
 import {Text} from '@rneui/themed';
-import {Icon} from 'react-native-elements';
 import CountDown from 'react-native-countdown-component';
 import LinearGradient from 'react-native-linear-gradient';
-import MaskedView from '@react-native-masked-view/masked-view';
 
 timeToday = Date.now();
 endDate = new Date(Date.UTC((year = 2023), (monthIndex = 2), (date = 15)));
@@ -44,7 +33,11 @@ const Countdown = ({navigation}) => {
         <Text style={styles.subText}>The countdown has already begun...</Text>
         <LinearGradient colors={['#ff4869', '#fa06ff']} style={styles.button}>
           <TouchableOpacity
-            onPress={() => Linking.openURL('http://google.com')}>
+            onPress={() =>
+              Linking.openURL(
+                'https://discord.com/channels/1023970802099572847/1039229895781404692',
+              )
+            }>
             <Text style={styles.buttonText}>Take Part In Private Beta</Text>
           </TouchableOpacity>
         </LinearGradient>

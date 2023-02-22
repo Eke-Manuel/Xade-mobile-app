@@ -12,7 +12,8 @@ import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
 
 import onClickLogin from '../ParticleAuth';
-import {connectWithParticleConfig, onClickConnect} from '../ParticleConnect';
+import onClickConnect from '../ParticleConnect';
+
 const bg = require('../../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;
 
@@ -48,7 +49,6 @@ const Login = ({navigation}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button}
-                //    onPress={() => onClickLogin(navigation)}>
                 onPress={() => this.onClickLogin(navigation)}>
                 <Icon
                   style={styles.buttonIcon}

@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {
   ImageBackground,
   TouchableOpacity,
@@ -8,21 +8,11 @@ import {
   View,
   Dimensions,
 } from 'react-native';
-import {Button, Text} from '@rneui/themed';
+import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
 
 const bg = require('../../assets/bg.png');
 const windowHeight = Dimensions.get('window').height;
-
-/*
-function HomeScreen({navigation}) {
-  return (
-    <View style={styles.container}>
-      <ConnectDemo />
-    </View>
-  );
-}
-*/
 
 const StaticHomeScreen = ({navigation}) => {
   return (

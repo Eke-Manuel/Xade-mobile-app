@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Icon} from 'react-native-elements';
 
 import {
   View,
@@ -13,11 +12,6 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-
-import ParticleConnect from './ParticleConnect';
-import ParticleAuth from './ParticleAuth';
-import {openWebWallet, logoutAccount} from './ParticleAuth';
-import {disconnect} from './ParticleConnect';
 
 import StaticHomeScreen from './screens/home';
 import Login from './screens/login';
@@ -32,22 +26,6 @@ function Particle({navigation}) {
   return (
     <View>
       <Login navigation={navigation} />
-    </View>
-  );
-}
-
-function Connect({navigation}) {
-  return (
-    <View>
-      <ParticleConnect navigation={navigation} />
-    </View>
-  );
-}
-
-function Auth({navigation}) {
-  return (
-    <View>
-      <ParticleAuth navigation={navigation} />
     </View>
   );
 }
@@ -129,8 +107,6 @@ export default function App({navigation}) {
           navigation={navigation}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="ParticleAuth" component={Auth} />
-        <Stack.Screen name="ParticleConnect" component={Connect} />
         <Stack.Screen
           name="LoggedIn"
           component={LoggedIn}
@@ -237,17 +213,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
 });
-
-/*
-    defaultConfig {
-        applicationId "com.org.xadefinance"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-
-        manifestPlaceholders["PN_PROJECT_ID"] = "260df770-44b4-4afd-a408-0a9f2b9944a9"
-        manifestPlaceholders["PN_PROJECT_CLIENT_KEY"] = "c2HUrCSv7ymat5zCKhD41B9BA8bsRIFJgAXM0Jlm"
-        manifestPlaceholders["PN_APP_ID"] = "f84832a5-f295-4f30-a1b7-18aa0a616d16"
-    }
-    */
