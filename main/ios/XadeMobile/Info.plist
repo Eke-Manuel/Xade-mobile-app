@@ -45,19 +45,19 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-  <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-      <key>NSAllowsArbitraryLoadsInWebContent</key>
-      <true/>
-      <key>NSAllowsLocalNetworking</key>
-      <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>We use the camera to scan barcodes</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need access in order to open photos of barcodes</string>
 	<key>UIAppFonts</key>
@@ -90,6 +90,7 @@
 		<string>Fontisto.ttf</string>
 		<string>NeueMachina-UltraBold.otf</string>
 		<string>NeueMontreal-Bold.otf</string>
+		<string>Benzin-Medium.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen.storyboard</string>

@@ -14,8 +14,10 @@ import {
 } from 'react-native';
 
 import StaticHomeScreen from './screens/home';
+import SendEmailComponent from './screens/sendEmail';
+import SendMobileComponent from './screens/sendMobile';
 import Login from './screens/login';
-import Countdown from './screens/countdown';
+import Payments from './screens/payments';
 import {Text} from 'react-native-elements';
 
 const Stack = createNativeStackNavigator();
@@ -36,7 +38,7 @@ function LoggedIn({navigation}) {
       <View style={styles.black}>
         <SafeAreaView>
           <View>
-            <Countdown navigation={navigation} />
+            <Payments navigation={navigation} />
           </View>
         </SafeAreaView>
       </View>
@@ -48,9 +50,9 @@ function Connected({navigation}) {
   return (
     <ScrollView>
       <View style={styles.black}>
-        <SafeAreaView>
+        <SafeAreaView>  
           <View>
-            <Countdown navigation={navigation} />
+            <Payments navigation={navigation} />
           </View>
         </SafeAreaView>
       </View>
@@ -92,13 +94,50 @@ function Loading({navigation}) {
   );
 }
 
+function SendEmail({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>  
+          <View>
+            <SendEmailComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
+function SendMobile({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>  
+          <View>
+            <SendMobileComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
 export default function App({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={StaticHomeScreen}
+          component={SendEmail}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SendEmail"
+          component={SendEmail}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SendMobile"
+          component={SendMobile}
           options={{headerShown: false}}
         />
         <Stack.Screen
