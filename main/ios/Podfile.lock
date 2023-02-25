@@ -338,14 +338,6 @@ PODS:
   - React-jsinspector (0.71.2)
   - React-logger (0.71.2):
     - glog
-  - react-native-camera (4.2.1):
-    - React-Core
-    - react-native-camera/RCT (= 4.2.1)
-    - react-native-camera/RN (= 4.2.1)
-  - react-native-camera/RCT (4.2.1):
-    - React-Core
-  - react-native-camera/RN (4.2.1):
-    - React-Core
   - react-native-particle-auth (0.10.0):
     - ParticleAuthService
     - ParticleNetworkBase
@@ -526,7 +518,6 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
-  - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-particle-auth (from `../node_modules/react-native-particle-auth`)
   - react-native-particle-connect (from `../node_modules/react-native-particle-connect`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -634,8 +625,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
-  react-native-camera:
-    :path: "../node_modules/react-native-camera"
   react-native-particle-auth:
     :path: "../node_modules/react-native-particle-auth"
   react-native-particle-connect:
@@ -744,7 +733,6 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 272deb09db352916b331dc7a0dd1c78b22ff8e54
   React-jsinspector: ea8101acf525ec08b2d87ddf0637d45f8e3b4148
   React-logger: 97987f46779d8dd24656474ad0c43a5b459f31d6
-  react-native-camera: 3eae183c1d111103963f3dd913b65d01aef8110f
   react-native-particle-auth: 54e76535be9d3dfd99967b841b83305be552af28
   react-native-particle-connect: 59345221ff20c17f93946889646eef99598c06fb
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
