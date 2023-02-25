@@ -30,10 +30,10 @@ login = async () => {
   const result = await particleAuth.login(type, '', supportAuthType, undefined);
   if (result.status) {
     const userInfo = result.data;
-    console.log(userInfo);
+    console.log('User Info:', userInfo);
   } else {
     const error = result.data;
-    console.log(error);
+    console.log('Error:', error);
   }
 };
 
@@ -43,8 +43,8 @@ logout = async navigation => {
 };
 
 getUserInfo = async () => {
-  const result = await particleAuth.getUserInfo();
-  const userInfo = JSON.parse(result);
+  var userInfo = await particleAuth.getUserInfo();
+  userInfo = JSON.parse(userInfo);
   console.log(userInfo);
 };
 
@@ -61,12 +61,15 @@ onClickLogin = async navigation => {
   await this.login();
   const result = await particleAuth.isLogin();
 
-  console.log('Result:', result);
+  console.log('Logged In:', result);
   if (result) {
-    navigation.navigate('LoggedIn');
+    navigation.navigate('QRScreen');
   } else {
     navigation.navigate('Error');
   }
+
+  uInfo = await particleAuth.getAddress();
+  console.log('Public Address:', uInfo);
 };
 
-export default {onClickLogin, openWebWallet, logout};
+export default {onClickLogin, openWebWallet, getUserInfo, logout};

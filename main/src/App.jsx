@@ -13,9 +13,10 @@ import {
   Dimensions,
 } from 'react-native';
 
-import StaticHomeScreen from './screens/home';
-import Login from './screens/login';
-import Countdown from './screens/countdown';
+import StaticHomeScreen from './screens/loggingIn/home';
+import Login from './screens/loggingIn/login';
+import Countdown from './screens/loggedIn/countdown';
+import QRPage from './screens/loggedIn/qr';
 import {Text} from 'react-native-elements';
 
 const Stack = createNativeStackNavigator();
@@ -96,6 +97,13 @@ export default function App({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/*
+        <Stack.Screen
+          name="Home"
+          component={StaticHomeScreen}
+          options={{headerShown: false}}
+        />
+        */}
         <Stack.Screen
           name="Home"
           component={StaticHomeScreen}
@@ -128,6 +136,12 @@ export default function App({navigation}) {
         <Stack.Screen
           name="Loading"
           component={Loading}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="QRScreen"
+          component={QRPage}
           navigation={navigation}
           options={{headerShown: false}}
         />

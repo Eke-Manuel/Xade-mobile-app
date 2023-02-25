@@ -1,7 +1,7 @@
 import * as particleConnect from 'react-native-particle-connect';
 import {Env, WalletType} from 'react-native-particle-connect';
 import {ChainInfo} from 'react-native-particle-connect';
-import {PNAccount} from './Models/PNAccount';
+import {PNAccount} from './models/PNAccount';
 
 const walletType = WalletType.MetaMask;
 
