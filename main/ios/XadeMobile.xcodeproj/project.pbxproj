@@ -45,6 +45,8 @@
 		E21DC469E7AD4C1E823060DB /* VelaSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7DDD8CA4C4F04E72A9337D7F /* VelaSans-Medium.otf */; };
 		E36FB458932343EBBFBC4235 /* Pods_XadeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241E79D26CB45AF5E5B494A0 /* Pods_XadeMobile.framework */; };
 		0FA0B17632654DCC93A59F8B /* Benzin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3489B7DB7D634EC9BA8529F1 /* Benzin-Medium.otf */; };
+		479E2C31E0B149D699BDEB58 /* Euclid Circular A Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43AED442062D4CBE8CD512C7 /* Euclid Circular A Medium.otf */; };
+		30F82939E54448A895105C43 /* urmom.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3D3970FAEB442C6B0DE7913 /* urmom.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-Light.otf"; path = "../assets/fonts/VelaSans-Light.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		3489B7DB7D634EC9BA8529F1 /* Benzin-Medium.otf */ = {isa = PBXFileReference; name = "Benzin-Medium.otf"; path = "../assets/fonts/Benzin-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43AED442062D4CBE8CD512C7 /* Euclid Circular A Medium.otf */ = {isa = PBXFileReference; name = "Euclid Circular A Medium.otf"; path = "../assets/fonts/Euclid Circular A Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A3D3970FAEB442C6B0DE7913 /* urmom.otf */ = {isa = PBXFileReference; name = "urmom.otf"; path = "../assets/fonts/urmom.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 				A6106704CA49472FBF050379 /* NeueMachina-UltraBold.otf */,
 				5527FF91DF54433594363E93 /* NeueMontreal-Bold.otf */,
 				3489B7DB7D634EC9BA8529F1 /* Benzin-Medium.otf */,
+				43AED442062D4CBE8CD512C7 /* Euclid Circular A Medium.otf */,
+				A3D3970FAEB442C6B0DE7913 /* urmom.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -384,6 +390,8 @@
 				BF850EDD35DF48A594AB5399 /* NeueMachina-UltraBold.otf in Resources */,
 				BD2CCEC0BF484F88BC943D7E /* NeueMontreal-Bold.otf in Resources */,
 				0FA0B17632654DCC93A59F8B /* Benzin-Medium.otf in Resources */,
+				479E2C31E0B149D699BDEB58 /* Euclid Circular A Medium.otf in Resources */,
+				30F82939E54448A895105C43 /* urmom.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

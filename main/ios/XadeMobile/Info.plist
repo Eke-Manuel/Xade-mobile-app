@@ -91,6 +91,8 @@
 		<string>NeueMachina-UltraBold.otf</string>
 		<string>NeueMontreal-Bold.otf</string>
 		<string>Benzin-Medium.otf</string>
+		<string>Euclid Circular A Medium.otf</string>
+		<string>urmom.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen.storyboard</string>

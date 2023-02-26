@@ -14,10 +14,15 @@ import {
 } from 'react-native';
 
 import StaticHomeScreen from './screens/home';
-import SendEmailComponent from './screens/sendEmail';
-import SendMobileComponent from './screens/sendMobile';
+import SendEmailComponent from './screens/sendMoney/sendEmail';
+import SendMobileComponent from './screens/sendMoney/sendMobile';
+import EnterAmountComponent from './screens/enterAmount';
+import Pending from './screens/transactionStatus/pending';
+import Successful from './screens/transactionStatus/successful';
+import Unsuccessful from './screens/transactionStatus/unsuccessful';
 import Login from './screens/login';
-import Payments from './screens/payments';
+import Payments from './screens/paymentsScreen/payments';
+import SavingsComponent from './screens/savingsScreen/savings'
 import {Text} from 'react-native-elements';
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +34,20 @@ function Particle({navigation}) {
     <View>
       <Login navigation={navigation} />
     </View>
+  );
+}
+
+function Savings({navigation}) {
+  return (
+  <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>  
+          <View>
+            <SavingsComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -108,6 +127,20 @@ function SendEmail({navigation}) {
   );
 }
 
+function EnterAmount({navigation}) {
+  return (
+    // <ScrollView>
+      <View style={styles.black}>
+        {/* <SafeAreaView>   */}
+          {/* <View> */}
+            <EnterAmountComponent navigation={navigation} />
+          {/* </View> */}
+        {/* </SafeAreaView> */}
+      </View>
+    
+  );
+}
+
 function SendMobile({navigation}) {
   return (
     <ScrollView>
@@ -127,7 +160,27 @@ export default function App({navigation}) {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={SendEmail}
+          component={Pending}
+          options={{headerShown: false}}
+        />
+         <Stack.Screen
+          name="Pending"
+          component={Pending}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Successful"
+          component={Successful}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Unsuccessful"
+          component={Unsuccessful}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EnterAmount"
+          component={EnterAmount}
           options={{headerShown: false}}
         />
         <Stack.Screen

@@ -2,17 +2,18 @@ import { StyleSheet } from 'react-native';
 
 const paymentStyles  = StyleSheet.create({
     container: {
+        marginTop: 30,
       width: '100%',
-      height: '50%',
+      height: '70%',
       borderWidth: 1, 
-      borderColor: 'rgba(128,128,128, 0.5)',
-      borderRadius: 50,
-      borderTopRightRadius: 0,
-      borderTopLeftRadius: 0,
-      // borderBottomWidth: 0,
-      borderRightWidth: 0,
-      borderLeftWidth: 0,
-      borderTopWidth: 0,
+    //   borderColor: 'rgba(128,128,128, 0.5)',
+    //   borderRadius: 50,
+    //   borderTopRightRadius: 0,
+    //   borderTopLeftRadius: 0,
+    //   // borderBottomWidth: 0,
+    //   borderRightWidth: 0,
+    //   borderLeftWidth: 0,
+    //   borderTopWidth: 0,
       // flex: 0.5,
       flexDirection: 'column',
       justifyContent: 'space-around',
@@ -28,7 +29,7 @@ const paymentStyles  = StyleSheet.create({
     },
   
     logo: {
-      fontFamily: 'LemonMilk-Regular',
+      fontFamily: 'VelaSans-Medium',
       color: '#fff',
       fontSize: 30,
       marginLeft: '8%',
@@ -139,6 +140,7 @@ const paymentStyles  = StyleSheet.create({
         width: 1
       }
     },
+    
   
     buttonIcon: {
       borderRadius: 15,
@@ -185,8 +187,36 @@ const paymentStyles  = StyleSheet.create({
     ttext: {
         marginLeft: 10,
     }
+,
+    depWith: {
+        flexDirection: 'row',
+        height: '100%',
+        width: '47%',
+        borderRadius: 20, 
+    },
+
+    innerDep: {
+       width: '100%', flexDirection: 'row',borderRadius: 10,
+       alignItems: 'center',justifyContent: 'space-between', paddingLeft: 20,paddingRight: 20
+    },
+
+    innerDep2: {
+        width: '100%', flexDirection: 'column',borderRadius: 10,
+        alignItems: 'center',justifyContent: 'space-between', paddingBottom: 30
+     },
+
+    amountText: {
+        fontFamily: 'urmom',marginLeft: 20,fontSize: 18,
+        alignSelf: 'flex-start',color: '#FFFFFF'
+    },
+
+    amountText2: {
+        fontFamily: 'VelaSans-medium',marginLeft: 20,fontSize: 13,
+        alignSelf: 'flex-start',color: '#FFFFFF'
+    }
+    
      
-  });
+    });
 
 
 export default paymentStyles;

@@ -47,6 +47,7 @@ const SendMobile = ({navigation}) => {
     const [text, setText] = useState('');
   return (
     <SafeAreaView style = {{width: '100%', height: '100%', justifyContent: 'space-between', alignItems: 'center'}}>
+      <View style = {{position: 'absolute', top: '5%'}}><Text style = {{fontSize: 25, fontFamily: 'urmom', 'color': 'white'}}>Enter {(country == 1)?'email':(country == 2)?'wallet':'how did we get here?'} address</Text></View>
         <View style = {styles.container}>
             <View style = {styles.enterAmount}>
                 
@@ -89,7 +90,6 @@ const SendMobile = ({navigation}) => {
             }
           }
         />
-
                 </View>
                 </View>
             </View>
@@ -97,7 +97,13 @@ const SendMobile = ({navigation}) => {
                  onPress={() => navigation.navigate('SendMobile')}
             style = {styles.subText}><Text style = {{color: '#4F4CF6'}}>Send to mobile number instead</Text></TouchableOpacity>
         </View>
-        <TouchableOpacity style = {styles.confirmButton}>
+        <TouchableOpacity style = {styles.confirmButton} onPress = {() =>   
+        (text != '' && (!(country == 1) ||  (text.includes('@'))))?
+             ( navigation.navigate('EnterAmount', {
+              type: (country == 1)?'email':(country == 2)?'wallet':'how did we get here?',
+              address: text,
+              
+          })):''}>
             <Text style = {{color: 'white', fontFamily: 'VelaSans-Medium', fontSize: 18}}>Continue</Text>
         </TouchableOpacity>  
     </SafeAreaView>
