@@ -78,9 +78,16 @@ function QRCode() {
           </View>
         </View>
       </View>
+      <TouchableHighlight style={styles.bottomButton}>
+        <Text style={styles.bottomText}>
+          Send To Email Address Or Mobile Instead
+        </Text>
+      </TouchableHighlight>
+      {/*
       <Text onPress={() => this.logout()} style={styles.logout}>
         Logout
       </Text>
+          */}
     </View>
   );
 }
@@ -199,7 +206,7 @@ class QRPage extends Component {
                   size={30}
                   color="white"
                   type="feather"
-                  onPress={() => this.props.navigation.navigate('Particle')}
+                  onPress={() => this.props.navigation.navigate('Investments')}
                 />
                 <View style={styles.nav}>
                   <TouchableOpacity
@@ -365,7 +372,7 @@ const styles = StyleSheet.create({
     color: '#409eff',
     textAlign: 'center',
     fontFamily: 'VelaSans-ExtraBold',
-    marginTop: windowHeight - windowHeight / 1.15,
+    marginTop: windowHeight - windowHeight / 1.2,
   },
 
   scannedStyle: {

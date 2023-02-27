@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* XadeMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* XadeMobile.m */; };
 		4B7E47A3788A41CFAAF4D60F /* VelaSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 577B344C2AE84ED993161D2B /* VelaSans-Bold.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84B747FA6A494F4AA7E9FEE7 /* EulidCircular-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9D1142DE42098E0BD822 /* EulidCircular-Regular.ttf */; };
 		8F560D7B9B63421C8808873F /* LemonMilk-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A3457CF55654EA39B47196F /* LemonMilk-Regular.otf */; };
 		98354A299FD14BF3B4F28098 /* VelaSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E98B70F4D28442798A5989B4 /* VelaSans-Light.otf */; };
 		9AE5F82E93B14DC7962651CA /* LemonMilk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CA994A5F6D54A34B82F2A33 /* LemonMilk-Bold.otf */; };
@@ -80,6 +81,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = XadeMobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886A90F9CB6993848EDF0BB4 /* Pods_XadeMobile_XadeMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XadeMobile_XadeMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-XadeMobile-XadeMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XadeMobile-XadeMobileTests.release.xcconfig"; path = "Target Support Files/Pods-XadeMobile-XadeMobileTests/Pods-XadeMobile-XadeMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C6D9D1142DE42098E0BD822 /* EulidCircular-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "EulidCircular-Regular.ttf"; path = "../assets/fonts/EulidCircular-Regular.ttf"; sourceTree = "<group>"; };
 		92DCC70407BF46CEAE294FBD /* VelaSans-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "VelaSans-ExtraLight.otf"; path = "../assets/fonts/VelaSans-ExtraLight.otf"; sourceTree = "<group>"; };
 		9C0B9FA92996B78C00832244 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		9C0B9FAA2996B78C00832244 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				0F29E1AB951D4AC4BFACFF79 /* VelaSans-SemiBold.otf */,
 				A6106704CA49472FBF050379 /* NeueMachina-UltraBold.otf */,
 				5527FF91DF54433594363E93 /* NeueMontreal-Bold.otf */,
+				8C6D9D1142DE42098E0BD822 /* EulidCircular-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				CC7D72D2134D4E7DAF11FE48 /* VelaSans-SemiBold.otf in Resources */,
 				BF850EDD35DF48A594AB5399 /* NeueMachina-UltraBold.otf in Resources */,
 				BD2CCEC0BF484F88BC943D7E /* NeueMontreal-Bold.otf in Resources */,
+				84B747FA6A494F4AA7E9FEE7 /* EulidCircular-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

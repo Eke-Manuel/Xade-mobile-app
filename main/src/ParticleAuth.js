@@ -63,7 +63,7 @@ onClickLogin = async navigation => {
 
   console.log('Logged In:', result);
   if (result) {
-    navigation.navigate('QRScreen');
+    navigation.navigate('Investments');
   } else {
     navigation.navigate('Error');
   }

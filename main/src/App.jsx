@@ -17,6 +17,7 @@ import StaticHomeScreen from './screens/loggingIn/home';
 import Login from './screens/loggingIn/login';
 import Countdown from './screens/loggedIn/countdown';
 import QRPage from './screens/loggedIn/qr';
+import Investments from './screens/loggedIn/investments';
 import {Text} from 'react-native-elements';
 
 const Stack = createNativeStackNavigator();
@@ -142,6 +143,12 @@ export default function App({navigation}) {
         <Stack.Screen
           name="QRScreen"
           component={QRPage}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Investments"
+          component={Investments}
           navigation={navigation}
           options={{headerShown: false}}
         />

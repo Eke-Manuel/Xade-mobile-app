@@ -57,7 +57,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>We use the camera to scan QRs for public addresses</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need access in order to open photos of QRs</string>
 	<key>UIAppFonts</key>
@@ -90,6 +90,7 @@
 		<string>Fontisto.ttf</string>
 		<string>NeueMachina-UltraBold.otf</string>
 		<string>NeueMontreal-Bold.otf</string>
+		<string>EulidCircular-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen.storyboard</string>
