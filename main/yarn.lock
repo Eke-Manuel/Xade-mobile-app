@@ -6236,7 +6236,7 @@
   "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   "version" "4.1.1"
 
-"lodash@^4.14.2", "lodash@^4.17.13", "lodash@^4.17.15", "lodash@^4.17.21":
+"lodash@*", "lodash@^4.14.2", "lodash@^4.17.13", "lodash@^4.17.15", "lodash@^4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -7941,6 +7941,11 @@
     "lodash" "^4.17.13"
     "prop-types" "^15.5.8"
     "sprintf-js" "^1.1.1"
+
+"react-native-element-dropdown@^2.7.1":
+  "integrity" "sha512-TOg43ezbbtqwmDMBHIwIPH/YImngY+mpYQPGojTAGc49biL1tRbbaQt6UfEqrPTDucabQviaCbL219wVp8Jeqw=="
+  "resolved" "https://registry.npmjs.org/react-native-element-dropdown/-/react-native-element-dropdown-2.7.1.tgz"
+  "version" "2.7.1"
 
 "react-native-elements@^3.4.3":
   "integrity" "sha512-VtZc25EecPZyUBER85zFK9ZbY6kkUdcm1ZwJ9hdoGSCr1R/GFgxor4jngOcSYeMvQ+qimd5No44OVJW3rSJECA=="

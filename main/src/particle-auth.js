@@ -63,7 +63,7 @@ onClickLogin = async navigation => {
 
   console.log('Logged In:', result);
   if (result) {
-    navigation.navigate('Investments');
+    navigation.navigate('Payments');
   } else {
     navigation.navigate('Error');
   }

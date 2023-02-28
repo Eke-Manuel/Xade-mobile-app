@@ -27,6 +27,7 @@
     "react-native": "0.71.2",
     "react-native-camera-kit": "^13.0.0",
     "react-native-countdown-component": "^2.7.1",
+    "react-native-element-dropdown": "^2.7.1",
     "react-native-elements": "^3.4.3",
     "react-native-linear-gradient": "^2.6.2",
     "react-native-particle-auth": "^0.10.0",

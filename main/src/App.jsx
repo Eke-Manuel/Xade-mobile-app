@@ -15,9 +15,14 @@ import {
 
 import StaticHomeScreen from './screens/loggingIn/home';
 import Login from './screens/loggingIn/login';
-import Countdown from './screens/loggedIn/countdown';
-import QRPage from './screens/loggedIn/qr';
-import Investments from './screens/loggedIn/investments';
+import Countdown from './screens/loggedIn/countdown/countdown';
+import QRPage from './screens/loggedIn/qr/qr';
+import Investments from './screens/loggedIn/investments/investments';
+import SendEmailComponent from './screens/loggedIn/send/sendEmail';
+import SendMobileComponent from './screens/loggedIn/send/sendMobile';
+import EnterAmountComponent from './screens/enterAmount';
+import SavingsComponent from './screens/loggedIn/savings/savings';
+import PaymentsComponent from './screens/loggedIn/payments/payments';
 import {Text} from 'react-native-elements';
 
 const Stack = createNativeStackNavigator();
@@ -94,6 +99,75 @@ function Loading({navigation}) {
   );
 }
 
+function SendEmail({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <SendEmailComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
+function EnterAmount({navigation}) {
+  return (
+    // <ScrollView>
+    <View style={styles.black}>
+      {/* <SafeAreaView>   */}
+      {/* <View> */}
+      <EnterAmountComponent navigation={navigation} />
+      {/* </View> */}
+      {/* </SafeAreaView> */}
+    </View>
+  );
+}
+
+function SendMobile({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <SendMobileComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
+function Savings({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <SavingsComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
+function Payments({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <PaymentsComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
 export default function App({navigation}) {
   return (
     <NavigationContainer>
@@ -150,6 +224,31 @@ export default function App({navigation}) {
           name="Investments"
           component={Investments}
           navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EnterAmount"
+          component={EnterAmount}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SendEmail"
+          component={SendEmail}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SendMobile"
+          component={SendMobile}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Savings"
+          component={Savings}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Payments"
+          component={Payments}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
