@@ -6,164 +6,323 @@ import {
   View,
   Image,
   TextInput,
+  Dimensions,
 } from 'react-native';
-import {Text} from '@rneui/themed';
+import {Text, Icon} from '@rneui/themed';
 import {Slider} from 'react-native-elements';
-
 import styles from './investment-styles';
 
+red = true;
 class Investments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: 'N/A',
-      btcPrice: 0,
+      btnSelected: 'long',
+      status: false,
       leverageValue: 1,
     };
-    this.updatePrice = this.updatePrice.bind(this);
   }
 
-  updatePrice() {
-    let bitcoinPriceUrl =
-      'https://api.coindesk.com/v1/bpi/currentprice/BTC.json';
-    let newPrice = 'Unavailable.';
+  btcFirst = () => {
+    if (this.state.status == true) {
+      this.setState({status: false});
+    } else {
+      this.setState({status: true});
+    }
+  };
 
-    fetch(bitcoinPriceUrl)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          price: responseJson.bpi.USD.rate,
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
-
-  UNSAFE_componentWillMount() {
-    this.updatePrice();
-  }
   render() {
     return (
       <View style={styles.black}>
-        <SafeAreaView>
-          <ScrollView>
-            <View>
-              <Text style={styles.header}>Investments</Text>
-
-              <View style={styles.component}>
-                <View style={styles.btcPrice}>
-                  <Image
-                    style={styles.tinyLogo}
-                    source={{
-                      uri: 'https://testnet.app.xade.finance/images/ticker/bitcoin.png',
-                    }}
-                  />
-                  <Text style={styles.btcPriceText}>{this.state.price}</Text>
-                </View>
-                {/*Candlestick Chart*/}
-              </View>
-
-              <View style={styles.component}>
-                <View style={styles.buttons}>
-                  <TouchableOpacity style={styles.longButton}>
-                    <Text style={styles.longText}>Long 📈</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={styles.shortButton}>
-                    <Text style={styles.shortText}>Short 📉</Text>
-                  </TouchableOpacity>
-                </View>
-                <View style={styles.priceSlippage}>
-                  <View style={styles.price}>
-                    <Text style={styles.priceSlippageText}>Price</Text>
-                    <Text style={styles.priceSlippageText}>0.00</Text>
-                  </View>
-                  <View style={styles.slippage}>
-                    <Text style={styles.priceSlippageText}>Slippage</Text>
-                    <TextInput
-                      style={styles.priceSlippageText}
-                      placeholder="1%"
-                      placeholderTextColor="#fff"
-                    />
-                  </View>
-                </View>
-                <View style={styles.usdTo}>
-                  <View style={styles.usd}>
-                    <Image
-                      style={styles.tinyLogo}
-                      source={{
-                        uri: 'https://testnet.app.xade.finance/images/ticker/dollar.png',
-                      }}
-                    />
-                    <Text style={styles.usdText}>USD</Text>
-                    <TextInput
-                      style={styles.usdNumber}
-                      placeholder="0.000"
-                      keyboardType="numeric"
-                      placeholderTextColor="#fff"
-                      onChangeText={usd =>
-                        this.setState({
-                          btcPrice:
-                            parseInt(usd) /
-                            parseFloat(this.state.price.replace(/,/g, '')),
-                        })
-                      }
-                    />
-                  </View>
-                  {/*
-                <Icon
-                  name="arrow-circle-down"
-                  type="font-awesome"
-                  color="#fff"
-                  size={30}
-                  containerStyle={{zIndex: '100'}}
-                  onPress={() => {}}
-                />
-              */}
-                  <View style={styles.btc}>
-                    <Image
-                      style={styles.tinyLogo}
-                      source={{
-                        uri: 'https://testnet.app.xade.finance/images/ticker/bitcoin.png',
-                      }}
-                    />
-                    <Text style={styles.usdText}>BTC</Text>
-                    <Text style={styles.usdNumber}>
-                      {this.state.btcPrice.toFixed(3)}
-                    </Text>
-                  </View>
-                </View>
-                <View style={styles.leverage}>
-                  <View
-                    style={{
-                      alignItems: 'flex-start',
-                      justifyContent: 'flex-start',
-                      flexDirection: 'row',
-                    }}>
-                    <Text style={styles.leverageText}>
-                      Leverage {parseFloat(this.state.leverageValue).toFixed(0)}
-                    </Text>
-                  </View>
-                  <Slider
-                    minimumTrackTintColor={'green'}
-                    minimumValue={1}
-                    maximumValue={10}
-                    trackMarks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-                    value={this.state.value}
-                    onValueChange={value =>
-                      this.setState({leverageValue: value})
-                    }
-                  />
-                </View>
-              </View>
+        <ScrollView>
+          <SafeAreaView>
+            <View style={styles.investmentsNav}>
               <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('QRScreen')}>
-                <Text style={styles.buttonText}>QR</Text>
+                onPress={() => {
+                  this.setState({
+                    btnSelected: 'chart',
+                  });
+                }}
+                style={
+                  this.state.btnSelected == 'chart'
+                    ? styles.navSelected
+                    : styles.navComponents
+                }>
+                <Text
+                  style={
+                    this.state.btnSelected == 'chart'
+                      ? styles.navSelectedText
+                      : styles.navText
+                  }>
+                  Overview
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setState({
+                    btnSelected: 'long',
+                  });
+                }}
+                style={
+                  this.state.btnSelected == 'long'
+                    ? styles.greenSelected
+                    : styles.navComponents
+                }>
+                <Text
+                  style={
+                    this.state.btnSelected == 'long'
+                      ? styles.navSelectedText
+                      : styles.navText
+                  }>
+                  Long
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setState({
+                    btnSelected: 'short',
+                  });
+                }}
+                style={
+                  this.state.btnSelected == 'short'
+                    ? styles.redSelected
+                    : styles.navComponents
+                }>
+                <Text
+                  style={
+                    this.state.btnSelected == 'short'
+                      ? styles.navSelectedText
+                      : styles.navText
+                  }>
+                  Short
+                </Text>
               </TouchableOpacity>
             </View>
-          </ScrollView>
-        </SafeAreaView>
+            <View
+              style={
+                this.state.btnSelected == 'long' ||
+                this.state.btnSelected == 'short'
+                  ? {display: 'none'}
+                  : styles.longshortContainer
+              }>
+              <Text>Overview</Text>
+            </View>
+            <View
+              style={
+                this.state.btnSelected == 'long' ||
+                this.state.btnSelected == 'short'
+                  ? styles.longshortContainer
+                  : {display: 'none'}
+              }>
+              <View style={styles.priceSlippage}>
+                <View style={styles.price}>
+                  <View style={styles.subContents}>
+                    <Text style={styles.subText}>Price</Text>
+                    <TextInput
+                      style={styles.subPrice}
+                      placeholder="$23,000.454"
+                      placeholderTextColor={'#C4C4C4'}
+                    />
+                  </View>
+                </View>
+                <View style={styles.slippage}>
+                  <View style={styles.subContents}>
+                    <Text style={styles.subText}>Slippage</Text>
+                    <TextInput
+                      style={styles.subPrice}
+                      placeholder="0%"
+                      placeholderTextColor={'#C4C4C4'}
+                    />
+                  </View>
+                </View>
+              </View>
+              <View style={styles.btcUsd}>
+                <View style={styles.btc}>
+                  <View style={styles.subContents}>
+                    <Text style={styles.subText}>You Sell</Text>
+                    {this.state.status ? (
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                        }}>
+                        <Text style={styles.subPrice}>32,222.32</Text>
+                        <Text
+                          style={{
+                            color: 'white',
+                            fontSize: 20,
+                            fontFamily: 'EuclidCircularA-Regular',
+                          }}>
+                          USD
+                        </Text>
+                      </View>
+                    ) : (
+                      <View>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                          }}>
+                          <Text style={styles.subPrice}>12,222.32</Text>
+                          <Text style={{color: '#ffd700', fontSize: 20}}>
+                            BTC
+                          </Text>
+                        </View>
+                      </View>
+                    )}
+                  </View>
+                </View>
+                <TouchableOpacity
+                  onPress={() => this.btcFirst()}
+                  style={{
+                    transform: [{rotate: '90deg'}],
+                    flex: 10,
+                    position: 'absolute',
+                    marginTop: '10%',
+                  }}>
+                  <Icon
+                    reverse
+                    name="swap"
+                    type="antdesign"
+                    color="#161616"
+                    size={25}
+                  />
+                </TouchableOpacity>
+                <View style={styles.usd}>
+                  <View style={styles.subContents}>
+                    <Text style={styles.subText}>You Receive</Text>
+                    {this.state.status ? (
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                        }}>
+                        <Text style={styles.subPrice}>12,222.32</Text>
+                        <Text
+                          style={{
+                            color: '#ffd700',
+                            fontSize: 20,
+                            fontFamily: 'EuclidCircularA-Regular',
+                          }}>
+                          BTC
+                        </Text>
+                      </View>
+                    ) : (
+                      <View>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                          }}>
+                          <Text style={styles.subPrice}>32,222.32</Text>
+                          <Text style={{color: 'white', fontSize: 20}}>
+                            USD
+                          </Text>
+                        </View>
+                      </View>
+                    )}
+                  </View>
+                </View>
+              </View>
+              <View style={styles.leverage}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text style={styles.leverageText}>Leverage</Text>
+                  <Text style={styles.leverageIndicator}>
+                    {this.state.leverageValue}x
+                  </Text>
+                </View>
+                <Slider
+                  thumbStyle={{
+                    height: 20,
+                    width: 20,
+                    backgroundColor: '#232323',
+                  }}
+                  trackStyle={{height: 5}}
+                  style={{marginTop: 10}}
+                  value={this.state.leverageValue}
+                  onValueChange={value => this.setState({leverageValue: value})}
+                  step={1}
+                  minimumValue={1}
+                  maximumValue={10}
+                />
+              </View>
+              <View>
+                <Text style={styles.orderSummary}>
+                  Scroll To See Order Summary
+                </Text>
+              </View>
+              <View style={styles.summary}>
+                <Text style={styles.summaryHeader}>Order Summary</Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: 4,
+                  }}>
+                  <Text style={styles.orderDescription}>Entry Price</Text>
+                  <Text style={styles.orderAmount}>$23000.454</Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: 4,
+                  }}>
+                  <Text style={styles.orderDescription}>Index Price</Text>
+                  <Text style={styles.orderAmount}>$23000.454</Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: 4,
+                  }}>
+                  <Text style={styles.orderDescription}>Funding Rate</Text>
+                  <Text style={styles.orderAmount}>0%</Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: 4,
+                  }}>
+                  <Text style={styles.orderDescription}>Trading Fees</Text>
+                  <Text style={styles.orderAmount}>$0</Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: 4,
+                  }}>
+                  <Text style={styles.orderDescription}>Position Size</Text>
+                  <Text style={styles.orderAmount}>$0</Text>
+                </View>
+              </View>
+            </View>
+          </SafeAreaView>
+        </ScrollView>
+        <View style={styles.confirmButton}>
+          <TouchableOpacity
+            style={
+              this.state.btnSelected == 'long' ||
+              this.state.btnSelected == 'short'
+                ? this.state.btnSelected == 'short'
+                  ? styles.shortButton
+                  : styles.longButton
+                : {display: 'none'}
+            }>
+            {this.state.btnSelected == 'short' ? (
+              <Text style={styles.confirmText}>Confirm Short</Text>
+            ) : (
+              <Text style={styles.confirmText}>Confirm Long</Text>
+            )}
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

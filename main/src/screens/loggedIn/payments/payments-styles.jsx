@@ -24,15 +24,18 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     width: '100%',
-    backgroundColor: 'transparent',
+    backgroundColor: '#000',
   },
 
   logo: {
     fontFamily: 'LemonMilk-Regular',
     color: '#fff',
     fontSize: 30,
+    fontWeight: 600,
+    letterSpacing: 0.5,
     marginLeft: '8%',
     marginTop: '2%',
+    marginBottom: '2%',
   },
 
   mainContent: {

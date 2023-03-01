@@ -3,144 +3,214 @@ import {Dimensions, StyleSheet} from 'react-native';
 const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-  header: {
-    color: '#fff',
-    fontSize: 30,
-    textAlign: 'center',
-    fontFamily: 'VelaSans-Bold',
-  },
   black: {
-    backgroundColor: '#000',
+    backgroundColor: '#0C0C0C',
     width: '100%',
     height: windowHeight,
   },
-  button: {
-    width: '40%',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: '30%',
-    marginTop: '15%',
-    paddingVertical: '5%',
-    borderRadius: 50,
-  },
-  buttonText: {
-    color: '#000',
-    fontSize: 20,
-    fontFamily: 'NeueMontreal-Bold',
-  },
-  component: {
-    width: '90%',
-    height: windowHeight / 1.5,
-    marginTop: '21%',
-    marginLeft: '5%',
-    borderRadius: 20,
-    backgroundColor: '#111',
-  },
-  buttons: {
-    justifyContent: 'center',
-    alignItems: 'center',
+
+  investmentsNav: {
+    justifyContent: 'space-evenly',
     flexDirection: 'row',
+    marginTop: '20%',
+  },
+
+  navComponents: {
+    borderWidth: 1,
+    borderColor: '#747474',
+    borderRadius: 50,
+    paddingHorizontal: 25,
+    paddingVertical: 7,
+  },
+
+  navText: {
+    color: '#747474',
+    fontFamily: 'VelaSans-ExtraBold',
+  },
+
+  navSelected: {
+    borderWidth: 1,
+    borderColor: '#1E1E1E',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 50,
+    paddingHorizontal: 25,
+    paddingVertical: 7,
+  },
+
+  redSelected: {
+    borderWidth: 1,
+    borderColor: '#E14C4C',
+    backgroundColor: '#E14C4C',
+    borderRadius: 50,
+    paddingHorizontal: 25,
+    paddingVertical: 7,
+  },
+
+  greenSelected: {
+    borderWidth: 1,
+    borderColor: '#2FBE6A',
+    backgroundColor: '#2FBE6A',
+    borderRadius: 50,
+    paddingHorizontal: 25,
+    paddingVertical: 7,
+  },
+
+  navText: {
+    color: '#747474',
+    fontFamily: 'VelaSans-ExtraBold',
+  },
+
+  navSelectedText: {
+    color: '#fff',
+    fontFamily: 'VelaSans-ExtraBold',
+  },
+
+  priceSlippage: {
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    marginTop: '20%',
+    width: '90%',
+    marginLeft: '5%',
+  },
+
+  price: {
+    width: '70%',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 7,
+    marginTop: '-7%',
+  },
+
+  slippage: {
+    marginLeft: '3%',
+    width: '25%',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 7,
+    marginTop: '-7%',
+  },
+
+  subContents: {
+    width: '80%',
+    marginLeft: 15,
+    marginTop: 15,
+  },
+
+  subText: {
+    color: '#868686',
+    fontFamily: 'EuclidCircularA-Regular',
+    textAlign: 'left',
+    fontSize: 15,
+  },
+
+  subPrice: {
+    fontFamily: 'EuclidCircularA-Regular',
+    textAlign: 'left',
+    marginTop: 4,
+    fontSize: 26,
+    color: '#C4C4C4',
+    marginBottom: 15,
+  },
+
+  btcUsd: {
+    width: '90%',
+    marginLeft: '5%',
+    alignItems: 'center',
     marginTop: '5%',
   },
-  longButton: {
-    backgroundColor: 'green',
-    paddingVertical: '4%',
-    paddingHorizontal: '10%',
-    borderRadius: 50,
-    marginRight: '5%',
+
+  btc: {
+    width: '100%',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 7,
+    flex: 1,
   },
-  longText: {
-    color: 'white',
-    fontFamily: 'EuclidCircularA-Regular',
-    fontSize: 15,
+
+  usd: {
+    width: '100%',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 7,
+    marginTop: '3%',
   },
-  shortButton: {
-    backgroundColor: 'transparent',
-    paddingVertical: '4%',
-    paddingHorizontal: '10%',
-    borderRadius: 50,
-    marginLeft: '5%',
-  },
-  shortText: {
-    color: 'red',
-    fontFamily: 'EuclidCircularA-Regular',
-    fontSize: 15,
-  },
-  priceSlippage: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  price: {
-    marginRight: '15%',
-  },
-  slippage: {
-    marginLeft: '15%',
-  },
-  priceSlippageText: {
-    textAlign: 'center',
-    color: 'white',
-    fontFamily: 'EuclidCircularA-Regular',
-    fontSize: 15,
-    paddingTop: '10%',
-  },
-  usdTo: {
+
+  leverage: {
+    width: '85%',
+    marginLeft: '7.5%',
     marginTop: '10%',
   },
-  usd: {
-    backgroundColor: '#222',
-    width: '80%',
-    marginLeft: '10%',
-    marginTop: '%',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingVertical: '4%',
-    paddingHorizontal: '2%',
-    borderRadius: 20,
-  },
-  btc: {
-    backgroundColor: '#222',
-    width: '80%',
-    marginLeft: '10%',
-    marginTop: '1%',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingVertical: '4%',
-    paddingHorizontal: '2%',
-    borderRadius: 20,
-  },
-  tinyLogo: {
-    width: 40,
-    height: 40,
-    justifyContent: 'flex-start',
-  },
-  usdText: {
-    color: 'white',
-    fontFamily: 'EuclidCircularA-Regular',
-    fontSize: 20,
-    marginLeft: '20%',
-  },
-  usdNumber: {
-    color: 'white',
-    fontFamily: 'EuclidCircularA-Regular',
-    fontSize: 20,
-    marginLeft: '30%',
-  },
-  btcPriceText: {
-    color: 'white',
-  },
-  leverage: {
-    width: '80%',
-    marginLeft: '10%',
-    marginTop: '5%',
-  },
+
   leverageText: {
+    color: '#FFF',
+    fontFamily: 'VelaSans-Bold',
+    fontSize: 23,
+  },
+
+  leverageIndicator: {
+    marginTop: 7,
+    color: '#787777',
+    fontSize: 20,
+    fontFamily: 'EuclidCircularA-Regular',
+  },
+
+  orderSummary: {
+    textAlign: 'center',
+    color: '#FFF',
+    fontFamily: 'VelaSans-ExtraBold',
+    marginTop: '10%',
+    fontSize: 15,
+  },
+
+  longButton: {
+    marginBottom: 80,
+    backgroundColor: '#2FBE6A',
+    paddingVertical: 12,
+    width: '80%',
+    marginLeft: '10%',
+    borderRadius: 10,
+  },
+
+  shortButton: {
+    marginBottom: 80,
+    backgroundColor: '#E14C4C',
+    paddingVertical: 12,
+    width: '80%',
+    marginLeft: '10%',
+    borderRadius: 10,
+  },
+
+  confirmText: {
+    textAlign: 'center',
+    color: '#FFF',
     fontFamily: 'VelaSans-ExtraBold',
     fontSize: 20,
-    color: 'white',
+  },
+
+  summary: {
+    marginTop: '15%',
+    width: '90%',
+    marginLeft: '5%',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 7,
+    paddingBottom: '10%',
+  },
+
+  summaryHeader: {
+    marginTop: '10%',
+    marginLeft: '5%',
+    color: '#FFF',
+    fontFamily: 'VelaSans-ExtraBold',
+    fontSize: 20,
+    marginBottom: '10%',
+  },
+
+  orderDescription: {
+    color: '#FFF',
+    fontFamily: 'EuclidCircularA-Regular',
+    paddingLeft: '5%',
+  },
+
+  orderAmount: {
+    color: '#787777',
+    fontFamily: 'EuclidCircularA-Regular',
+    paddingRight: '5%',
   },
 });
 

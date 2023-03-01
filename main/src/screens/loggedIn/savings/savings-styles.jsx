@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     width: '100%',
     height: '70%',
-    borderWidth: 1,
+    // borderWidth: 1,
     //   borderColor: 'rgba(128,128,128, 0.5)',
     //   borderRadius: 50,
     //   borderTopRightRadius: 0,
@@ -25,15 +25,18 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     width: '100%',
-    backgroundColor: 'transparent',
+    backgroundColor: '#000',
   },
 
   logo: {
-    fontFamily: 'VelaSans-Medium',
+    fontFamily: 'LemonMilk-Regular',
     color: '#fff',
     fontSize: 30,
+    fontWeight: 600,
+    letterSpacing: 0.5,
     marginLeft: '8%',
     marginTop: '2%',
+    marginBottom: '2%',
   },
 
   mainContent: {

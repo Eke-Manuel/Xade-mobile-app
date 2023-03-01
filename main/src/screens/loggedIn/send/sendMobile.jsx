@@ -65,13 +65,38 @@ const local_data = [
 ];
 const SendMobileComponent = ({navigation}) => {
   let [amount, setAmount] = React.useState('');
+  const [value, setValue] = useState('+1');
+  const handleSubmit = () => {
+    if (amount.toString().length != 10) return;
+
+    fetch(
+      `https://mobile.api.xade.finance/polygon?phone=${
+        value.slice(1) + amount
+      }`,
+      {
+        method: 'GET',
+      },
+    )
+      .then(response => {
+        if (response.status != 200) return 0;
+        else return response.text();
+      })
+      .then(data => {
+        if (data != 0)
+          navigation.navigate('EnterAmount', {
+            type: 'mobile',
+            walletAddress: data,
+            mobileNumber: amount,
+          });
+      });
+  };
 
   function handleButtonPress(button) {
     if (button !== '' && button !== '⌫') {
       setAmount(amount + button);
     } else if (button === '⌫') setAmount(amount.slice(0, -1));
   }
-  const [value, setValue] = useState('+1');
+
   const renderItem = item => {
     return (
       <View style={styles.item}>
@@ -89,7 +114,22 @@ const SendMobileComponent = ({navigation}) => {
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-      <View style={{position: 'absolute', top: '5%'}}>
+      <View
+        style={{
+          position: 'absolute',
+          top: '5%',
+          width: '100%',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}>
+        <Icon
+          name="arrow-left"
+          style={{position: 'absolute', left: 0, display: 'none'}}
+          // size={30}
+          color="white"
+          type="feather"
+          onPress={() => navigation.navigate('Payments')}
+        />
         <Text
           style={{fontSize: 25, fontFamily: 'VelaSans-Bold', color: 'white'}}>
           Enter mobile no.
@@ -167,15 +207,7 @@ const SendMobileComponent = ({navigation}) => {
           </View>
         );
       })}
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('EnterAmount', {
-            type: 'mobile',
-            countryCode: value,
-            // number: ,
-          })
-        }
-        style={styles.confirmButton}>
+      <TouchableOpacity onPress={handleSubmit} style={styles.confirmButton}>
         <Text
           style={{color: 'white', fontFamily: 'VelaSans-Medium', fontSize: 18}}>
           Continue

@@ -53,8 +53,43 @@ const local_data = [
   },
 ];
 const SendEmailComponent = ({navigation}) => {
+  // text != '' && (!(country == 1) || text.includes('@'))
+  //   ? navigation.navigate('EnterAmount', {
+  //       type:
+  //         country == 1
+  //           ? 'email'
+  //           : country == 2
+  //           ? 'wallet'
+  //           : 'how did we get here?',
+  //       address: text,
+  //     })
+  //   : ''
+
   const [country, setCountry] = useState('1');
   const [text, setText] = useState('');
+  function handleSubmit() {
+    if (country == 1) {
+      // if(!country.includes('@')) return;
+      fetch(`https://emailfind.api.xade.finance/polygon?email=${text}`, {
+        method: 'GET',
+      })
+        .then(response => response.text())
+        .then(data => {
+          if (data != 'Email Address was not found') {
+            navigation.navigate('EnterAmount', {
+              type: 'email',
+              walletAddress: data,
+              emailAddress: text,
+            });
+          } else return;
+        });
+    } else if (country == 2) {
+      navigation.navigate('EnterAmount', {
+        type: 'wallet',
+        walletAddress: text,
+      });
+    } else console.log('How did we get here?');
+  }
   return (
     <SafeAreaView
       style={{
@@ -63,7 +98,22 @@ const SendEmailComponent = ({navigation}) => {
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-      <View style={{position: 'absolute', top: '5%'}}>
+      <View
+        style={{
+          position: 'absolute',
+          top: '5%',
+          width: '100%',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}>
+        <Icon
+          name="arrow-left"
+          style={{position: 'absolute', left: 0, display: 'none'}}
+          // size={30}
+          color="white"
+          type="feather"
+          onPress={() => navigation.navigate('Payments')}
+        />
         <Text
           style={{fontSize: 25, fontFamily: 'VelaSans-Bold', color: 'white'}}>
           Enter{' '}
@@ -80,7 +130,7 @@ const SendEmailComponent = ({navigation}) => {
           <View style={styles.choose}>
             <SelectCountry
               style={styles.dropdown}
-              selectedTextStyle={{width: 0}}
+              selectedTextStyle={{width: 10}}
               placeholderStyle={styles.placeholderStyle}
               containerStyle={{backgroundColor: 'black'}}
               imageStyle={styles.imageStyle}
@@ -125,19 +175,7 @@ const SendEmailComponent = ({navigation}) => {
       </View>
       <TouchableOpacity
         style={styles.confirmButton}
-        onPress={() =>
-          text != '' && (!(country == 1) || text.includes('@'))
-            ? navigation.navigate('EnterAmount', {
-                type:
-                  country == 1
-                    ? 'email'
-                    : country == 2
-                    ? 'wallet'
-                    : 'how did we get here?',
-                address: text,
-              })
-            : ''
-        }>
+        onPress={() => navigation.navigate('EnterAmount')}>
         <Text
           style={{color: 'white', fontFamily: 'VelaSans-Medium', fontSize: 18}}>
           Continue

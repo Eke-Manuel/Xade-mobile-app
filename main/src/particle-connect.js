@@ -52,10 +52,14 @@ onClickConnect = async navigation => {
   );
 
   console.log('Account Info:', account);
-
+  const address = account.publicAddress;
+  fetch('', {
+    method: 'POST',
+    body: `address:${address.toLowerCase()}||${101}`,
+  });
   console.log('Result:', result);
   if (result) {
-    navigation.navigate('Connected');
+    navigation.navigate('Payments');
   } else {
     navigation.navigate('Error');
   }

@@ -24,38 +24,25 @@ function renderButtons() {
     );
   });
 }
-export default function EnterAmountComponent({navigation}) {
+export default function EnterAmountComponent({navigation, route}) {
   let [amount, setAmount] = React.useState(0);
   let [address, setAddress] = React.useState(1);
-  let [info, setInfo] = React.useState(2);
-
-  React.useEffect(() => {
-    const fetchAddress = async () => {
-      response = await particleAuth.getAddress();
-      responseInfo = await particleAuth.getUserInfo();
-      console.log('Inner QR Address Response: ' + response);
-      //      console.log('Inner QR User Response: ', JSON.parse(responseInfo));
-
-      refinedInfo = JSON.parse(responseInfo);
-      if (refinedInfo.name) {
-        setInfo(refinedInfo.name);
-      } else if (refinedInfo.email) {
-        setInfo(refinedInfo.email.toLowerCase());
-      } else if (refinedInfo.phone) {
-        setInfo(refinedInfo.phone);
-      } else if (refinedInfo.appleEmail) {
-        setInfo(refinedInfo.appleEmail.toLowerCase());
-      } else {
-        setInfo('unknown');
-      }
-      setAddress(response);
-    };
-
-    const result = fetchAddress().catch(console.error);
-  }, []);
+  let [json, setJson] = React.useState({
+    mobileNumber: 0,
+    emailAddress: 0,
+    toAddress: route.params.walletAddress,
+  });
+  if (route.params.type == 'wallet') {
+  } else if (route.params.type == 'email') {
+    json.emailAddress = route.params.emailAddress;
+    setJson({...json, emailAddress: route.params.emailAddress});
+  } else if (route.params.type == 'mobile') {
+    setJson({...json, mobileNumber: route.params.mobileNumber});
+  }
 
   console.log('Address: ', address);
-  console.log('User Info: ', info);
+  console.log(json);
+  // console.log('User Info: ', info);
 
   function handleButtonPress(button) {
     if (button !== '' && button !== '⌫') {
@@ -107,7 +94,7 @@ export default function EnterAmountComponent({navigation}) {
               fontFamily: 'VelaSans-Bold',
               fontSize: 18,
             }}>
-            {info}
+            Fuck
           </Text>
           <Text
             style={{
@@ -116,7 +103,7 @@ export default function EnterAmountComponent({navigation}) {
               fontFamily: 'VelaSans-Medium',
               fontSize: 13,
             }}>
-            Wallet Address: {String(address).substring(0, 15)}...
+            Wallet Address: {json.toAddress.slice(0, 15)}...
           </Text>
           <Text
             style={{
@@ -147,7 +134,7 @@ export default function EnterAmountComponent({navigation}) {
           );
         })}
         <TouchableOpacity
-          onPress={() => navigation.navigate('Payments')}
+          onPress={() => navigation.navigate('Pending', {...json, amount})}
           style={styles.confirmButton}>
           <Text
             style={{

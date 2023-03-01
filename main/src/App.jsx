@@ -13,6 +13,8 @@ import {
   Dimensions,
 } from 'react-native';
 
+import '../global';
+import {Icon} from 'react-native-elements';
 import StaticHomeScreen from './screens/loggingIn/home';
 import Login from './screens/loggingIn/login';
 import Countdown from './screens/loggedIn/countdown/countdown';
@@ -23,11 +25,127 @@ import SendMobileComponent from './screens/loggedIn/send/sendMobile';
 import EnterAmountComponent from './screens/enterAmount';
 import SavingsComponent from './screens/loggedIn/savings/savings';
 import PaymentsComponent from './screens/loggedIn/payments/payments';
-import {Text} from 'react-native-elements';
+import Pending from './screens/loggedIn/txStatus/pending';
+import Successful from './screens/loggedIn/txStatus/successful';
+import Unsuccessful from './screens/loggedIn/txStatus/unsuccessful';
+import LinearGradient from 'react-native-linear-gradient';
 
+import {Text} from 'react-native-elements';
+const Web3 = require('web3');
 const Stack = createNativeStackNavigator();
 const bg = require('../assets/bg.png');
 const windowHeight = Dimensions.get('window').height;
+
+const BottomNavbar = ({name}) => {
+  return (
+    <View>
+      <View style={styles2.container}>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={['#000', '#fff', '#000']}
+          style={styles2.top}></LinearGradient>
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '100%',
+            justifyContent: 'space-around',
+          }}>
+          <View style={styles2.navItem}>
+            <Icon
+              name="house-blank"
+              type="font-awesome"
+              style={styles2.icon}
+              // size={30}
+              // containerStyle={{zIndex: '100'}}
+              onPress={() => {}}
+            />
+            <Text style={styles2.navItemText}>Home</Text>
+          </View>
+
+          <View style={styles2.navItem}>
+            <Icon
+              name="arrow-circle-down"
+              type="font-awesome"
+              style={styles2.icon}
+              // size={30}
+              // containerStyle={{zIndex: '100'}}
+              onPress={() => {}}
+            />
+            <Text style={styles2.navItemText}>Savings</Text>
+          </View>
+          <View style={styles2.navItem}>
+            <Icon
+              name="fa-solid fa-piggy-bank"
+              type="font-awesome"
+              style={styles2.icon}
+              // size={30}
+              // containerStyle={{zIndex: '100'}}
+              onPress={() => {}}
+            />
+            <Text style={styles2.navItemText}>Investments</Text>
+          </View>
+          <View style={styles2.navItem}>
+            <Icon
+              name="fa-solid fa-piggy-bank"
+              type="font-awesome"
+              style={styles2.icon}
+              // size={30}
+              // containerStyle={{zIndex: '100'}}
+              onPress={() => {}}
+            />
+            <Text style={styles2.navItemText}>Shop</Text>
+          </View>
+          <View style={styles2.navItem}>
+            <Icon
+              name="fa-solid fa-piggy-bank"
+              type="font-awesome"
+              style={styles2.icon}
+              // size={30}
+              // containerStyle={{zIndex: '100'}}
+              onPress={() => {}}
+            />
+            <Text style={styles2.navItemText}>Card</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles2 = StyleSheet.create({
+  top: {
+    height: 1,
+    width: '100%',
+  },
+  container: {
+    backgroundColor: 'black',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    // backgroundColor: '#fff',
+    // borderTopWidth: 1,
+    // borderTopColor: '#ddd',
+    height: 60,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  navItem: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  navItemText: {
+    fontFamily: 'VelaSans-Light',
+    fontSize: 10,
+    color: '#fff',
+    marginTop: 4,
+  },
+  icon: {
+    color: '#fff',
+  },
+});
 
 function Particle({navigation}) {
   return (
@@ -113,13 +231,13 @@ function SendEmail({navigation}) {
   );
 }
 
-function EnterAmount({navigation}) {
+function EnterAmount({navigation, route}) {
   return (
     // <ScrollView>
     <View style={styles.black}>
       {/* <SafeAreaView>   */}
       {/* <View> */}
-      <EnterAmountComponent navigation={navigation} />
+      <EnterAmountComponent navigation={navigation} route={route} />
       {/* </View> */}
       {/* </SafeAreaView> */}
     </View>
@@ -150,6 +268,7 @@ function Savings({navigation}) {
           </View>
         </SafeAreaView>
       </View>
+      <BottomNavbar name="savings" />
     </ScrollView>
   );
 }
@@ -164,6 +283,7 @@ function Payments({navigation}) {
           </View>
         </SafeAreaView>
       </View>
+      <BottomNavbar name="payments" />
     </ScrollView>
   );
 }
@@ -172,18 +292,12 @@ export default function App({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/*
         <Stack.Screen
           name="Home"
           component={StaticHomeScreen}
           options={{headerShown: false}}
         />
-        */}
-        <Stack.Screen
-          name="Home"
-          component={StaticHomeScreen}
-          options={{headerShown: false}}
-        />
+
         <Stack.Screen
           name="Particle"
           component={Particle}
@@ -229,26 +343,31 @@ export default function App({navigation}) {
         <Stack.Screen
           name="EnterAmount"
           component={EnterAmount}
+          navigation={navigation}
           options={{headerShown: false}}
         />
         <Stack.Screen
           name="SendEmail"
           component={SendEmail}
+          navigation={navigation}
           options={{headerShown: false}}
         />
         <Stack.Screen
           name="SendMobile"
           component={SendMobile}
+          navigation={navigation}
           options={{headerShown: false}}
         />
         <Stack.Screen
           name="Savings"
           component={Savings}
+          navigation={navigation}
           options={{headerShown: false}}
         />
         <Stack.Screen
           name="Payments"
           component={Payments}
+          navigation={navigation}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
