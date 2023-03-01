@@ -1618,6 +1618,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@miblanchard/react-native-slider@^2.3.0":
+  "integrity" "sha512-KiAESUOP69eft8U43iD6xeX+s9ZetwiY/cXkGq1xL4nywb37cVnrxQeSi3+rAix8aHeJwXXeyPZkxmZQe0Hjbw=="
+  "resolved" "https://registry.npmjs.org/@miblanchard/react-native-slider/-/react-native-slider-2.3.0.tgz"
+  "version" "2.3.0"
+
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   "integrity" "sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg=="
   "resolved" "https://registry.npmjs.org/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz"
@@ -1835,6 +1840,11 @@
   "integrity" "sha512-+zDZ20NUnSWghj7Ku5aFphMzuM9JulqCW+aPXT6IfIXFbb8tzYTTOSeRFOtuekJ99ibW2fUCSsjuKNlwDIbHFg=="
   "resolved" "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.3.0.tgz"
   "version" "1.3.0"
+
+"@react-native-community/slider@^4.4.2":
+  "integrity" "sha512-D9bv+3Vd2gairAhnRPAghwccgEmoM7g562pm8i4qB3Esrms5mggF81G3UvCyc0w3jjtFHh8dpQkfEoKiP0NW/Q=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/slider/-/slider-4.4.2.tgz"
+  "version" "4.4.2"
 
 "@react-native-masked-view/masked-view@^0.2.8":
   "integrity" "sha512-+1holBPDF1yi/y0uc1WB6lA5tSNHhM7PpTMapT3ypvSnKQ9+C6sy/zfjxNxRA/llBQ1Ci6f94EaK56UCKs5lTA=="
@@ -6226,7 +6236,7 @@
   "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   "version" "4.1.1"
 
-"lodash@^4.14.2", "lodash@^4.17.13", "lodash@^4.17.15", "lodash@^4.17.21":
+"lodash@*", "lodash@^4.14.2", "lodash@^4.17.13", "lodash@^4.17.15", "lodash@^4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -7725,7 +7735,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@*", "prop-types@^15.5.10", "prop-types@^15.5.8", "prop-types@^15.7.2", "prop-types@^15.8.0", "prop-types@^15.8.1":
+"prop-types@*", "prop-types@^15.5.10", "prop-types@^15.5.6", "prop-types@^15.5.8", "prop-types@^15.7.2", "prop-types@^15.8.0", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -7932,6 +7942,11 @@
     "prop-types" "^15.5.8"
     "sprintf-js" "^1.1.1"
 
+"react-native-element-dropdown@^2.7.1":
+  "integrity" "sha512-TOg43ezbbtqwmDMBHIwIPH/YImngY+mpYQPGojTAGc49biL1tRbbaQt6UfEqrPTDucabQviaCbL219wVp8Jeqw=="
+  "resolved" "https://registry.npmjs.org/react-native-element-dropdown/-/react-native-element-dropdown-2.7.1.tgz"
+  "version" "2.7.1"
+
 "react-native-elements@^3.4.3":
   "integrity" "sha512-VtZc25EecPZyUBER85zFK9ZbY6kkUdcm1ZwJ9hdoGSCr1R/GFgxor4jngOcSYeMvQ+qimd5No44OVJW3rSJECA=="
   "resolved" "https://registry.npmjs.org/react-native-elements/-/react-native-elements-3.4.3.tgz"
@@ -8041,6 +8056,13 @@
   "resolved" "https://registry.npmjs.org/react-native-size-matters/-/react-native-size-matters-0.4.0.tgz"
   "version" "0.4.0"
 
+"react-native-slider@^0.11.0":
+  "integrity" "sha512-jV9K87eu9uWr0uJIyrSpBLnCKvVlOySC2wynq9TFCdV9oGgjt7Niq8Q1A8R8v+5GHsuBw/s8vEj1AAkkUi+u+w=="
+  "resolved" "https://registry.npmjs.org/react-native-slider/-/react-native-slider-0.11.0.tgz"
+  "version" "0.11.0"
+  dependencies:
+    "prop-types" "^15.5.6"
+
 "react-native-svg@^13.2.0", "react-native-svg@^13.8.0":
   "integrity" "sha512-G8Mx6W86da+vFimZBJvA93POw8yz0fgDS5biy6oIjMWVJVQSDzCyzwO/zY0yuZmCDhKSZzogl5m0wXXvW2OcTA=="
   "resolved" "https://registry.npmjs.org/react-native-svg/-/react-native-svg-13.8.0.tgz"
@@ -8062,7 +8084,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.63.4", "react-native@0.71.2":
+"react-native@*", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.59", "react-native@>=0.63.4", "react-native@0.71.2":
   "integrity" "sha512-ZSianM+j+09LoEdVIhrAP/uP8sQhT7dH6olCqM2xlpxmfCgA5NubsK6NABIuZiBlmmqjigyijm5Y/GhBIHDvEg=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.2.tgz"
   "version" "0.71.2"
@@ -8124,7 +8146,7 @@
     "react-shallow-renderer" "^16.15.0"
     "scheduler" "^0.23.0"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=16", "react@>=16.0", "react@>=17.0.0", "react@18.2.0":
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=16", "react@>=16.0", "react@>=16.8", "react@>=17.0.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

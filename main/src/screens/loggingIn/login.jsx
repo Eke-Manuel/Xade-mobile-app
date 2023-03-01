@@ -11,8 +11,8 @@ import {
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
 
-import onClickLogin from '../../ParticleAuth';
-import onClickConnect from '../../ParticleConnect';
+import onClickLogin from '../../particle-auth';
+import onClickConnect from '../../particle-connect';
 
 const bg = require('../../../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;

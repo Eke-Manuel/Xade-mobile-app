@@ -10,11 +10,11 @@ target 'XadeMobile' do
   # Flags change depending on the env values.
   flags = get_default_flags()
 
-    pod 'ParticleWalletGUI', '0.10.1'
-    pod 'ParticleWalletAPI', '0.10.1'
-    pod 'ParticleNetworkBase', '0.10.1'
-    pod 'ParticleAuthService', '0.10.1'
-    pod 'ParticleWalletConnect', '0.10.1'
+    pod 'ParticleWalletGUI', '0.10.3'
+    pod 'ParticleWalletAPI', '0.10.3'
+    pod 'ParticleNetworkBase', '0.10.3'
+    pod 'ParticleAuthService', '0.10.3'
+    pod 'ParticleWalletConnect', '0.10.3'
     
     pod 'ParticleConnect', '0.1.47'
     pod 'ConnectWalletConnectAdapter', '0.1.47'
