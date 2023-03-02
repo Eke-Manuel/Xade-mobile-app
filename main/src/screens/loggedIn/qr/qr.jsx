@@ -23,7 +23,7 @@ import {logout} from '../../../particle-auth';
 
 import styles from './qr-styles';
 
-const bg = require('../../../../assets/particle.jpg');
+const bg = require('../../../../assets/qr.jpg');
 
 function QRCode() {
   const [address, setAddress] = useState(0);
@@ -77,11 +77,6 @@ function QRCode() {
           </View>
         </View>
       </View>
-      <TouchableHighlight style={styles.bottomButton}>
-        <Text style={styles.bottomText}>
-          Send To Email Address Or Mobile Instead
-        </Text>
-      </TouchableHighlight>
       {/*
       <Text onPress={() => this.logout()} style={styles.logout}>
         Logout
@@ -91,7 +86,7 @@ function QRCode() {
   );
 }
 
-QRScanner = () => {
+QRScanner = ({navigation}) => {
   const [qrvalue, setQrvalue] = useState('');
   const [openScanner, setOpenScanner] = useState(true);
 
@@ -99,9 +94,8 @@ QRScanner = () => {
     Linking.openURL(qrvalue);
   };
 
-  const onBarcodeScan = qrvalue => {
-    setQrvalue(qrvalue);
-    setOpenScanner(false);
+  const onBarcodeScan = navigation => {
+    navigation.navigate('EnterAmount');
   };
 
   const onOpenScanner = () => {
@@ -145,15 +139,8 @@ QRScanner = () => {
             laserColor={'transparent'}
             frameColor={'transparent'}
             colorForScannerFrame={'transparent'}
-            onReadCode={event =>
-              onBarcodeScan(event.nativeEvent.codeStringValue)
-            }
+            onReadCode={event => onBarcodeScan(navigation)}
           />
-          <TouchableHighlight style={styles.bottomButton}>
-            <Text style={styles.bottomText}>
-              Send To Email Address Or Mobile Instead
-            </Text>
-          </TouchableHighlight>
         </View>
       ) : (
         <View style={styles.QRcontainer}>
@@ -224,6 +211,13 @@ class QRPage extends Component {
               </View>
               <View style={styles.mainContent}>
                 {this.state.status ? <QRCode /> : <QRScanner />}
+                <TouchableHighlight
+                  style={styles.bottomButton}
+                  onPress={() => this.props.navigation.navigate('SendEmail')}>
+                  <Text style={styles.bottomText}>
+                    Send To Email Address Or Mobile Instead
+                  </Text>
+                </TouchableHighlight>
               </View>
             </View>
           </ScrollView>

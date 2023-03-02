@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   TouchableOpacity,
   TouchableHighlight,
@@ -14,59 +14,99 @@ import CountDown from 'react-native-countdown-component';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './payments-styles';
 import {Icon} from 'react-native-elements';
-import { useEffect } from 'react';
+import {useEffect} from 'react';
+import * as particleAuth from 'react-native-particle-auth';
+
 timeToday = Date.now();
 endDate = new Date(Date.UTC((year = 2023), (monthIndex = 2), (date = 15)));
-import '../../../../global'
-const Web3 = require('web3')
-
 
 var time = (endDate - timeToday) / 1000.0;
-const address = '0x6dD0D673c0C434839A344328B4CdCFf53a53FB9b'
-const contractAddress = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
+const contractAddress = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
 const PaymentsComponent = ({navigation}) => {
-  
-  const [state, setState] = React.useState([{truth: true, to: '0', from: '0', value: 0}]);
-  
+  const [state, setState] = React.useState([
+    {truth: true, to: '0', from: '0', value: 0},
+  ]);
+  const [address, setAddress] = useState('0x');
 
   useEffect(() => {
-      
-      fetch(`https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${address}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`)
-      .then(response => response.json())    
+    const fetchAddress = async () => {
+      response = await particleAuth.getAddress();
+      console.log('Inner QR Address Response: ' + response);
+
+      setAddress(response.toString());
+    };
+
+    fetchAddress().catch(console.error);
+
+    fetch(
+      `https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${address}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
+    )
+      .then(response => response.json())
       .then(data => {
-        const result = data.result;
-        let len = result.length;
-        let arr = []
-        for(let i = 0; i < len; i++)
-        {
-          let res = result[i];
-          let val = res.value;
-          const etherValue = Web3.utils.fromWei(val, 'ether');
-          var pubDate = new Date(res.timeStamp * 1000);
-          var weekday=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+        if (data.message != 'NOTOK') {
+          console.log(data.message);
+          console.log(data);
+          const result = data.result;
+          let len = result.length;
+          let arr = [];
+          for (let i = 0; i < len; i++) {
+            let res = result[i];
+            let val = res.value;
+            const etherValue = val;
+            var pubDate = new Date(res.timeStamp * 1000);
+            var weekday = new Array(
+              'Sun',
+              'Mon',
+              'Tue',
+              'Wed',
+              'Thu',
+              'Fri',
+              'Sat',
+            );
 
-var monthname=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+            var monthname = new Array(
+              'Jan',
+              'Feb',
+              'Mar',
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Aug',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dec',
+            );
 
-var formattedDate =
-  monthname[pubDate.getMonth()] + ' '
-  + pubDate.getDate() + ', ' + pubDate.getFullYear()
-          const json = {
-            truth: (result == res.to), // true while accepting
-            to: res.to,
-            from: res.from,
-            value: etherValue,
-            date: formattedDate,
-          };
-          arr.push(json);
+            var formattedDate =
+              monthname[pubDate.getMonth()] +
+              ' ' +
+              pubDate.getDate() +
+              ', ' +
+              pubDate.getFullYear();
+            const json = {
+              truth: result == res.to, // true while accepting
+              to: res.to,
+              from: res.from,
+              value: etherValue,
+              date: formattedDate,
+            };
+            arr.push(json);
+          }
+          console.log(arr);
+          setState(arr);
+          console.log(data.result);
+        } else {
+          console.log('Condition is working');
+          setState([{value: 0}]);
+          return;
         }
-        console.log(arr)
-        setState(arr);
-        console.log(data.result)
-      })
-      
-
+      });
   }, []);
-  const t = true; // it means to send
+  const t = true; // it means to send]
+  console.log('Address: ', address);
+  console.log('State: ', state);
   return (
     <SafeAreaView style={{width: '100%', height: '100%'}}>
       <View colors={['#222222', '#000']} style={styles.container}>
@@ -113,7 +153,6 @@ var formattedDate =
 
         <View
           style={{
-            flexDirection: 'row',
             width: '90%',
             height: 50,
             justifyContent: 'space-around',
@@ -197,52 +236,65 @@ var formattedDate =
 
       <View style={styles.transactionContainer}>
         <View style={styles.heading}>
-          <Text style={{color: 'white', fontSize: 20, fontWeight: 'bold'}}>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: 20,
+              fontWeight: 'bold',
+              fontFamily: 'VelaSans-Bold',
+            }}>
             Transactions
           </Text>
           {/* <Text style = {{color: 'grey', fontSize: 20}}>See all</Text> */}
         </View>
-        {/* This is supposed to be a loop */}
-        {state.map((json) => {
-           return <View style={styles.transactions}>
-           <View style={styles.transactionLeft}>
-             <Image
-               source={require('./icon/negative.png')}
-               style={{borderWidth: 1}}
-             />
-             <View style={styles.ttext}>
-             <TouchableHighlight onPress={() => {
-              Clipboard.setString(((json.truth)?json.to:json.from));
-              Alert.alert('Copied Address To Clipboard');
-            }}>
-               <Text style={{color: 'white', fontFamily: 'VelaSans-Bold'}}>
-                 {((json.truth)?json.to:json.from).slice(0, 10)}...
-               </Text>
-               </TouchableHighlight>
-         
-            
-          
-               <Text style={{color: 'grey', fontFamily: 'VelaSans-Bold'}}>
-                 {json.date}
-               </Text>
-             </View>
-           </View>
-        
-           <View style={styles.transactionRight}>
-             <Text
-               style={{
-                 color: ((json.truth) ? '#4EE58B' : 'red'),
-                 fontSize: 20,
-                 fontFamily: 'VelaSans-Bold',
-               }}>
-               {((json.truth) ? '+' : '-')}4
-             </Text>
-           </View>
-         </View>
-        
-        })}
+        {state[0].value > 0 ? (
+          state.map(json => {
+            console.log(state);
+            return (
+              <View style={styles.transactions}>
+                <View style={styles.transactionLeft}>
+                  <Image
+                    source={require('./icon/negative.png')}
+                    style={{borderWidth: 1}}
+                  />
+                  <View style={styles.ttext}>
+                    <TouchableHighlight
+                      onPress={() => {
+                        Clipboard.setString(json.truth ? json.to : json.from);
+                        Alert.alert('Copied Address To Clipboard');
+                      }}>
+                      <Text
+                        style={{color: 'white', fontFamily: 'VelaSans-Bold'}}>
+                        {(json.truth ? json.to : json.from).slice(0, 10)}...
+                      </Text>
+                    </TouchableHighlight>
 
-        
+                    <Text style={{color: 'grey', fontFamily: 'VelaSans-Bold'}}>
+                      {json.date}
+                    </Text>
+                  </View>
+                </View>
+
+                <View style={styles.transactionRight}>
+                  <Text
+                    style={{
+                      color: json.truth ? '#4EE58B' : 'red',
+                      fontSize: 20,
+                      fontFamily: 'VelaSans-Bold',
+                    }}>
+                    {json.truth ? '+' : '-'}4
+                  </Text>
+                </View>
+              </View>
+            );
+          })
+        ) : (
+          <View>
+            <Text style={styles.noTransaction}>
+              Your Transactions Appear Here
+            </Text>
+          </View>
+        )}
       </View>
     </SafeAreaView>
   );

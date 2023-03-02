@@ -24,24 +24,25 @@ function renderButtons() {
     );
   });
 }
-export default function EnterAmountComponent({navigation, route}) {
+export default function EnterAmountComponent({navigation}) {
   let [amount, setAmount] = React.useState(0);
   let [address, setAddress] = React.useState(1);
-  let [json, setJson] = React.useState({
-    mobileNumber: 0,
-    emailAddress: 0,
-    toAddress: route.params.walletAddress,
-  });
-  if (route.params.type == 'wallet') {
-  } else if (route.params.type == 'email') {
-    json.emailAddress = route.params.emailAddress;
-    setJson({...json, emailAddress: route.params.emailAddress});
-  } else if (route.params.type == 'mobile') {
-    setJson({...json, mobileNumber: route.params.mobileNumber});
-  }
+  // let [json, setJson] = React.useState({mobileNumber: 0, emailAddress: 0, toAddress:route.params.walletAddress})
+  // if(route.params.type == 'wallet')
+  // {
+
+  // }
+  // else if(route.params.type == 'email')
+  // {
+  //   json.emailAddress =  route.params.emailAddress
+  //   setJson({...json, emailAddress:route.params.emailAddress})
+  // }
+  // else if(route.params.type == 'mobile')
+  // {
+  //   setJson({...json, mobileNumber:route.params.mobileNumber})
+  // }
 
   console.log('Address: ', address);
-  console.log(json);
   // console.log('User Info: ', info);
 
   function handleButtonPress(button) {
@@ -94,7 +95,7 @@ export default function EnterAmountComponent({navigation, route}) {
               fontFamily: 'VelaSans-Bold',
               fontSize: 18,
             }}>
-            Fuck
+            {/* {info} */}
           </Text>
           <Text
             style={{
@@ -103,7 +104,7 @@ export default function EnterAmountComponent({navigation, route}) {
               fontFamily: 'VelaSans-Medium',
               fontSize: 13,
             }}>
-            Wallet Address: {json.toAddress.slice(0, 15)}...
+            Wallet Address: 0x123..
           </Text>
           <Text
             style={{
@@ -134,7 +135,7 @@ export default function EnterAmountComponent({navigation, route}) {
           );
         })}
         <TouchableOpacity
-          onPress={() => navigation.navigate('Pending', {...json, amount})}
+          onPress={() => navigation.navigate('Pending')}
           style={styles.confirmButton}>
           <Text
             style={{

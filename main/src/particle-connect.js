@@ -1,7 +1,7 @@
 import * as particleConnect from 'react-native-particle-connect';
 import {Env, WalletType} from 'react-native-particle-connect';
 import {ChainInfo} from 'react-native-particle-connect';
-import {PNAccount} from './models/PNAccount';
+import {PNAccount} from './Models/PNAccount';
 
 const walletType = WalletType.MetaMask;
 
@@ -52,17 +52,16 @@ onClickConnect = async navigation => {
   );
 
   console.log('Account Info:', account);
-  const address = account.publicAddress;
-  fetch('', {
-    method: 'POST',
-    body: `address:${address.toLowerCase()}||${101}`,
-  });
+
   console.log('Result:', result);
   if (result) {
-    navigation.navigate('Payments');
+    navigation.navigate('Connected');
   } else {
     navigation.navigate('Error');
   }
+
+  //  uInfo = await particleConnect.getInfo();
+  //  console.log('Public Address:', uInfo);
 };
 
 disconnect = async () => {

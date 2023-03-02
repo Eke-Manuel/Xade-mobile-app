@@ -30,31 +30,7 @@ login = async () => {
   const result = await particleAuth.login(type, '', supportAuthType, undefined);
   if (result.status) {
     const userInfo = result.data;
-    const address = userInfo.uuid;
-    const uuid = userInfo.wallets[0].uuid;
     console.log('User Info:', userInfo);
-    fetch('https://mongo.api.xade.finance/polygon', {
-      method: 'POST',
-      body: `address:${address.toLowerCase()}||${uuid}`,
-    });
-    //    const usermame = userInfo.email;
-    const email = userInfo.email;
-    const login_type = '';
-    fetch('', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email,
-        name: email,
-        verifier: '',
-        verifierId: '',
-        typeOfLogin: '',
-        id: uuid,
-      }),
-    });
   } else {
     const error = result.data;
     console.log('Error:', error);
@@ -87,7 +63,7 @@ onClickLogin = async navigation => {
 
   console.log('Logged In:', result);
   if (result) {
-    navigation.navigate('Investments');
+    navigation.navigate('Payments');
   } else {
     navigation.navigate('Error');
   }

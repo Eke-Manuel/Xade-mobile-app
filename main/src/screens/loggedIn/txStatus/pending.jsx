@@ -11,39 +11,61 @@ import {
   Linking,
   ScrollView,
 } from 'react-native';
-import {useState, useMemo, useEffect} from 'react';
-import {Text} from '@rneui/themed';
-import CountDown from 'react-native-countdown-component';
-import LinearGradient from 'react-native-linear-gradient';
-import {SelectCountry} from 'react-native-element-dropdown';
-import {Dropdown} from 'react-native-element-dropdown';
-import ethProvider from './../ethProvider'
-import countries from '../../../countries';
-import { ParticleProvider } from '@particle-network/provider';
+import {Text} from 'react-native-elements';
+import Video from 'react-native-video';
+const earthVideo = require('./pending.mp4');
 
+export default function Component({route, navigation}) {
+  //     const { amount, toAddress, mobileNumber, emailAddress } = route.params;
 
-export default function Component({ route, navigation })
-{       
-//     const { amount, toAddress, mobileNumber, emailAddress } = route.params;
+  //     // signAndSendTransaction here calling ethProvider
+  //     const provider = new ParticleProvider(particle.auth)
+  //     const {signAndSendTransaction} = ethProvider(provider)
+  //     useEffect(async () => {
+  //         const txReciept = await signAndSendTransaction(amount, toAddress);
+  //         if(true) // this should check the status of txReceipt
+  //         {
+  //             navigation.navigate('Successful', {...route.params, txReceipt})
+  //         }
+  //         else
+  //         {
+  //             navigation.navigate('Unsuccessful');
+  //         }
+  //      }, [])
 
-//     // signAndSendTransaction here calling ethProvider
-//     const provider = new ParticleProvider(particle.auth)
-//     const {signAndSendTransaction} = ethProvider(provider)
-//     useEffect(async () => { 
-//         const txReciept = await signAndSendTransaction(amount, toAddress);
-//         if(true) // this should check the status of txReceipt
-//         {
-//             navigation.navigate('Successful', {...route.params, txReceipt})
-//         }
-//         else
-//         {
-//             navigation.navigate('Unsuccessful');
-//         }
-//      }, [])
-
-    return <View style = {{width:'100%', height: '100%'}}>
-        <View style = {{width: '80%', marginTop: '30%'}}>
-            {/* Video here */}
-        </View>
+  return (
+    <View style={{width: '100%', height: '100%', backgroundColor: '#151515'}}>
+      <Text
+        style={{
+          color: '#fff',
+          fontSize: 30,
+          marginTop: '20%',
+          textAlign: 'center',
+          fontFamily: 'NeueMachina-UltraBold',
+        }}>
+        Transaction Pending
+      </Text>
+      <View style={{width: '80%', marginTop: '30%', marginLeft: '11%'}}>
+        <Video
+          source={earthVideo}
+          style={{width: 300, height: 300}}
+          ref={ref => {
+            this.player = ref;
+          }}
+        />
+      </View>
+      <TouchableOpacity onPress={() => navigation.navigate('Payments')}>
+        <Text
+          style={{
+            color: '#fff',
+            fontSize: 20,
+            marginTop: '20%',
+            textAlign: 'center',
+            fontFamily: 'VelaSans-Bold',
+          }}>
+          Return Home
+        </Text>
+      </TouchableOpacity>
     </View>
+  );
 }

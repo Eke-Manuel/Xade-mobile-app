@@ -207,7 +207,9 @@ const SendMobileComponent = ({navigation}) => {
           </View>
         );
       })}
-      <TouchableOpacity onPress={handleSubmit} style={styles.confirmButton}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('EnterAmount')}
+        style={styles.confirmButton}>
         <Text
           style={{color: 'white', fontFamily: 'VelaSans-Medium', fontSize: 18}}>
           Continue

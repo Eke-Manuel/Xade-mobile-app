@@ -13,139 +13,27 @@ import {
   Dimensions,
 } from 'react-native';
 
-import '../global';
-import {Icon} from 'react-native-elements';
+import BottomNavbar from './screens/navbar';
 import StaticHomeScreen from './screens/loggingIn/home';
 import Login from './screens/loggingIn/login';
 import Countdown from './screens/loggedIn/countdown/countdown';
 import QRPage from './screens/loggedIn/qr/qr';
 import Investments from './screens/loggedIn/investments/investments';
-import SendEmailComponent from './screens/loggedIn/send/sendEmail';
-import SendMobileComponent from './screens/loggedIn/send/sendMobile';
-import EnterAmountComponent from './screens/enterAmount';
 import SavingsComponent from './screens/loggedIn/savings/savings';
 import PaymentsComponent from './screens/loggedIn/payments/payments';
+import EnterAmountComponent from './screens/enterAmount';
+import SendEmailComponent from './screens/loggedIn/send/sendEmail';
+import SendMobileComponent from './screens/loggedIn/send/sendMobile';
+import {Text} from 'react-native-elements';
+
 import Pending from './screens/loggedIn/txStatus/pending';
 import Successful from './screens/loggedIn/txStatus/successful';
 import Unsuccessful from './screens/loggedIn/txStatus/unsuccessful';
-import LinearGradient from 'react-native-linear-gradient';
 
-import {Text} from 'react-native-elements';
-const Web3 = require('web3');
 const Stack = createNativeStackNavigator();
 const bg = require('../assets/bg.png');
+const particle = require('../assets/particle.jpg');
 const windowHeight = Dimensions.get('window').height;
-
-const BottomNavbar = ({name}) => {
-  return (
-    <View>
-      <View style={styles2.container}>
-        <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#000', '#fff', '#000']}
-          style={styles2.top}></LinearGradient>
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '100%',
-            justifyContent: 'space-around',
-          }}>
-          <View style={styles2.navItem}>
-            <Icon
-              name="house-blank"
-              type="font-awesome"
-              style={styles2.icon}
-              // size={30}
-              // containerStyle={{zIndex: '100'}}
-              onPress={() => {}}
-            />
-            <Text style={styles2.navItemText}>Home</Text>
-          </View>
-
-          <View style={styles2.navItem}>
-            <Icon
-              name="arrow-circle-down"
-              type="font-awesome"
-              style={styles2.icon}
-              // size={30}
-              // containerStyle={{zIndex: '100'}}
-              onPress={() => {}}
-            />
-            <Text style={styles2.navItemText}>Savings</Text>
-          </View>
-          <View style={styles2.navItem}>
-            <Icon
-              name="fa-solid fa-piggy-bank"
-              type="font-awesome"
-              style={styles2.icon}
-              // size={30}
-              // containerStyle={{zIndex: '100'}}
-              onPress={() => {}}
-            />
-            <Text style={styles2.navItemText}>Investments</Text>
-          </View>
-          <View style={styles2.navItem}>
-            <Icon
-              name="fa-solid fa-piggy-bank"
-              type="font-awesome"
-              style={styles2.icon}
-              // size={30}
-              // containerStyle={{zIndex: '100'}}
-              onPress={() => {}}
-            />
-            <Text style={styles2.navItemText}>Shop</Text>
-          </View>
-          <View style={styles2.navItem}>
-            <Icon
-              name="fa-solid fa-piggy-bank"
-              type="font-awesome"
-              style={styles2.icon}
-              // size={30}
-              // containerStyle={{zIndex: '100'}}
-              onPress={() => {}}
-            />
-            <Text style={styles2.navItemText}>Card</Text>
-          </View>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const styles2 = StyleSheet.create({
-  top: {
-    height: 1,
-    width: '100%',
-  },
-  container: {
-    backgroundColor: 'black',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    // backgroundColor: '#fff',
-    // borderTopWidth: 1,
-    // borderTopColor: '#ddd',
-    height: 60,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-  navItem: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  navItemText: {
-    fontFamily: 'VelaSans-Light',
-    fontSize: 10,
-    color: '#fff',
-    marginTop: 4,
-  },
-  icon: {
-    color: '#fff',
-  },
-});
 
 function Particle({navigation}) {
   return (
@@ -217,14 +105,53 @@ function Loading({navigation}) {
   );
 }
 
-function SendEmail({navigation}) {
+function ComingSoon({navigation}) {
+  return (
+    <ImageBackground source={particle} style={styles.bg}>
+      <ScrollView>
+        <SafeAreaView>
+          <View>
+            <Text style={styles.comingSoonText}>Coming Soon...</Text>
+          </View>
+        </SafeAreaView>
+      </ScrollView>
+      <BottomNavbar navigation={navigation} />
+    </ImageBackground>
+  );
+}
+
+function Savings({navigation}) {
   return (
     <ScrollView>
       <View style={styles.black}>
         <SafeAreaView>
           <View>
-            <SendEmailComponent navigation={navigation} />
+            <SavingsComponent navigation={navigation} />
+            <BottomNavbar navigation={navigation} />
           </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
+function Investment({navigation}) {
+  return (
+    <View>
+      <Investments navigation={navigation} />
+    </View>
+  );
+}
+
+function Payments({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <PaymentsComponent navigation={navigation} />
+          </View>
+          <BottomNavbar navigation={navigation} />
         </SafeAreaView>
       </View>
     </ScrollView>
@@ -244,6 +171,20 @@ function EnterAmount({navigation, route}) {
   );
 }
 
+function SendEmail({navigation}) {
+  return (
+    <ScrollView>
+      <View style={styles.black}>
+        <SafeAreaView>
+          <View>
+            <SendEmailComponent navigation={navigation} />
+          </View>
+        </SafeAreaView>
+      </View>
+    </ScrollView>
+  );
+}
+
 function SendMobile({navigation}) {
   return (
     <ScrollView>
@@ -258,46 +199,22 @@ function SendMobile({navigation}) {
   );
 }
 
-function Savings({navigation}) {
-  return (
-    <ScrollView>
-      <View style={styles.black}>
-        <SafeAreaView>
-          <View>
-            <SavingsComponent navigation={navigation} />
-          </View>
-        </SafeAreaView>
-      </View>
-      <BottomNavbar name="savings" />
-    </ScrollView>
-  );
-}
-
-function Payments({navigation}) {
-  return (
-    <ScrollView>
-      <View style={styles.black}>
-        <SafeAreaView>
-          <View>
-            <PaymentsComponent navigation={navigation} />
-          </View>
-        </SafeAreaView>
-      </View>
-      <BottomNavbar name="payments" />
-    </ScrollView>
-  );
-}
-
 export default function App({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/*
         <Stack.Screen
           name="Home"
           component={StaticHomeScreen}
           options={{headerShown: false}}
         />
-
+        */}
+        <Stack.Screen
+          name="Home"
+          component={StaticHomeScreen}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Particle"
           component={Particle}
@@ -329,6 +246,12 @@ export default function App({navigation}) {
           options={{headerShown: false}}
         />
         <Stack.Screen
+          name="ComingSoon"
+          component={ComingSoon}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
           name="QRScreen"
           component={QRPage}
           navigation={navigation}
@@ -336,25 +259,7 @@ export default function App({navigation}) {
         />
         <Stack.Screen
           name="Investments"
-          component={Investments}
-          navigation={navigation}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="EnterAmount"
-          component={EnterAmount}
-          navigation={navigation}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="SendEmail"
-          component={SendEmail}
-          navigation={navigation}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="SendMobile"
-          component={SendMobile}
+          component={Investment}
           navigation={navigation}
           options={{headerShown: false}}
         />
@@ -367,6 +272,39 @@ export default function App({navigation}) {
         <Stack.Screen
           name="Payments"
           component={Payments}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EnterAmount"
+          component={EnterAmount}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SendEmail"
+          component={SendEmail}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SendMobile"
+          component={SendMobile}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Pending"
+          component={Pending}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Successful"
+          component={Successful}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Unsuccessful"
+          component={Unsuccessful}
           navigation={navigation}
           options={{headerShown: false}}
         />
@@ -387,11 +325,19 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: '#E8FF59',
+    color: '#e8ff59',
     fontFamily: 'NeueMachina-UltraBold',
     fontSize: 25,
-    textAlign: 'center',
     marginTop: '5%',
+    textAlign: 'center',
+  },
+
+  comingSoonText: {
+    color: '#fff',
+    fontFamily: 'Benzin-Medium',
+    fontSize: 35,
+    textAlign: 'center',
+    marginTop: '60%',
   },
 
   button: {
@@ -449,6 +395,6 @@ const styles = StyleSheet.create({
 
   black: {
     height: windowHeight,
-    backgroundColor: '#000',
+    backgroundColor: '#0C0C0C',
   },
 });

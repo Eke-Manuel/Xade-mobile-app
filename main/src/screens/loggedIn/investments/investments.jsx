@@ -11,6 +11,7 @@ import {
 import {Text, Icon} from '@rneui/themed';
 import {Slider} from 'react-native-elements';
 import styles from './investment-styles';
+import BottomNavbar from '../../navbar';
 
 red = true;
 class Investments extends React.Component {
@@ -31,81 +32,100 @@ class Investments extends React.Component {
     }
   };
 
-  render() {
+  render(navigation) {
     return (
       <View style={styles.black}>
         <ScrollView>
           <SafeAreaView>
             <View style={styles.investmentsNav}>
-              <TouchableOpacity
-                onPress={() => {
-                  this.setState({
-                    btnSelected: 'chart',
-                  });
-                }}
-                style={
-                  this.state.btnSelected == 'chart'
-                    ? styles.navSelected
-                    : styles.navComponents
-                }>
-                <Text
+              <Text style={styles.logo}>Investments</Text>
+              <View
+                style={{
+                  justifyContent: 'space-evenly',
+                  flexDirection: 'row',
+                  marginTop: '5%',
+                }}>
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({
+                      btnSelected: 'chart',
+                    });
+                  }}
                   style={
                     this.state.btnSelected == 'chart'
-                      ? styles.navSelectedText
-                      : styles.navText
+                      ? styles.navSelected
+                      : styles.navComponents
                   }>
-                  Overview
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  this.setState({
-                    btnSelected: 'long',
-                  });
-                }}
-                style={
-                  this.state.btnSelected == 'long'
-                    ? styles.greenSelected
-                    : styles.navComponents
-                }>
-                <Text
+                  <Text
+                    style={
+                      this.state.btnSelected == 'chart'
+                        ? styles.navSelectedText
+                        : styles.navText
+                    }>
+                    Overview
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({
+                      btnSelected: 'long',
+                    });
+                  }}
                   style={
                     this.state.btnSelected == 'long'
-                      ? styles.navSelectedText
-                      : styles.navText
+                      ? styles.greenSelected
+                      : styles.navComponents
                   }>
-                  Long
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  this.setState({
-                    btnSelected: 'short',
-                  });
-                }}
-                style={
-                  this.state.btnSelected == 'short'
-                    ? styles.redSelected
-                    : styles.navComponents
-                }>
-                <Text
+                  <Text
+                    style={
+                      this.state.btnSelected == 'long'
+                        ? styles.navSelectedText
+                        : styles.navText
+                    }>
+                    Long
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({
+                      btnSelected: 'short',
+                    });
+                  }}
                   style={
                     this.state.btnSelected == 'short'
-                      ? styles.navSelectedText
-                      : styles.navText
+                      ? styles.redSelected
+                      : styles.navComponents
                   }>
-                  Short
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View
-              style={
-                this.state.btnSelected == 'long' ||
-                this.state.btnSelected == 'short'
-                  ? {display: 'none'}
-                  : styles.longshortContainer
-              }>
-              <Text>Overview</Text>
+                  <Text
+                    style={
+                      this.state.btnSelected == 'short'
+                        ? styles.navSelectedText
+                        : styles.navText
+                    }>
+                    Short
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View
+                style={
+                  this.state.btnSelected == 'long' ||
+                  this.state.btnSelected == 'short'
+                    ? {display: 'none'}
+                    : styles.longshortContainer
+                }>
+                <View style={styles.marketTrades}>
+                  <View style={styles.subContents}>
+                    <Text style={styles.marketText}>
+                      Market Trades Appear Here
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.marketTrades}>
+                  <View style={styles.subContents}>
+                    <Text style={styles.marketText}>Portfolio</Text>
+                  </View>
+                </View>
+              </View>
             </View>
             <View
               style={
@@ -308,6 +328,7 @@ class Investments extends React.Component {
         </ScrollView>
         <View style={styles.confirmButton}>
           <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Pending')}
             style={
               this.state.btnSelected == 'long' ||
               this.state.btnSelected == 'short'
@@ -322,6 +343,7 @@ class Investments extends React.Component {
               <Text style={styles.confirmText}>Confirm Long</Text>
             )}
           </TouchableOpacity>
+          <BottomNavbar navigation={this.props.navigation} />
         </View>
       </View>
     );

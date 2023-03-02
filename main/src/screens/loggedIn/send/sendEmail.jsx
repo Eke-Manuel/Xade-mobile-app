@@ -67,29 +67,33 @@ const SendEmailComponent = ({navigation}) => {
 
   const [country, setCountry] = useState('1');
   const [text, setText] = useState('');
-  function handleSubmit() {
+  const handleSubmit = () => {
     if (country == 1) {
       // if(!country.includes('@')) return;
       fetch(`https://emailfind.api.xade.finance/polygon?email=${text}`, {
         method: 'GET',
       })
-        .then(response => response.text())
+        .then(response => {
+          console.log(response);
+          if (response.status == 200) {
+            return response.text();
+          } else return 0;
+        })
         .then(data => {
-          if (data != 'Email Address was not found') {
+          if (data != 0)
             navigation.navigate('EnterAmount', {
               type: 'email',
               walletAddress: data,
               emailAddress: text,
             });
-          } else return;
         });
     } else if (country == 2) {
       navigation.navigate('EnterAmount', {
         type: 'wallet',
-        walletAddress: text,
+        walletAddress: data,
       });
     } else console.log('How did we get here?');
-  }
+  };
   return (
     <SafeAreaView
       style={{
@@ -108,7 +112,7 @@ const SendEmailComponent = ({navigation}) => {
         }}>
         <Icon
           name="arrow-left"
-          style={{position: 'absolute', left: 0, display: 'none'}}
+          style={{position: 'absolute', left: 0}}
           // size={30}
           color="white"
           type="feather"

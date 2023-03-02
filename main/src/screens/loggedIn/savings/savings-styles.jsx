@@ -25,15 +25,13 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     width: '100%',
-    backgroundColor: '#000',
+    backgroundColor: '#0C0C0C',
   },
 
   logo: {
-    fontFamily: 'LemonMilk-Regular',
+    fontFamily: 'VelaSans-ExtraBold',
     color: '#fff',
-    fontSize: 30,
-    fontWeight: 600,
-    letterSpacing: 0.5,
+    fontSize: 25,
     marginLeft: '8%',
     marginTop: '2%',
     marginBottom: '2%',

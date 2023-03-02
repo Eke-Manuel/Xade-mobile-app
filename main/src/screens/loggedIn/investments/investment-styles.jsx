@@ -6,13 +6,18 @@ const styles = StyleSheet.create({
   black: {
     backgroundColor: '#0C0C0C',
     width: '100%',
-    height: windowHeight,
+    height: '100%',
   },
 
-  investmentsNav: {
-    justifyContent: 'space-evenly',
-    flexDirection: 'row',
-    marginTop: '20%',
+  investmentsNav: {},
+
+  logo: {
+    fontFamily: 'VelaSans-ExtraBold',
+    color: '#fff',
+    fontSize: 25,
+    marginLeft: '8%',
+    marginTop: '2%',
+    marginBottom: '2%',
   },
 
   navComponents: {
@@ -63,6 +68,24 @@ const styles = StyleSheet.create({
   navSelectedText: {
     color: '#fff',
     fontFamily: 'VelaSans-ExtraBold',
+  },
+
+  marketTrades: {
+    width: '80%',
+    marginLeft: '10%',
+    backgroundColor: '#1E1E1E',
+    borderRadius: 7,
+    marginTop: '20%',
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  marketText: {
+    color: 'grey',
+    fontFamily: 'VelaSans-Bold',
+    textAlign: 'center',
+    fontSize: 15,
   },
 
   priceSlippage: {
@@ -154,7 +177,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#FFF',
     fontFamily: 'VelaSans-ExtraBold',
-    marginTop: '10%',
+    marginTop: '7%',
     fontSize: 15,
   },
 
@@ -174,6 +197,11 @@ const styles = StyleSheet.create({
     width: '80%',
     marginLeft: '10%',
     borderRadius: 10,
+  },
+
+  confirmButton: {
+    marginTop: 15,
+    marginBottom: 25,
   },
 
   confirmText: {
