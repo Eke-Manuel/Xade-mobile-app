@@ -13,26 +13,27 @@ import {
 } from 'react-native';
 import {Text} from 'react-native-elements';
 import Video from 'react-native-video';
-const earthVideo = require('./pending.mp4');
+import {ParticleProvider} from '@particle-network/provider';
+import {ParticleNetwork, WalletEntryPosition} from '@particle-network/auth';
+import ethProvider from '../ethPool';
 
 export default function Component({route, navigation}) {
-  //     const { amount, toAddress, mobileNumber, emailAddress } = route.params;
-
-  //     // signAndSendTransaction here calling ethProvider
-  //     const provider = new ParticleProvider(particle.auth)
-  //     const {signAndSendTransaction} = ethProvider(provider)
-  //     useEffect(async () => {
-  //         const txReciept = await signAndSendTransaction(amount, toAddress);
-  //         if(true) // this should check the status of txReceipt
-  //         {
-  //             navigation.navigate('Successful', {...route.params, txReceipt})
-  //         }
-  //         else
-  //         {
-  //             navigation.navigate('Unsuccessful');
-  //         }
-  //      }, [])
-
+  const {amount, walletAddress, mobileNumber, emailAddress} = route.params;
+  // signAndSendTransaction here calling ethProvider
+  /*  const provider = new ParticleProvider(particle.auth);
+  const {signAndSendTransaction} = ethProvider(provider);
+  useEffect(async () => {
+    const txReciept = await signAndSendTransaction(amount, walletAddress);
+    if (true) {
+      // this should check the status of txReceipt
+      navigation.navigate('Successful', {...route.params, txReceipt});
+    } else {
+      navigation.navigate('Unsuccessful');
+    }
+  }, []);
+  */
+  /*
+  console.log(route.params);
   return (
     <View style={{width: '100%', height: '100%', backgroundColor: '#151515'}}>
       <Text
@@ -66,6 +67,17 @@ export default function Component({route, navigation}) {
           Return Home
         </Text>
       </TouchableOpacity>
+    </View>
+    */
+  const earthVideo = require('./pending.mp4');
+  return (
+    <View>
+      <Video
+        source={this.earthVideo}
+        style={{width: 300, height: 300}}
+        controls={true}
+        paused={true}
+      />
     </View>
   );
 }

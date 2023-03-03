@@ -80,6 +80,7 @@ const SendEmailComponent = ({navigation}) => {
           } else return 0;
         })
         .then(data => {
+          console.log(data);
           if (data != 0)
             navigation.navigate('EnterAmount', {
               type: 'email',
@@ -112,7 +113,7 @@ const SendEmailComponent = ({navigation}) => {
         }}>
         <Icon
           name="arrow-left"
-          style={{position: 'absolute', left: 0}}
+          style={{position: 'absolute', left: 0, display: 'none'}}
           // size={30}
           color="white"
           type="feather"
@@ -177,9 +178,7 @@ const SendEmailComponent = ({navigation}) => {
           <Text style={{color: '#4F4CF6'}}>Send to mobile number instead</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        style={styles.confirmButton}
-        onPress={() => navigation.navigate('EnterAmount')}>
+      <TouchableOpacity style={styles.confirmButton} onPress={handleSubmit}>
         <Text
           style={{color: 'white', fontFamily: 'VelaSans-Medium', fontSize: 18}}>
           Continue

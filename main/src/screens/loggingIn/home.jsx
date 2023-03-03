@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
+const Web3 = require('web3');
 
 const bg = require('../../../assets/bg.png');
 const windowHeight = Dimensions.get('window').height;

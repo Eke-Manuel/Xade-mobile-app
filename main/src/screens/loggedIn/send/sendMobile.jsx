@@ -82,6 +82,7 @@ const SendMobileComponent = ({navigation}) => {
         else return response.text();
       })
       .then(data => {
+        console.log(data);
         if (data != 0)
           navigation.navigate('EnterAmount', {
             type: 'mobile',
@@ -207,9 +208,7 @@ const SendMobileComponent = ({navigation}) => {
           </View>
         );
       })}
-      <TouchableOpacity
-        onPress={() => navigation.navigate('EnterAmount')}
-        style={styles.confirmButton}>
+      <TouchableOpacity onPress={handleSubmit} style={styles.confirmButton}>
         <Text
           style={{color: 'white', fontFamily: 'VelaSans-Medium', fontSize: 18}}>
           Continue

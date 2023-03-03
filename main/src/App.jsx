@@ -1,7 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
+import {Buffer} from 'buffer';
+global.Buffer = Buffer;
+import '../global';
 import {
   View,
   ActivityIndicator,
@@ -12,7 +14,6 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-
 import BottomNavbar from './screens/navbar';
 import StaticHomeScreen from './screens/loggingIn/home';
 import Login from './screens/loggingIn/login';
@@ -29,6 +30,9 @@ import {Text} from 'react-native-elements';
 import Pending from './screens/loggedIn/txStatus/pending';
 import Successful from './screens/loggedIn/txStatus/successful';
 import Unsuccessful from './screens/loggedIn/txStatus/unsuccessful';
+
+import {LogBox} from 'react-native';
+LogBox.ignoreAllLogs();
 
 const Stack = createNativeStackNavigator();
 const bg = require('../assets/bg.png');

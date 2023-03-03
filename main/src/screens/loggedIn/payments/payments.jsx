@@ -17,6 +17,10 @@ import {Icon} from 'react-native-elements';
 import {useEffect} from 'react';
 import * as particleAuth from 'react-native-particle-auth';
 
+import {ParticleProvider} from '@particle-network/provider';
+
+var Web3 = require('web3');
+
 timeToday = Date.now();
 endDate = new Date(Date.UTC((year = 2023), (monthIndex = 2), (date = 15)));
 
@@ -107,6 +111,7 @@ const PaymentsComponent = ({navigation}) => {
   const t = true; // it means to send]
   console.log('Address: ', address);
   console.log('State: ', state);
+
   return (
     <SafeAreaView style={{width: '100%', height: '100%'}}>
       <View colors={['#222222', '#000']} style={styles.container}>

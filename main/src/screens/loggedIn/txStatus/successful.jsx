@@ -11,46 +11,46 @@ import {
   Linking,
   ScrollView,
 } from 'react-native';
-import {useState, useMemo, useEffect} from 'react';
 import {Text} from '@rneui/themed';
-import CountDown from 'react-native-countdown-component';
-import LinearGradient from 'react-native-linear-gradient';
-import {SelectCountry} from 'react-native-element-dropdown';
-import {Dropdown} from 'react-native-element-dropdown';
+import Video from 'react-native-video';
+//const successVideo = require('./successful.mp4');
 
-import countries from '../../../countries';
-
-
-export default function Component()
-{   
-    // Some routing must be done after Pending state
-    return <View style = {{width:'100%', height: '100%', justifyContent: 'center'}}>
-        <View style = {{width: '80%', marginTop: '30%'}}>
-
-        </View>
-
-        <Text style = {{fontFamily: 'EulidCircular-Regular.ttf', marginTop: '10%'}}>Transaction successful</Text>
-
-        <View style = {{width: '80%'}}>
-            <View>
-                <Text>To:</Text>
-                <Text>lol</Text>
-            </View>
-            
-            <View>
-                <Text>Hash</Text>
-                <Text>lol</Text>
-            </View>
-            
-            <View>
-                <Text>Amount</Text>
-                <Text>lol</Text>
-            </View>
-
-            <View>
-                <Text></Text>
-                <Text></Text>
-            </View>
-        </View>
+export default function Component({navigation}) {
+  // Some routing must be done after Pending state
+  return (
+    <View style={{width: '100%', height: '100%', backgroundColor: '#151515'}}>
+      <Text
+        style={{
+          color: '#fff',
+          fontSize: 30,
+          marginTop: '20%',
+          textAlign: 'center',
+          fontFamily: 'NeueMachina-UltraBold',
+        }}>
+        Transaction Success!
+      </Text>
+      <View style={{width: '80%', marginTop: '30%', marginLeft: '11%'}}>
+        <Video
+          //      source={successVideo}
+          style={{width: 300, height: 300}}
+          controls={true}
+          ref={ref => {
+            this.player = ref;
+          }}
+        />
+      </View>
+      <TouchableOpacity onPress={() => navigation.navigate('Payments')}>
+        <Text
+          style={{
+            color: '#fff',
+            fontSize: 20,
+            marginTop: '20%',
+            textAlign: 'center',
+            fontFamily: 'VelaSans-Bold',
+          }}>
+          Return Home
+        </Text>
+      </TouchableOpacity>
     </View>
+  );
 }

@@ -24,23 +24,12 @@ function renderButtons() {
     );
   });
 }
-export default function EnterAmountComponent({navigation}) {
+export default function EnterAmountComponent({navigation, route}) {
+  let params = route.params;
   let [amount, setAmount] = React.useState(0);
   let [address, setAddress] = React.useState(1);
-  // let [json, setJson] = React.useState({mobileNumber: 0, emailAddress: 0, toAddress:route.params.walletAddress})
-  // if(route.params.type == 'wallet')
-  // {
-
-  // }
-  // else if(route.params.type == 'email')
-  // {
-  //   json.emailAddress =  route.params.emailAddress
-  //   setJson({...json, emailAddress:route.params.emailAddress})
-  // }
-  // else if(route.params.type == 'mobile')
-  // {
-  //   setJson({...json, mobileNumber:route.params.mobileNumber})
-  // }
+  const json = {mobileNumber: 0, emailAddress: 0, walletAddress: 0, ...params};
+  console.log(json);
 
   console.log('Address: ', address);
   // console.log('User Info: ', info);
@@ -94,9 +83,7 @@ export default function EnterAmountComponent({navigation}) {
               color: 'white',
               fontFamily: 'VelaSans-Bold',
               fontSize: 18,
-            }}>
-            {/* {info} */}
-          </Text>
+            }}></Text>
           <Text
             style={{
               marginLeft: 0,
@@ -104,7 +91,7 @@ export default function EnterAmountComponent({navigation}) {
               fontFamily: 'VelaSans-Medium',
               fontSize: 13,
             }}>
-            Wallet Address: 0x123..
+            Wallet Address: {json.walletAddress.substring(0, 5)}...
           </Text>
           <Text
             style={{
@@ -135,7 +122,7 @@ export default function EnterAmountComponent({navigation}) {
           );
         })}
         <TouchableOpacity
-          onPress={() => navigation.navigate('Pending')}
+          onPress={() => navigation.navigate('Pending', {...json, amount})}
           style={styles.confirmButton}>
           <Text
             style={{
