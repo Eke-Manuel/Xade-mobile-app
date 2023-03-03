@@ -2,7 +2,7 @@
  * @format
  */
 import './shim.js';
-import crypto from 'crypto';
+// import crypto from 'crypto';
 import 'react-native-get-random-values';
 import {AppRegistry} from 'react-native';
 import './src/global';

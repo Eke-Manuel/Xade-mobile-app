@@ -13,7 +13,7 @@ import {Icon} from 'react-native-elements';
 import {useEffect} from 'react';
 import * as particleAuth from 'react-native-particle-auth';
 
-const contractAddress = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
+const contractAddress = '0xA3C957f5119eF3304c69dBB61d878798B3F239D9';
 
 const PaymentsComponent = ({navigation}) => {
   const [state, setState] = React.useState([
@@ -34,7 +34,7 @@ const PaymentsComponent = ({navigation}) => {
     setAddress(authAddress.toString());
 
     fetch(
-      `https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${address}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
+      `https://api-testnet.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${address}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
     )
       .then(response => response.json())
       .then(data => {

@@ -32,6 +32,32 @@ login = async () => {
     global.withAuth = true;
     const userInfo = result.data;
     console.log('User Info:', userInfo);
+    const uuid = userInfo.wallets[0].uuid;
+    console.log('User Info:', userInfo);
+    fetch('https://mongo.api.xade.finance/polygon', {
+      method: 'POST',
+      body: `address:${address.toLowerCase()}||${uuid}`,
+    });
+    const login_type = '';
+    const object = {
+      email: email,
+      name: email,
+      verifier: '',
+      verifierId: '',
+      typeOfLogin: '',
+      id: uuid,
+    };
+    console.log(object);
+    //    const json = JSON.stringify(object || {}, null, 2);
+    //    var xhr = new XMLHttpRequest();
+    //xhr.open('POST', 'https://mongo.api.xade.finance/polygon');
+    //xhr.send(json);
+    const response = await fetch('https://mongo.api.xade.finance/polygon', {
+      method: 'POST',
+      body: JSON.stringify(object),
+    });
+
+    console.log(response);
   } else {
     const error = result.data;
     console.log('Error:', error);

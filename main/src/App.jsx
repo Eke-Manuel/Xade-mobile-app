@@ -32,9 +32,6 @@ import Pending from './screens/loggedIn/txStatus/pending';
 import Successful from './screens/loggedIn/txStatus/successful';
 import Unsuccessful from './screens/loggedIn/txStatus/unsuccessful';
 
-import {LogBox} from 'react-native';
-LogBox.ignoreAllLogs();
-
 const Stack = createNativeStackNavigator();
 const bg = require('../assets/bg.png');
 const particle = require('../assets/particle.jpg');
@@ -225,7 +222,7 @@ export default function App({navigation}) {
         */}
         <Stack.Screen
           name="Home"
-          component={StaticHomeScreen}
+          component={Pending}
           options={{headerShown: false}}
         />
         <Stack.Screen

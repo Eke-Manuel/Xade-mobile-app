@@ -1,19 +1,16 @@
-import {TestAccountEVM} from './TestAccount';
 import BigNumber from 'bignumber.js';
 import {Buffer} from 'buffer';
 import {EvmService} from './NetService/EvmService';
 
 export async function getEvmTokenTransaction({sender, receiver, amount}) {
-  // mock a ethereum token transaction
-  // send 0.01 chain link token on ethereum goerli
-
-  const contractAddress = '0x844B1c89F857fFb31af3643b515A948995ee35C2';
+  const contractAddress = '0xA3C957f5119eF3304c69dBB61d878798B3F239D9';
 
   const data = await EvmService.erc20Transfer(
     contractAddress,
     receiver,
     amount,
   );
+  
   console.log(`data = ${data}`);
   const gasLimit = await EvmService.estimateGas(sender, receiver, '0x0', data);
   console.log(`gasLimit = ${gasLimit}`);
@@ -27,8 +24,8 @@ export async function getEvmTokenTransaction({sender, receiver, amount}) {
   const maxPriorityFeePerGas = gasFeesResult.high.maxPriorityFeePerGas;
   const maxPriorityFeePerGasHex =
     '0x' + BigNumber(maxPriorityFeePerGas * Math.pow(10, 9)).toString(16);
-  const chainId = TestAccountEVM.chainId;
-
+  const chainInfo = await ParticleAuth.getChainInfo();
+  const chainId = chainInfo.chain_id;
   const transaction = {
     from: sender,
     to: contractAddress,
