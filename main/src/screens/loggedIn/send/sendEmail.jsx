@@ -12,14 +12,11 @@ import {
 } from 'react-native';
 import {useState, useMemo, useEffect} from 'react';
 import {Text} from '@rneui/themed';
-import CountDown from 'react-native-countdown-component';
-import LinearGradient from 'react-native-linear-gradient';
 import {SelectCountry} from 'react-native-element-dropdown';
 
 // import styles from './paymentsStyles'
 // import { Picker, onOpen } from 'react-native-actions-sheet-picker';
 import {Icon} from 'react-native-elements';
-const windowWidth = Dimensions.get('window').width;
 // const countries = [
 //     {
 //         "name": "Email Address",

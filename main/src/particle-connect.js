@@ -1,34 +1,39 @@
 import * as particleConnect from 'react-native-particle-connect';
-import {Env, WalletType} from 'react-native-particle-connect';
-import {ChainInfo} from 'react-native-particle-connect';
 import {PNAccount} from './Models/PNAccount';
+// import * as Helper from './Helper';
+import {
+  Env,
+  LoginType,
+  SupportAuthType,
+  WalletType,
+} from 'react-native-particle-connect';
+import {ChainInfo} from 'react-native-particle-connect';
+import {ParticleConnectConfig} from 'react-native-particle-connect';
 
-const walletType = WalletType.MetaMask;
-
-var pnaccount;
-
-connect = async () => {
-  const result = await particleConnect.connect(walletType);
+connect = async ({walleType}) => {
+  console.log('Connect:', walleType);
+  const result = await particleConnect.connect(walleType);
   if (result.status) {
     console.log('connect success');
     const account = result.data;
-    pnaccount = new PNAccount(
-      account.icons,
-      account.name,
+    const name = account.name ? account.name : 'Not Set';
+    global.connectAccount = new PNAccount(
+      'Not Set',
+      name,
       account.publicAddress,
-      account.url,
     );
-    console.log('pnaccount = ', pnaccount);
+    global.setAuth = false;
+    console.log('pnaccount = ', global.connectAccount);
   } else {
     console.log('connect failure');
     const error = result.data;
     console.log(error);
   }
 
-  return pnaccount;
+  return connectAccount;
 };
 
-onClickConnect = async navigation => {
+onClickConnect = async ({navigation, walletype}) => {
   const metadata = {
     name: 'Xade Finance',
     icon: 'https://connect.particle.network/icons/512.png',
@@ -43,11 +48,10 @@ onClickConnect = async navigation => {
   );
 
   navigation.navigate('Loading');
-
-  var account = await this.connect();
-
+  console.log('onClick:', walletype);
+  var account = await this.connect({walleType: walletype});
   var result = await particleConnect.isConnected(
-    WalletType.MetaMask,
+    walletype,
     account.publicAddress,
   );
 
@@ -55,7 +59,7 @@ onClickConnect = async navigation => {
 
   console.log('Result:', result);
   if (result) {
-    navigation.navigate('Connected');
+    navigation.navigate('Payments');
   } else {
     navigation.navigate('Error');
   }
@@ -65,7 +69,7 @@ onClickConnect = async navigation => {
 };
 
 disconnect = async () => {
-  const publicAddress = pnaccount.publicAddress;
+  const publicAddress = connectAccount.publicAddress;
   const result = await particleConnect.disconnect(walletType, publicAddress);
   if (result.status) {
     console.log(result.data);
@@ -75,4 +79,5 @@ disconnect = async () => {
     console.log(error);
   }
 };
+
 export default {onClickConnect, disconnect};

@@ -12,9 +12,37 @@ import {
 import {Text} from '@rneui/themed';
 import {Icon} from 'react-native-elements';
 const Web3 = require('web3');
+import {PNAccount} from '../../Models/PNAccount';
+
+import * as particleAuth from 'react-native-particle-auth';
+import * as particleConnect from 'react-native-particle-connect';
 
 const bg = require('../../../assets/bg.png');
 const windowHeight = Dimensions.get('window').height;
+
+const LoginCheck = async ({navigation}) => {
+  particleAuth.init(
+    particleAuth.ChainInfo.PolygonMainnet,
+    particleAuth.Env.Production,
+  );
+  console.log('Checking if user is logged in');
+  const result = await particleAuth.isLogin();
+  var account = await particleAuth.getUserInfo();
+  account = JSON.parse(account);
+  const email = account.email ? account.email : account.phone;
+  const name = account.name ? account.name : 'Not Set';
+  const address = await particleAuth.getAddress();
+  global.loginAccount = new PNAccount(email, name, address);
+  global.withAuth = true;
+
+  console.log('Logged In:', global.loginAccount);
+
+  if (result) {
+    navigation.navigate('Payments');
+  } else {
+    navigation.navigate('Particle');
+  }
+};
 
 const StaticHomeScreen = ({navigation}) => {
   return (
@@ -37,7 +65,9 @@ const StaticHomeScreen = ({navigation}) => {
               </Text>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('Particle')}>
+                onPress={() => {
+                  LoginCheck({navigation});
+                }}>
                 <Icon
                   style={styles.buttonIcon}
                   name="arrow-right"

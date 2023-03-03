@@ -3,29 +3,18 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   SafeAreaView,
-  StyleSheet,
   View,
-  Linking,
-  ScrollView,
   Image,
 } from 'react-native';
 import {Text} from '@rneui/themed';
-import CountDown from 'react-native-countdown-component';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './payments-styles';
 import {Icon} from 'react-native-elements';
 import {useEffect} from 'react';
 import * as particleAuth from 'react-native-particle-auth';
 
-import {ParticleProvider} from '@particle-network/provider';
-
-var Web3 = require('web3');
-
-timeToday = Date.now();
-endDate = new Date(Date.UTC((year = 2023), (monthIndex = 2), (date = 15)));
-
-var time = (endDate - timeToday) / 1000.0;
 const contractAddress = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
+
 const PaymentsComponent = ({navigation}) => {
   const [state, setState] = React.useState([
     {truth: true, to: '0', from: '0', value: 0},
@@ -33,14 +22,16 @@ const PaymentsComponent = ({navigation}) => {
   const [address, setAddress] = useState('0x');
 
   useEffect(() => {
-    const fetchAddress = async () => {
-      response = await particleAuth.getAddress();
-      console.log('Inner QR Address Response: ' + response);
+    console.log('Global Account:', global.loginAccount);
+    console.log('Is Auth:', global.withAuth);
 
-      setAddress(response.toString());
-    };
+    if (global.withAuth) {
+      var authAddress = global.loginAccount.publicAddress;
+    } else {
+      var authAddress = global.connectAccount.publicAddress;
+    }
 
-    fetchAddress().catch(console.error);
+    setAddress(authAddress.toString());
 
     fetch(
       `https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${address}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
@@ -191,7 +182,7 @@ const PaymentsComponent = ({navigation}) => {
           <TouchableOpacity
             style={styles.depWith}
             onPress={() => {
-              navigation.navigate('EnterAmount');
+              navigation.navigate('ComingSoon');
             }}>
             <LinearGradient
               colors={['#1D2426', '#383838']}

@@ -22,13 +22,19 @@ import QR from '../../../qr-generator';
 import {logout} from '../../../particle-auth';
 
 import styles from './qr-styles';
-
+let address;
+let info;
 const bg = require('../../../../assets/qr.jpg');
 
 function QRCode() {
-  const [address, setAddress] = useState(0);
-  const [info, setInfo] = useState(1);
-
+  if (global.withAuth) {
+    address = global.loginAccount.publicAddress;
+    info = global.loginAccount.phoneEmail;
+  } else {
+    address = global.connectAccount.publicAddress;
+    info = global.loginAccount.phoneEmail;
+  }
+  /*
   useEffect(() => {
     const fetchAddress = async () => {
       response = await particleAuth.getAddress();
@@ -53,6 +59,7 @@ function QRCode() {
 
     const result = fetchAddress().catch(console.error);
   }, []);
+  */
 
   const qrUrl = String(info) + '-xade-' + String(address);
   console.log('Address: ', address);
@@ -62,13 +69,15 @@ function QRCode() {
       <View>
         <Text style={styles.header}>QR Code</Text>
         <View style={styles.userInfo}>
-          <Text style={styles.name}>{info}</Text>
+          <Text style={styles.name}>{String(info)}</Text>
           <TouchableHighlight
             onPress={() => {
               Clipboard.setString(String(address));
               Alert.alert('Copied Address To Clipboard');
             }}>
-            <Text style={styles.address}>{address}</Text>
+            <Text style={styles.address}>
+              {String(address).substring(0, 35)}...
+            </Text>
           </TouchableHighlight>
         </View>
         <View style={{width: '100%', alignItems: 'center'}}>

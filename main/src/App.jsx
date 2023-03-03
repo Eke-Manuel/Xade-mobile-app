@@ -17,6 +17,7 @@ import {
 import BottomNavbar from './screens/navbar';
 import StaticHomeScreen from './screens/loggingIn/home';
 import Login from './screens/loggingIn/login';
+import ChooseConnect from './screens/loggingIn/connect';
 import Countdown from './screens/loggedIn/countdown/countdown';
 import QRPage from './screens/loggedIn/qr/qr';
 import Investments from './screens/loggedIn/investments/investments';
@@ -43,6 +44,14 @@ function Particle({navigation}) {
   return (
     <View>
       <Login navigation={navigation} />
+    </View>
+  );
+}
+
+function ChooseWallet({navigation}) {
+  return (
+    <View>
+      <ChooseConnect navigation={navigation} />
     </View>
   );
 }
@@ -222,6 +231,12 @@ export default function App({navigation}) {
         <Stack.Screen
           name="Particle"
           component={Particle}
+          navigation={navigation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ChooseConnect"
+          component={ChooseWallet}
           navigation={navigation}
           options={{headerShown: false}}
         />

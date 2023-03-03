@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   name: {
     textAlign: 'center',
     color: 'white',
-    fontSize: 25,
+    fontSize: 23,
     fontFamily: 'VelaSans-ExtraBold',
   },
 

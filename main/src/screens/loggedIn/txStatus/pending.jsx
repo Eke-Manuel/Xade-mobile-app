@@ -32,7 +32,6 @@ export default function Component({route, navigation}) {
     }
   }, []);
   */
-  /*
   console.log(route.params);
   return (
     <View style={{width: '100%', height: '100%', backgroundColor: '#151515'}}>
@@ -67,17 +66,6 @@ export default function Component({route, navigation}) {
           Return Home
         </Text>
       </TouchableOpacity>
-    </View>
-    */
-  const earthVideo = require('./pending.mp4');
-  return (
-    <View>
-      <Video
-        source={this.earthVideo}
-        style={{width: 300, height: 300}}
-        controls={true}
-        paused={true}
-      />
     </View>
   );
 }

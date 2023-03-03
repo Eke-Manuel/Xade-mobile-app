@@ -13,7 +13,6 @@ import {Text, Icon} from '@rneui/themed';
 import {Slider} from 'react-native-elements';
 import styles from './investment-styles';
 import BottomNavbar from '../../navbar';
-import {ParticleNetwork, WalletEntryPosition} from '@particle-network/auth';
 
 red = true;
 class Investments extends React.Component {
