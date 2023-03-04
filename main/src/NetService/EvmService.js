@@ -3,12 +3,18 @@ import JsonRpcRequest from './NetService';
 import BigNumber from 'bignumber.js';
 import {Buffer} from 'buffer';
 import * as ParticleAuth from 'react-native-particle-auth';
+import * as ParticleConnect from 'react-native-particle-connect';
 
 export class EvmService {
   static async rpc(method, params) {
-    const rpcUrl = 'https://rpc.ankr.com/polygon_mumbai';
+    const rpcUrl = 'https://rpc.particle.network/';
     const path = 'evm-chain';
-    const chainInfo = await ParticleAuth.getChainInfo();
+    let chainInfo;
+    if (global.withAuth) {
+      chainInfo = await ParticleAuth.getChainInfo();
+    } else {
+      chainInfo = await ParticleConnect.getChainInfo();
+    }
     const chainId = chainInfo.chain_id;
     const result = await JsonRpcRequest(rpcUrl, path, method, params, chainId);
     return result;

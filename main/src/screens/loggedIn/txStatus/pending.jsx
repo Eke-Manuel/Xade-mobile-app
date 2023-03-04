@@ -1,60 +1,62 @@
 import React, {useEffect} from 'react';
-import {
-  TouchableOpacity,
-  Dimensions,
-  TextInput,
-  FlatList,
-  TouchableHighlight,
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Linking,
-  ScrollView,
-} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {Text} from 'react-native-elements';
-import Video from 'react-native-video';
-import {getEvmTokenTransaction} from '../../../helper';
+// import Video from 'react-native-video';
+import {signAndSendTransactionConnect} from '../../../particle-connect';
 import * as particleAuth from 'react-native-particle-auth';
+import * as particleConnect from 'react-native-particle-connect';
+const Web3 = require('web3');
 export default function Component({route, navigation}) {
-  // const {amount, walletAddress, mobileNumber, emailAddress} = route.params;
-  // signAndSendTransaction here calling ethProvider
-  /*  const provider = new ParticleProvider(particle.auth);
-  const {signAndSendTransaction} = ethProvider(provider);
-  useEffect(async () => {
-    const txReciept = await signAndSendTransaction(amount, walletAddress);
-    if (true) {
-      // this should check the status of txReceipt
-      navigation.navigate('Successful', {...route.params, txReceipt});
+  const {amount, walletAddress, emailAddress, mobileNumber} = route.params;
+  const weiVal = Web3.utils.toWei(amount.toString(), 'ether');
+  useEffect(() => {
+    let status;
+    console.log('Is Auth:', global.withAuth);
+    if (global.withAuth) {
+      authAddress = global.loginAccount.publicAddress;
+      console.log('Global Account:', global.loginAccount);
+      status = this.signAndSendTransaction(walletAddress, weiVal);
+      if (status) navigation.navigate('Successful');
+      else navigation.navigate('Unsuccessful');
     } else {
-      navigation.navigate('Unsuccessful');
+      authAddress = global.connectAccount.publicAddress;
+      console.log('Global Account:', global.connectAccount);
+      status = this.signAndSendTransactionConnect(walletAddress, weiVal);
+      if (status) navigation.navigate('Successful');
+      else navigation.navigate('Unsuccessful');
     }
   }, []);
-  */
-  useEffect(() => {
-    console.log('Test');
-    const trans = async () => {
-      console.log('Working On It..');
-      const chainInfo = await particleAuth.getChainInfo();
-      console.log(chainInfo);
-      let transaction = '';
-      console.log('Transaction');
-      transaction = await getEvmTokenTransaction({
-        sender: '0xB02CcaF699F4708B348d2915E40A1fa31A2B4279',
-        receiver: '0x1a2eaf515a6ca05bfab9bf3d9850ea29e5c7882e',
-        amount: '10',
-      });
-      console.log(transaction);
-      const result = await particleAuth.signTransaction(transaction);
-      console.log('Transaction Complete');
-      console.log(result);
-      if (result.status) {
-        const signature = result.data;
-        console.log('Sign:', signature);
-      } else {
-        const error = result.data;
-        console.log('Error:', error);
-      }
-      /*
+
+  return (
+    <View style={{width: '100%', height: '100%', backgroundColor: '#151515'}}>
+      <Text
+        style={{
+          color: '#fff',
+          fontSize: 30,
+          marginTop: '20%',
+          textAlign: 'center',
+          fontFamily: 'NeueMachina-UltraBold',
+        }}>
+        Transaction Pending
+      </Text>
+      <View style={{width: '80%', marginTop: '30%', marginLeft: '11%'}}></View>
+      {/* <TouchableOpacity onPress={() => navigation.navigate('Payments')}>
+        <Text
+          style={{
+            color: '#fff',
+            fontSize: 20,
+            marginTop: '20%',
+            textAlign: 'center',
+            fontFamily: 'VelaSans-Bold',
+          }}>
+          Return Home
+        </Text>
+      </TouchableOpacity> */}
+    </View>
+  );
+}
+
+/*
 
       const sender = await particleAuth.getAddress();
       const receiver = '0x1a2eaf515a6ca05bfab9bf3d9850ea29e5c7882e';
@@ -77,44 +79,3 @@ export default function Component({route, navigation}) {
         console.log(error);
       }
             */
-    };
-    trans();
-  }, []);
-
-  console.log(route.params);
-  return (
-    <View style={{width: '100%', height: '100%', backgroundColor: '#151515'}}>
-      <Text
-        style={{
-          color: '#fff',
-          fontSize: 30,
-          marginTop: '20%',
-          textAlign: 'center',
-          fontFamily: 'NeueMachina-UltraBold',
-        }}>
-        Transaction Pending
-      </Text>
-      <View style={{width: '80%', marginTop: '30%', marginLeft: '11%'}}>
-        {/* <Video
-          source={earthVideo}
-          style={{width: 300, height: 300}}
-          ref={ref => {
-            this.player = ref;
-          }}
-        />*/}
-      </View>
-      <TouchableOpacity onPress={() => navigation.navigate('Payments')}>
-        <Text
-          style={{
-            color: '#fff',
-            fontSize: 20,
-            marginTop: '20%',
-            textAlign: 'center',
-            fontFamily: 'VelaSans-Bold',
-          }}>
-          Return Home
-        </Text>
-      </TouchableOpacity>
-    </View>
-  );
-}

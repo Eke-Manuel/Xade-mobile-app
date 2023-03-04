@@ -5,6 +5,9 @@ import {
   SafeAreaView,
   View,
   Image,
+  ScrollView,
+  Clipboard,
+  Alert,
 } from 'react-native';
 import {Text} from '@rneui/themed';
 import LinearGradient from 'react-native-linear-gradient';
@@ -12,6 +15,8 @@ import styles from './payments-styles';
 import {Icon} from 'react-native-elements';
 import {useEffect} from 'react';
 import * as particleAuth from 'react-native-particle-auth';
+const Web3 = require('web3');
+import {signAndSendTransactionConnect} from '../../particle-connect';
 
 const contractAddress = '0xA3C957f5119eF3304c69dBB61d878798B3F239D9';
 
@@ -20,21 +25,27 @@ const PaymentsComponent = ({navigation}) => {
     {truth: true, to: '0', from: '0', value: 0},
   ]);
   const [address, setAddress] = useState('0x');
-
+  const [balance, setBalance] = useState('0');
   useEffect(() => {
-    console.log('Global Account:', global.loginAccount);
     console.log('Is Auth:', global.withAuth);
 
     if (global.withAuth) {
-      var authAddress = global.loginAccount.publicAddress;
+      authAddress = global.loginAccount.publicAddress;
+      console.log('Global Account:', global.loginAccount);
     } else {
-      var authAddress = global.connectAccount.publicAddress;
+      authAddress = global.connectAccount.publicAddress;
+      console.log('Global Account:', global.connectAccount);
+      console.log('Global Account:', global.walletType);
+      this.signAndSendTransactionConnect(
+        '0xb02ccaf699f4708b348d2915e40a1fa31a2b4279',
+        '1000000000000000',
+      );
     }
 
     setAddress(authAddress.toString());
 
     fetch(
-      `https://api-testnet.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${address}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
+      `https://api-testnet.polygonscan.com/api?module=account&action=tokentx&contractaddress=${contractAddress}&address=${authAddress}&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
     )
       .then(response => response.json())
       .then(data => {
@@ -42,12 +53,13 @@ const PaymentsComponent = ({navigation}) => {
           console.log(data.message);
           console.log(data);
           const result = data.result;
+          //        console.log('Arnav:', result);
           let len = result.length;
           let arr = [];
           for (let i = 0; i < len; i++) {
             let res = result[i];
             let val = res.value;
-            const etherValue = val;
+            const etherValue = Web3.utils.fromWei(val, 'ether');
             var pubDate = new Date(res.timeStamp * 1000);
             var weekday = new Array(
               'Sun',
@@ -81,22 +93,34 @@ const PaymentsComponent = ({navigation}) => {
               ', ' +
               pubDate.getFullYear();
             const json = {
-              truth: result == res.to, // true while accepting
+              truth: authAddress.toString().toLowerCase() == res.to, // true while accepting
               to: res.to,
               from: res.from,
               value: etherValue,
               date: formattedDate,
             };
             arr.push(json);
+            console.log(authAddress, res.to, json.truth);
           }
-          console.log(arr);
-          setState(arr);
-          console.log(data.result);
+          //    console.log(json);
+          setState(arr.reverse());
+          // console.log(data.result);
         } else {
           console.log('Condition is working');
           setState([{value: 0}]);
           return;
         }
+      });
+
+    fetch(
+      `https://api-testnet.polygonscan.com/api?module=account&action=tokenBalance&contractaddress=${contractAddress}&address=${authAddress}&tag=latest&apikey=26UDEN3Z37KX5V7PS9UMGHU11WAJ38RZ57`,
+    )
+      .then(response => response.json())
+      .then(data => {
+        const balance = data.result;
+        const etherValue = Web3.utils.fromWei(balance, 'ether');
+        setBalance(etherValue);
+        console.log(etherValue);
       });
   }, []);
   const t = true; // it means to send]
@@ -121,11 +145,12 @@ const PaymentsComponent = ({navigation}) => {
             </Text>
             <Text
               style={{
+                marginTop: '5%',
                 color: 'white',
                 fontSize: 45,
                 fontFamily: 'Benzin-Medium',
               }}>
-              12043
+              {balance.split('.')[0]}
             </Text>
             <Text
               style={{
@@ -134,7 +159,7 @@ const PaymentsComponent = ({navigation}) => {
                 fontFamily: 'Benzin-Medium',
                 marginBottom: 5,
               }}>
-              .52
+              {balance.split('.')[1] ? balance.split('.')[1] : '.00'}
             </Text>
           </View>
           <Text
@@ -149,6 +174,7 @@ const PaymentsComponent = ({navigation}) => {
 
         <View
           style={{
+            marginTop: '5%',
             width: '90%',
             height: 50,
             justifyContent: 'space-around',
@@ -243,14 +269,18 @@ const PaymentsComponent = ({navigation}) => {
           </Text>
           {/* <Text style = {{color: 'grey', fontSize: 20}}>See all</Text> */}
         </View>
-        {state[0].value > 0 ? (
+        {state.length > 0 ? (
           state.map(json => {
             console.log(state);
             return (
               <View style={styles.transactions}>
                 <View style={styles.transactionLeft}>
                   <Image
-                    source={require('./icon/negative.png')}
+                    source={
+                      json.truth
+                        ? require('./icon/positive.png')
+                        : require('./icon/negative.png')
+                    }
                     style={{borderWidth: 1}}
                   />
                   <View style={styles.ttext}>
@@ -278,7 +308,8 @@ const PaymentsComponent = ({navigation}) => {
                       fontSize: 20,
                       fontFamily: 'VelaSans-Bold',
                     }}>
-                    {json.truth ? '+' : '-'}4
+                    {json.truth ? '+' : '-'}
+                    {json.value}
                   </Text>
                 </View>
               </View>

@@ -71,7 +71,7 @@ const Savings = ({navigation}) => {
           }}>
           <TouchableOpacity
             style={styles.depWith}
-            onPress={() => navigation.navigate('EnterAmount')}>
+            onPress={() => navigation.navigate('EnterSavingsAmount')}>
             <LinearGradient
               colors={['#1D2426', '#383838']}
               useAngle
@@ -93,7 +93,7 @@ const Savings = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.depWith}
-            onPress={() => navigation.navigate('EnterAmount')}>
+            onPress={() => navigation.navigate('EnterSavingsAmount')}>
             <LinearGradient
               colors={['#1D2426', '#383838']}
               useAngle

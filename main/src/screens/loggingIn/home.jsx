@@ -15,29 +15,34 @@ const Web3 = require('web3');
 import {PNAccount} from '../../Models/PNAccount';
 
 import * as particleAuth from 'react-native-particle-auth';
-import * as particleConnect from 'react-native-particle-connect';
-
+import {signAndSendTransactionConnect} from '../../particle-connect';
 const bg = require('../../../assets/bg.png');
 const windowHeight = Dimensions.get('window').height;
 
 const LoginCheck = async ({navigation}) => {
   particleAuth.init(
-    particleAuth.ChainInfo.PolygonMainnet,
+    particleAuth.ChainInfo.PolygonMumbai,
     particleAuth.Env.Production,
   );
   console.log('Checking if user is logged in');
   const result = await particleAuth.isLogin();
-  var account = await particleAuth.getUserInfo();
-  account = JSON.parse(account);
-  const email = account.email ? account.email : account.phone;
-  const name = account.name ? account.name : 'Not Set';
-  const address = await particleAuth.getAddress();
-  global.loginAccount = new PNAccount(email, name, address);
-  global.withAuth = true;
 
-  console.log('Logged In:', global.loginAccount);
+  /*
+  this.signAndSendTransaction(
+    '0xb0ff54808427d753F51B359c0ffc177242Fb4804',
+    '1000000000000000',
+  );
+  */
 
   if (result) {
+    var account = await particleAuth.getUserInfo();
+    account = JSON.parse(account);
+    const email = account.email ? account.email : account.phone;
+    const name = account.name ? account.name : 'Not Set';
+    const address = await particleAuth.getAddress();
+    global.loginAccount = new PNAccount(email, name, address);
+    global.withAuth = true;
+    console.log('Logged In:', global.loginAccount);
     navigation.navigate('Payments');
   } else {
     navigation.navigate('Particle');

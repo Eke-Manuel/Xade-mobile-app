@@ -103,9 +103,7 @@ QRScanner = ({navigation}) => {
     Linking.openURL(qrvalue);
   };
 
-  const onBarcodeScan = navigation => {
-    navigation.navigate('EnterAmount');
-  };
+  const onBarcodeScan = navigation => {};
 
   const onOpenScanner = () => {
     if (Platform.OS === 'android') {

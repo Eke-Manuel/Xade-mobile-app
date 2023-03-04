@@ -12,7 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {Text} from '@rneui/themed';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
 //const successVideo = require('./successful.mp4');
 
 export default function Component({navigation}) {
@@ -30,14 +30,14 @@ export default function Component({navigation}) {
         Transaction Success!
       </Text>
       <View style={{width: '80%', marginTop: '30%', marginLeft: '11%'}}>
-        <Video
+        {/* <Video
           //      source={successVideo}
           style={{width: 300, height: 300}}
           controls={true}
           ref={ref => {
             this.player = ref;
           }}
-        />
+        /> */}
       </View>
       <TouchableOpacity onPress={() => navigation.navigate('Payments')}>
         <Text

@@ -16,18 +16,3 @@ export const AbiEncodeFunction = {
   erc721SafeTransferFrom: 'erc721_safeTransferFrom',
   erc1155SafeTransferFrom: 'erc1155_safeTransferFrom',
 };
-
-export const SolanaReqBodyMethod = {
-  enhancedGetTokensAndNFTs: 'enhancedGetTokensAndNFTs',
-  enhancedGetPrice: 'enhancedGetPrice',
-  enhancedGetTransactionsByAddress: 'enhancedGetTransactionsByAddress',
-  enhancedGetTokenTransactionsByAddress:
-    'enhancedGetTokenTransactionsByAddress',
-  enhancedSerializeTransaction: 'enhancedSerializeTransaction',
-  enhancedGetTokensByTokenAddresses: 'enhancedGetTokensByTokenAddresses',
-};
-
-export const SerializeTransactionParams = {
-  transferSol: 'transfer-sol',
-  transferToken: 'transfer-token',
-};

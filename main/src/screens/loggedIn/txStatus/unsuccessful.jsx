@@ -12,7 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {Text} from '@rneui/themed';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
 //const video = require('./unsuccessful.mp4');
 
 export default function Component({navigation}) {
@@ -30,10 +30,10 @@ export default function Component({navigation}) {
         Transaction Unsuccessful!
       </Text>
       <View style={{width: '80%', marginTop: '30%', marginLeft: '11%'}}>
-        <Video
+        {/* <Video
           //   source={video}
           style={{width: 300, height: 300}}
-        />
+        /> */}
       </View>
       <TouchableOpacity onPress={() => navigation.navigate('Payments')}>
         <Text

@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     width: '100%',
     flexDirection: 'column',
+    paddingBottom: 200,
   },
 
   heading: {
